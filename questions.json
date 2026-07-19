@@ -1,9 +1,9 @@
 [
   {
-    "scrambled": "[干净了] / [把] / [衣服] / [洗] / [吗]",
-    "answer": "把衣服洗干净了吗？",
-    "pinyin": "Bǎ yīfú xǐ gānjìng le ma?",
-    "vietnamese": "Đem quần áo giặt sạch sẽ chưa?",
+    "scrambled": "[你] / [把] / [苹果] / [吃了] / [吗]",
+    "answer": "你把苹果吃了吗？",
+    "pinyin": "Nǐ bǎ píng guǒ chī le ma?",
+    "vietnamese": "Bạn ăn quả táo chưa?",
     "category": "Câu chữ 把 (Bǎ)",
     "sources": [
       "HTML App"
@@ -50,10 +50,10 @@
     ]
   },
   {
-    "scrambled": "[他] / [打扫得] / [把] / [干干净净] / [房间]",
-    "answer": "他把房间打扫得干干净净。",
-    "pinyin": "Tā bǎ fáng jiān dǎ sǎo dé gān gān jìng jìng.",
-    "vietnamese": "Anh ấy đã dọn dẹp phòng sạch sẽ tinh tươm.",
+    "scrambled": "[他] / [打扫得] / [把] / [很干净] / [房间]",
+    "answer": "他把房间打扫得很干净。",
+    "pinyin": "Tā bǎ fáng jiān dă sǎo dé hěn gān jìng.",
+    "vietnamese": "Anh ấy đã dọn dẹp phòng rất sạch sẽ.",
     "category": "Câu chữ 把 (Bǎ)",
     "sources": [
       "PDF Đề 9"
@@ -80,30 +80,30 @@
     ]
   },
   {
-    "scrambled": "[她] / [放进了] / [叔叔的包里] / [把] / [钱]",
-    "answer": "她把钱放进了叔叔的包里。",
-    "pinyin": "Tā bǎ qián fàng jìn le shū shū de bāo lǐ.",
-    "vietnamese": "Cô ấy đã để tiền vào trong túi của chú.",
+    "scrambled": "[请把] / [手机] / [给] / [我]",
+    "answer": "请把手机给我。",
+    "pinyin": "Qǐng bǎ shǒu jī gěi wǒ.",
+    "vietnamese": "Xin hãy đưa điện thoại cho tôi.",
     "category": "Câu chữ 把 (Bǎ)",
     "sources": [
       "PDF Đề 15"
     ]
   },
   {
-    "scrambled": "[手机声音] / [请把] / [关] / [小点儿]",
-    "answer": "请把手机声音关小点儿。",
-    "pinyin": "Qǐng bǎ shǒu jī shēng yīn guān xiǎo diǎn ér.",
-    "vietnamese": "Xin vui lòng vặn nhỏ âm thanh điện thoại lại.",
+    "scrambled": "[我] / [把] / [衣服] / [洗] / [干净了]",
+    "answer": "我把衣服洗干净了。",
+    "pinyin": "Wǒ bǎ yī fú xǐ gān jìng le.",
+    "vietnamese": "Tôi giặt sạch quần áo rồi.",
     "category": "Câu chữ 把 (Bǎ)",
     "sources": [
       "PDF Đề 16"
     ]
   },
   {
-    "scrambled": "[他] / [打扫得] / [把] / [干干净净] / [教室]",
-    "answer": "他把教室打扫得干干净净。",
-    "pinyin": "Tā bǎ jiào shì dǎ sǎo dé gān gān jìng jìng.",
-    "vietnamese": "Anh ấy đã quét dọn phòng học sạch sẽ tinh tươm.",
+    "scrambled": "[她] / [把] / [自行车] / [骑] / [走了]",
+    "answer": "她把自行车骑走了。",
+    "pinyin": "Tā bǎ zì xíng chē qí zǒu le.",
+    "vietnamese": "Cô ấy đi xe đạp đi rồi.",
     "category": "Câu chữ 把 (Bǎ)",
     "sources": [
       "PDF Đề 18"
