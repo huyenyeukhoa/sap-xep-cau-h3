@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Điều Khiển Giáo Viên - HSK 3 Classroom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container" style="max-width: 1000px;">
+    <h1>Hệ Thống Chấm Điểm HSK 3 - Giáo Viên</h1>
+
+    <div class="admin-grid">
+      
+      <!-- Left Column: Operations & Settings -->
+      <div>
+        <h2>Cấu Hình Đề Thi</h2>
+        <div class="form-group">
+          <label for="filter-category">Chủ điểm ngữ pháp:</label>
+          <select id="filter-category">
+            <option value="all">Tất cả chủ điểm (Trộn lẫn)</option>
+            <option value="Câu chữ 把 (Bǎ)">Câu chữ 把 (Bǎ)</option>
+            <option value="Câu chữ 被 (Bèi)">Câu chữ 被 (Bèi)</option>
+            <option value="Câu so sánh 比 (Bǐ)">Câu so sánh 比 (Bǐ)</option>
+            <option value="Cấu trúc 越来越...">Cấu trúc 越来越...</option>
+            <option value="Cấu trúc 又...又...">Cấu trúc 又...又...</option>
+            <option value="Câu liên động / Cách thức hành động">Câu liên động / Cách thức hành động</option>
+            <option value="Cấu trúc 马上就要... / 快要...">Cấu trúc 马上就要... / 快要...</option>
+            <option value="Câu có Bổ ngữ trạng thái / Trình độ (得)">Câu có Bổ ngữ trạng thái / Trình độ (得)</option>
+            <option value="Câu song tân ngữ / Kiêm ngữ">Câu song tân ngữ / Kiêm ngữ</option>
+            <option value="Câu có Động từ năng nguyện (想/喜欢/会/能)">Câu có Động từ năng nguyện (想/喜欢/会/能)</option>
+            <option value="Câu tồn tại / Vị trí / Địa điểm (在/有)">Câu tồn tại / Vị trí / Địa điểm (在/有)</option>
+            <option value="Câu chữ 是 / Cấu trúc 是...的">Câu chữ 是 / Cấu trúc 是... de/的</option>
+            <option value="Câu vị ngữ tính từ / Trạng thái (很/非常/太)">Câu vị ngữ tính từ / Trạng thái (很/非常/太)</option>
+            <option value="Câu hỏi dùng đại từ nghi vấn / Trợ từ">Câu hỏi dùng đại từ nghi vấn / Trợ từ</option>
+            <option value="Câu biểu thị Số lượng / Giá cả / Chi tiêu (一共/花...)">Câu biểu thị Số lượng / Giá cả / Chi tiêu (一共/花...)</option>
+            <option value="Câu vị ngữ động từ thường / Trạng thái biến đổi">Câu vị ngữ động từ thường / Trạng thái biến đổi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="num-questions">Số lượng câu hỏi giao cho học viên:</label>
+          <select id="num-questions">
+            <option value="5">5 câu</option>
+            <option value="10" selected>10 câu</option>
+            <option value="15">15 câu</option>
+            <option value="20">20 câu</option>
+            <option value="30">30 câu</option>
+            <option value="134">Tất cả (134 câu)</option>
+          </select>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;">
+          <button id="btn-init" onclick="initExam()">Phát đề cho cả lớp</button>
+          <button id="btn-grade" class="secondary" onclick="gradeExam()" disabled>Khóa đề & Chấm điểm</button>
+          <button id="btn-reset" class="secondary" onclick="resetExam()" disabled>Làm phiên mới</button>
+          <button id="btn-clear-names" class="secondary" onclick="clearStudentNames()" style="background-color: #c00000; border-color: #a00000; box-shadow: 2px 2px 0px #800000; color: white;">Đặt lại tên cả lớp</button>
+        </div>
+
+        <h2>Trạng Thái Lớp Học</h2>
+        <div style="background-color: #FAF6ED; border: 1px solid var(--gold-border); padding: 15px; border-radius: 6px; font-size: 15px; margin-bottom: 20px;">
+          <p style="margin: 5px 0;"><strong>Trạng thái phòng:</strong> <span id="room-status" style="font-weight: bold; color: var(--primary-color);">Đang chờ</span></p>
+          <p style="margin: 5px 0;"><strong>Số lượng câu đang giao:</strong> <span id="active-count" style="font-weight: bold;">0</span></p>
+          <p style="margin: 5px 0;"><strong>Sĩ số kết nối:</strong> <span id="students-connected" style="font-weight: bold;">0</span></p>
+        </div>
+              <!-- Category Questions List -->
+        <div id="category-questions-section" style="margin-top: 30px; display: none; background-color: #FAF6ED; border: 2px solid var(--gold-border); border-radius: 6px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px;">
+          <h3 style="color: var(--primary-color); margin-top: 0; border-bottom: 2px dashed var(--gold-border); padding-bottom: 8px; font-size: 18px; font-weight: 700;">
+            📝 Câu Hỏi Ngữ Pháp: <span id="cat-questions-title"></span>
+          </h3>
+          <div id="cat-questions-list" style="display: flex; flex-direction: column; gap: 15px; max-height: 400px; overflow-y: auto; padding-right: 5px; margin-top: 15px;">
+            <!-- Questions list will be injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Lesson Plan Section -->
+        <div id="lesson-plan-section" style="margin-top: 30px; display: none; background-color: #FAF6ED; border: 2px solid var(--gold-border); border-radius: 6px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px;">
+          <h3 style="color: var(--primary-color); margin-top: 0; border-bottom: 2px dashed var(--gold-border); padding-bottom: 8px; font-size: 18px; font-weight: 700;">
+            📖 Giáo Án Giảng Dạy: <span id="lesson-plan-title"></span>
+          </h3>
+          <div id="lesson-plan-content" style="font-size: 15px; line-height: 1.6; color: var(--text-dark);">
+            <!-- Content will be injected dynamically -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column: Student Monitor & Leaderboard -->
+      <div>
+        <h2>Danh Sách Học Viên</h2>
+        <div style="overflow-x: auto; max-height: 400px; border: 1px solid #E6DBC4; border-radius: 6px; background-color: white;">
+          <table class="student-table" style="margin: 0;">
+            <thead>
+              <tr>
+                <th>Họ và Tên</th>
+                <th>Trạng Thái</th>
+                <th>Điểm Số</th>
+                <th style="text-align: center;">Thao Tác</th>
+              </tr>
+            </thead>
+            <tbody id="student-list-tbody">
+              <tr>
+                <td colspan="4" style="text-align: center; color: #888;">Chưa có học viên nào kết nối...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Leaderboard (Grading results) -->
+        <div id="leaderboard-section" style="margin-top: 30px; display: none;">
+          <h2>BẢNG XẾP HẠNG LỚP HỌC</h2>
+          <ol id="leaderboard-ol" style="padding-left: 20px; font-size: 16px; font-weight: bold; color: var(--border-color);">
+            <!-- Leaderboard ranks go here -->
+          </ol>
+        </div>
+
+        <!-- Question Statistics Section -->
+        <div id="stats-section" style="margin-top: 30px; display: none;">
+          <h2>THỐNG KÊ CÂU HỎI SAI NHIỀU NHẤT</h2>
+          <div id="stats-list" style="display: flex; flex-direction: column; gap: 15px; max-height: 500px; overflow-y: auto; padding-right: 5px;">
+            <!-- Question stats go here -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    let ws = null;
+    let students = [];
+    let categoryCounts = {};
+    let hasUpdatedCategoryTexts = false;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const selectCat = document.getElementById("filter-category");
+      selectCat.addEventListener("change", () => {
+        updateNumQuestionsDropdown();
+        updateLessonPlan();
+      });
+      // Show initially if a category is selected
+      updateLessonPlan();
+    });
+
+    
+    const grammarLessons = {
+      "Câu chữ 把 (Bǎ)": {
+        structure: "S + <strong>把</strong> + O + V + Thành phần khác (了 / Bổ ngữ / Động từ lặp lại)",
+        usage: "Nhấn mạnh tác động của chủ ngữ lên tân ngữ, làm thay đổi trạng thái hoặc vị trí của tân ngữ.",
+        examples: [
+          { cn: "我把衣服洗了。", vi: "Tôi giặt quần áo rồi. (Tác động làm sạch quần áo)" },
+          { cn: "请把桌子擦干净。", vi: "Xin hãy lau sạch bàn. (Thay đổi trạng thái bàn)" }
+        ]
+      },
+      "Câu chữ 被 (Bèi)": {
+        structure: "S (Tân ngữ bị tác động) + <strong>被</strong> + Người thực hiện (có thể bỏ) + V + Thành phần khác",
+        usage: "Nhấn mạnh ý bị động, biểu thị chủ ngữ bị tác động bởi một hành vi nào đó (thường mang ý không mong muốn).",
+        examples: [
+          { cn: "那本书被他拿走了。", vi: "Cuốn sách kia bị anh ấy lấy đi rồi." },
+          { cn: "我的手机被妹妹摔坏了。", vi: "Điện thoại của tôi bị em gái làm hỏng rồi." }
+        ]
+      },
+      "Câu so sánh 比 (Bǐ)": {
+        structure: "A + <strong>比</strong> + B + Adj (hoặc Adj + 一点儿 / 得多 / 数量)",
+        usage: "So sánh tính chất, trạng thái giữa hai đối tượng A và B (A hơn B). Không dùng '很', '非常', '太' trước tính từ.",
+        examples: [
+          { cn: "今天比昨天冷。", vi: "Hôm nay lạnh hơn hôm qua." },
+          { cn: "哥哥比我高。", vi: "Anh trai cao hơn tôi." }
+        ]
+      },
+      "Cấu trúc 越来越...": {
+        structure: "S + <strong>越来越</strong> + Adj / V tâm lý (喜欢/想/觉得...)",
+        usage: "Biểu thị mức độ thay đổi theo thời gian (ngày càng...). Không dùng '很', '非常', '太' trước tính từ.",
+        examples: [
+          { cn: "天气越来越热了。", vi: "Thời tiết ngày càng nóng rồi." },
+          { cn: "汉语越来越难了。", vi: "Tiếng Trung ngày càng khó rồi." }
+        ]
+      },
+      "Cấu trúc 又...又...": {
+        structure: "S + <strong>又</strong> + Adj1/V1 + <strong>又</strong> + Adj2/V2",
+        usage: "Biểu thị hai tính chất hoặc hành động tồn tại song song (vừa... vừa...). Hai từ đi kèm phải cùng hướng tích cực hoặc cùng tiêu cực.",
+        examples: [
+          { cn: "这件衣服又便宜又好看。", vi: "Bộ quần áo này vừa rẻ vừa đẹp." },
+          { cn: "那个苹果又红又大。", vi: "Quả táo kia vừa đỏ vừa to." }
+        ]
+      },
+      "Câu liên động / Cách thức hành động": {
+        structure: "S + V1 (chỉ phương tiện/cách thức) + O1 + V2 + O2",
+        usage: "Diễn tả hai hành động liên tiếp, động từ thứ nhất (V1) chỉ phương thức, phương tiện thực hiện hành động thứ hai (V2).",
+        examples: [
+          { cn: "我们骑自行车去公园。", vi: "Chúng tôi đi xe đạp đến công viên." },
+          { cn: "他坐飞机去中国。", vi: "Anh ấy đi máy bay đến Trung Quốc." }
+        ]
+      },
+      "Cấu trúc 马上就要... / 快要...": {
+        structure: "S + <strong>马上就要</strong> / <strong>快要</strong> / <strong>要</strong> + V + 了",
+        usage: "Diễn tả sự việc sắp xảy ra trong thời gian ngắn (sắp... rồi). Nếu có thời gian cụ thể (như 明天, 下个月), chỉ dùng '就要...了'.",
+        examples: [
+          { cn: "火车要开了。", vi: "Tàu hỏa sắp chạy rồi." },
+          { cn: "我们马上要毕业了。", vi: "Chúng tôi sắp tốt nghiệp rồi." }
+        ]
+      },
+      "Câu có Bổ ngữ trạng thái / Trình độ (得)": {
+        structure: "S + V + <strong>得</strong> + Adj  hoặc  S + V + O + V + <strong>得</strong> + Adj",
+        usage: "Nhận xét, đánh giá kết quả, trình độ hoặc trạng thái của hành động đã hoặc đang diễn ra.",
+        examples: [
+          { cn: "他说汉语说得很好。", vi: "Anh ấy nói tiếng Trung rất tốt." },
+          { cn: "妹妹写汉字写得很漂亮。", vi: "Em gái viết chữ Hán rất đẹp." }
+        ]
+      },
+      "Câu song tân ngữ / Kiêm ngữ": {
+        structure: "Song tân ngữ: S + V + O1 (người) + O2 (vật)<br>Kiêm ngữ: S + V1 (请/让/叫/帮) + O1/S2 + V2 + O2",
+        usage: "Diễn tả hành động tác động gián tiếp hoặc câu cầu khiến, yêu cầu ai đó làm gì.",
+        examples: [
+          { cn: "那位医生送给他一个礼物。", vi: "Vị bác sĩ đó tặng cho anh ấy một món quà." },
+          { cn: "请帮我拿一下盘子。", vi: "Xin giúp tôi lấy cái đĩa một chút." }
+        ]
+      },
+      "Câu có Động từ năng nguyện (想/喜欢/会/能)": {
+        structure: "S + <strong>想</strong> / <strong>喜欢</strong> / <strong>会</strong> / <strong>能</strong> + V + O",
+        usage: "Diễn tả mong muốn, sở thích, khả năng hoặc sự cho phép đối với một hành động.",
+        examples: [
+          { cn: "我想去学校图书馆看书。", vi: "Tôi muốn đến thư viện trường đọc sách." },
+          { cn: "你会说英语吗？", vi: "Bạn biết nói tiếng Anh không?" }
+        ]
+      },
+      "Câu tồn tại / Vị trí / Địa điểm (In / At / Have) (在/有)": {
+        structure: "Nơi chốn + <strong>有</strong>/<strong>是</strong> + Danh từ  hoặc  S + <strong>在</strong> + Địa điểm",
+        usage: "Diễn tả sự tồn tại hoặc vị trí của người/vật tại một địa điểm.",
+        examples: [
+          { cn: "桌子上有一本书。", vi: "Trên bàn có một cuốn sách." },
+          { cn: "我的手机在桌子上。", vi: "Điện thoại của tôi ở trên bàn." }
+        ]
+      },
+      "Câu tồn tại / Vị trí / Địa điểm (在/有)": {
+        structure: "Nơi chốn + <strong>有</strong>/<strong>是</strong> + Danh từ  hoặc  S + <strong>在</strong> + Địa điểm",
+        usage: "Diễn tả sự tồn tại hoặc vị trí của người/vật tại một địa điểm.",
+        examples: [
+          { cn: "桌子上有一本书。", vi: "Trên bàn có một cuốn sách." },
+          { cn: "我的手机在桌子上。", vi: "Điện thoại của tôi ở trên bàn." }
+        ]
+      },
+      "Câu chữ 是 / Cấu trúc 是...的": {
+        structure: "S + <strong>是</strong> + [Thời gian / Địa điểm / Phương thức] + V + <strong>的</strong>",
+        usage: "Nhấn mạnh thời gian, địa điểm, phương thức hoặc người thực hiện của hành động đã xảy ra trong quá khứ.",
+        examples: [
+          { cn: "这些苹果是昨天买的。", vi: "Những quả táo này là mua ngày hôm qua. (Nhấn mạnh thời gian)" },
+          { cn: "这个照相机是新买 of的。", vi: "Chiếc máy ảnh này là mới mua. (Nhấn mạnh trạng thái)" },
+          { cn: "这个照相机是新买的。", vi: "Chiếc máy ảnh này là mới mua. (Nhấn mạnh trạng thái)" }
+        ]
+      },
+      "Câu vị ngữ tính từ / Trạng thái (很/非常/太)": {
+        structure: "S + Phó từ chỉ mức độ (<strong>很</strong>/<strong>非常</strong>/<strong>最</strong>/<strong>真</strong>/<strong>太</strong>) + Adj",
+        usage: "Miêu tả tính chất, trạng thái của sự vật/chủ ngữ mà không dùng động từ '是'.",
+        examples: [
+          { cn: "那位邻居很热情。", vi: "Vị hàng xóm đó rất nhiệt tình." },
+          { cn: "今天的天气非常冷。", vi: "Thời tiết hôm nay cực kỳ lạnh." }
+        ]
+      },
+      "Câu vị ngữ tính từ / Trạng thái (Nguyên gốc là gì? Chỗ này bị rác/lỗi)": {
+        structure: "S + Phó từ chỉ mức độ (<strong>很</strong>/<strong>非常</strong>/<strong>最</strong>/<strong>真</strong>/<strong>太</strong>) + Adj",
+        usage: "Miêu tả tính chất, trạng thái của sự vật/chủ ngữ mà không dùng động từ '是'.",
+        examples: [
+          { cn: "那位邻居很热情。", vi: "Vị hàng xóm đó rất nhiệt tình." },
+          { cn: "今天的天气非常冷。", vi: "Thời tiết hôm nay cực kỳ lạnh." }
+        ]
+      },
+      "Câu hỏi dùng đại từ nghi vấn / Trợ từ": {
+        structure: "Đại từ nghi vấn: 谁, 什么, 哪儿, 怎么, 几, 多少<br>Trợ từ ngữ khí cuối câu: 吗, 吧, 呢",
+        usage: "Các hình thức đặt câu hỏi trong tiếng Trung để tìm kiếm thông tin hoặc xác nhận sự việc.",
+        examples: [
+          { cn: "你叫什么名字？", vi: "Bạn tên là gì?" },
+          { cn: "他是谁的朋友？", vi: "Anh ấy là bạn của ai?" }
+        ]
+      },
+      "Câu biểu thị Số lượng / Giá cả / Chi tiêu (一共/花...)": {
+        structure: "<strong>一共</strong> + Số lượng/Tiền  hoặc  S + <strong>花</strong> + Thời gian/Tiền + V/O",
+        usage: "Hỏi/trả lời về tổng số lượng, giá cả hoặc diễn tả chi phí thời gian, tiền bạc vào việc gì đó.",
+        examples: [
+          { cn: "一共多少钱？", vi: "Tổng cộng bao nhiêu tiền?" },
+          { cn: "我今天花了一百块钱。", vi: "Tôi hôm nay đã tiêu 100 tệ." }
+        ]
+      },
+      "Câu vị ngữ động từ thường / Trạng thái biến đổi": {
+        structure: "S + V + O  hoặc  S + V + <strong>了</strong> (Biến đổi trạng thái)",
+        usage: "Câu miêu tả hành động thông thường hoặc sự thay đổi của sự vật, hiện tượng.",
+        examples: [
+          { cn: "我要去超市买东西。", vi: "Tôi muốn đi siêu thị mua đồ." },
+          { cn: "他们明天坐火车去旅行。", vi: "Ngày mai họ đi tàu hỏa đi du lịch." }
+        ]
+      }
+    };
+
+    function updateLessonPlan() {
+      const cat = document.getElementById("filter-category").value;
+      const section = document.getElementById("lesson-plan-section");
+      const titleSpan = document.getElementById("lesson-plan-title");
+      const contentDiv = document.getElementById("lesson-plan-content");
+
+      if (cat === "all" || !grammarLessons[cat]) {
+        section.style.display = "none";
+        document.getElementById("category-questions-section").style.display = "none";
+        return;
+      }
+      
+      // Request questions for this category
+      ws.send(JSON.stringify({
+        type: 'GET_CATEGORY_QUESTIONS',
+        payload: { category: cat }
+      }));
+
+      const lesson = grammarLessons[cat];
+      titleSpan.innerText = cat;
+      
+      let examplesHtml = "";
+      lesson.examples.forEach((ex, i) => {
+        examplesHtml += `<div style="margin-top: 10px; padding-left: 10px; border-left: 3px solid var(--primary-color);">
+          <p style="margin: 2px 0; font-weight: bold; font-family: 'SimSun', serif; font-size: 18px; color: var(--primary-color);">${i + 1}. ${ex.cn}</p>
+          <p style="margin: 2px 0; font-style: italic; color: #555;">${ex.vi}</p>
+        </div>`;
+      });
+
+      contentDiv.innerHTML = `
+        <p style="margin: 8px 0;"><strong>1. Cấu trúc ngữ pháp:</strong></p>
+        <div style="background-color: var(--box-bg); padding: 10px 15px; border-radius: 4px; font-size: 16px; font-family: 'SimSun', serif; border: 1px solid var(--gold-border);">
+          ${lesson.structure}
+        </div>
+        
+        <p style="margin: 12px 0 8px 0;"><strong>2. Cách dùng giảng dạy:</strong></p>
+        <p style="margin: 4px 0; padding-left: 5px;">${lesson.usage}</p>
+        
+        <p style="margin: 12px 0 8px 0;"><strong>3. Ví dụ trực quan để giảng dạy:</strong></p>
+        ${examplesHtml}
+      `;
+
+      section.style.display = "block";
+    }
+
+
+
+    function updateCategoryDropdownTexts() {
+      if (hasUpdatedCategoryTexts) return;
+      const selectCat = document.getElementById("filter-category");
+      for (let i = 0; i < selectCat.options.length; i++) {
+        const opt = selectCat.options[i];
+        if (categoryCounts[opt.value]) {
+          opt.text = `${opt.text} (${categoryCounts[opt.value]} câu)`;
+        }
+      }
+      hasUpdatedCategoryTexts = true;
+      updateNumQuestionsDropdown();
+    }
+
+    function updateNumQuestionsDropdown() {
+      const cat = document.getElementById("filter-category").value;
+      const selectNum = document.getElementById("num-questions");
+      const maxAvailable = cat === 'all' ? 134 : (categoryCounts[cat] || 0);
+      
+      Array.from(selectNum.options).forEach(opt => {
+        const val = parseInt(opt.value);
+        if (opt.value === "134") {
+          opt.text = `Tất cả (${maxAvailable} câu)`;
+          opt.disabled = false;
+        } else if (val > maxAvailable) {
+          opt.disabled = true;
+        } else {
+          opt.disabled = false;
+        }
+      });
+
+      // If current selection is disabled, auto select the best match
+      if (selectNum.selectedOptions[0] && selectNum.selectedOptions[0].disabled) {
+        if (maxAvailable >= 10) selectNum.value = "10";
+        else if (maxAvailable >= 5) selectNum.value = "5";
+        else selectNum.value = maxAvailable.toString();
+      }
+    }
+
+    function connectWebSocket() {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const wsUrl = `${protocol}//${window.location.host}?role=admin`;
+      ws = new WebSocket(wsUrl);
+
+      ws.onopen = () => {
+        console.log('Admin connected to WebSocket server.');
+      };
+
+      ws.onmessage = (event) => {
+        try {
+          const msg = JSON.parse(event.data);
+          
+          if (msg.type === 'CATEGORY_QUESTIONS_RESPONSE') {
+            renderCategoryQuestions(msg.category, msg.questions);
+          } else if (msg.type === 'UPDATE_QUESTION_SUCCESS') {
+            alert('Cập nhật câu hỏi thành công!');
+          } else if (msg.type === 'STATE_UPDATE') {
+            students = msg.students;
+            if (msg.categoryCounts) {
+              categoryCounts = msg.categoryCounts;
+              updateCategoryDropdownTexts();
+            }
+            updateUI(msg.state, msg.activeQuestionsCount);
+            
+            // Render question statistics
+            if (msg.state === 'GRADING') {
+              showQuestionStats(msg.questionStats);
+            } else {
+              document.getElementById('stats-section').style.display = 'none';
+            }
+          }
+        } catch (err) {
+          console.error('Error handling server message:', err);
+        }
+      };
+
+      ws.onclose = () => {
+        console.log('WebSocket connection closed. Reconnecting in 3s...');
+        setTimeout(connectWebSocket, 3000);
+      };
+    }
+
+    function updateUI(state, activeQuestionsCount) {
+      // 1. Update State displays
+      const roomStatus = document.getElementById('room-status');
+      const activeCount = document.getElementById('active-count');
+      const studentsConnected = document.getElementById('students-connected');
+
+      activeCount.innerText = activeQuestionsCount;
+      studentsConnected.innerText = students.length;
+
+      // Enable/disable buttons based on state
+      const btnInit = document.getElementById('btn-init');
+      const btnGrade = document.getElementById('btn-grade');
+      const btnReset = document.getElementById('btn-reset');
+
+      if (state === 'IDLE') {
+        roomStatus.innerText = 'Đang chờ phát đề';
+        roomStatus.style.color = '#888';
+        btnInit.disabled = false;
+        btnGrade.disabled = true;
+        btnReset.disabled = true;
+        document.getElementById('leaderboard-section').style.display = 'none';
+      } else if (state === 'EXAM') {
+        roomStatus.innerText = 'Học viên đang làm bài';
+        roomStatus.style.color = 'var(--primary-color)';
+        btnInit.disabled = true;
+        btnGrade.disabled = false;
+        btnReset.disabled = false;
+        document.getElementById('leaderboard-section').style.display = 'none';
+      } else if (state === 'GRADING') {
+        roomStatus.innerText = 'Đã chấm điểm xong';
+        roomStatus.style.color = '#385723';
+        btnInit.disabled = true;
+        btnGrade.disabled = true;
+        btnReset.disabled = false;
+        
+        // Show Leaderboard
+        showLeaderboard();
+      }
+
+      // 2. Render Student List Table
+      const tbody = document.getElementById('student-list-tbody');
+      tbody.innerHTML = '';
+
+      if (students.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="3" style="text-align: center; color: #888;">Chưa có học viên nào kết nối...</td></tr>`;
+        return;
+      }
+
+      students.forEach(student => {
+        let statusTag = '';
+        let scoreText = '--';
+
+        if (state === 'IDLE') {
+          statusTag = '<span class="status-tag working">Đang chờ</span>';
+        } else if (state === 'EXAM') {
+          if (student.submitted) {
+            statusTag = '<span class="status-tag submitted">Đã nộp bài</span>';
+          } else {
+            const currentQNum = student.currentIdx !== -1 ? (student.currentIdx + 1) : 1;
+            statusTag = `<span class="status-tag working">Đang làm (Câu ${currentQNum}/${student.totalQuestions || activeQuestionsCount})</span>`;
+          }
+        } else if (state === 'GRADING') {
+          statusTag = '<span class="status-tag graded">Đã chấm</span>';
+          scoreText = `${student.score} / 10`;
+        }
+
+        let actionBtn = '';
+        if (state === 'EXAM' && student.submitted) {
+          actionBtn = `<button onclick="unlockStudent('${student.clientId}')" style="padding: 4px 10px; font-size: 12px; background-color: var(--gold-border); border: 1px solid var(--border-color); border-radius: 4px; cursor: pointer;">🔓 Cho sửa</button>`;
+        } else if (state === 'GRADING') {
+          actionBtn = `<button onclick="unlockStudent('${student.clientId}')" style="padding: 4px 10px; font-size: 12px; background-color: var(--gold-border); border: 1px solid var(--border-color); border-radius: 4px; cursor: pointer;">🔓 Cho sửa</button>`;
+        }
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="padding: 8px 10px; border-bottom: 1px solid var(--gold-border);"><strong>${student.name || '(Học viên ẩn danh)'}</strong></td>
+          <td style="padding: 8px 10px; border-bottom: 1px solid var(--gold-border);">${statusTag}</td>
+          <td style="padding: 8px 10px; border-bottom: 1px solid var(--gold-border); font-weight: bold; color: var(--primary-color);">${scoreText}</td>
+          <td style="padding: 8px 10px; border-bottom: 1px solid var(--gold-border); text-align: center;">${actionBtn}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function initExam() {
+      const numQuestions = parseInt(document.getElementById('num-questions').value);
+      const categoriesFilter = document.getElementById('filter-category').value;
+
+      ws.send(JSON.stringify({
+        type: 'INIT_EXAM',
+        payload: {
+          numQuestions: numQuestions,
+          categoriesFilter: categoriesFilter
+        }
+      }));
+    }
+
+    function gradeExam() {
+      // Check if some students haven't submitted
+      const working = students.filter(s => !s.submitted);
+      if (working.length > 0) {
+        if (!confirm(`Còn ${working.length} học viên chưa nộp bài. Bạn có chắc chắn muốn khóa bài thi và chấm điểm không?`)) {
+          return;
+        }
+      } else {
+        if (!confirm('Khóa đề thi và chấm điểm ngay?')) {
+          return;
+        }
+      }
+
+      ws.send(JSON.stringify({
+        type: 'GRADE_EXAM'
+      }));
+    }
+
+    function resetExam() {
+      if (confirm('Bạn có chắc muốn bắt đầu lại phiên học tập mới không? Tất cả kết quả bài làm hiện tại sẽ bị xóa sạch!')) {
+        ws.send(JSON.stringify({
+          type: 'RESET_EXAM'
+        }));
+      }
+    }
+
+    function clearStudentNames() {
+      if (confirm('Bạn có chắc chắn muốn yêu cầu TẤT CẢ học viên nhập lại tên không?')) {
+        ws.send(JSON.stringify({ type: 'FORCE_RESET_NAMES' }));
+      }
+    }
+
+    function showLeaderboard() {
+      const leaderboardSection = document.getElementById('leaderboard-section');
+      const leaderboardOl = document.getElementById('leaderboard-ol');
+      leaderboardOl.innerHTML = '';
+
+      // Sort students by score descending
+      const sorted = [...students].sort((a, b) => b.score - a.score);
+
+      if (sorted.length === 0) {
+        leaderboardSection.style.display = 'none';
+        return;
+      }
+
+      leaderboardSection.style.display = 'block';
+      sorted.forEach(student => {
+        const li = document.createElement('li');
+        li.style.marginBottom = '8px';
+        li.innerHTML = `
+          <span style="color: var(--text-dark);">${student.name || '(Ẩn danh)'}:</span>
+          <span style="color: var(--primary-color);">${student.score} / 10 điểm</span>
+        `;
+        leaderboardOl.appendChild(li);
+      });
+    }
+
+    // Connect automatically
+    connectWebSocket();
+  
+    function showQuestionStats(questionStats) {
+      const statsSection = document.getElementById('stats-section');
+      const statsList = document.getElementById('stats-list');
+      statsList.innerHTML = '';
+
+      if (!questionStats || questionStats.length === 0) {
+        statsSection.style.display = 'none';
+        return;
+      }
+
+      statsSection.style.display = 'block';
+      questionStats.forEach((stat, i) => {
+        const total = stat.correctCount + stat.partialCount + stat.incorrectCount;
+        const wrongCount = stat.partialCount + stat.incorrectCount;
+        
+        const card = document.createElement('div');
+        card.style.backgroundColor = '#FAF6ED';
+        card.style.border = '1px solid var(--gold-border)';
+        card.style.borderRadius = '6px';
+        card.style.padding = '15px';
+        card.style.boxShadow = '0 2px 5px rgba(0,0,0,0.02)';
+        card.style.marginBottom = '10px';
+
+        // Color coding for error rate
+        let badgeColor = '#385723'; // green for low error
+        if (stat.errorRate >= 60) {
+          badgeColor = '#C00000'; // red for high error
+        } else if (stat.errorRate >= 30) {
+          badgeColor = '#E3A857'; // orange for medium error
+        }
+
+        card.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-bottom: 1px dashed var(--gold-border); padding-bottom: 6px;">
+            <span style="font-weight: bold; color: var(--border-color); font-size: 14px;">Câu ${stat.index + 1}: ${stat.category}</span>
+            <span style="background-color: ${badgeColor}; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; white-space: nowrap;">
+              Tỷ lệ sai: ${stat.errorRate}% (${wrongCount}/${total} em)
+            </span>
+          </div>
+          <div style="margin-top: 5px;">
+            <p style="margin: 2px 0; font-size: 13px; color: #777;">Từ gợi ý: <span style="font-family: 'SimSun', serif; font-size: 15px; color: #333;">${stat.scrambled}</span></p>
+            <p style="margin: 2px 0; font-size: 13px; color: #777;">Đáp án đúng:</p>
+            <p style="margin: 0; font-family: 'SimSun', serif; font-size: 18px; font-weight: bold; color: var(--primary-color);">${stat.answer}</p>
+          </div>
+          <div style="margin-top: 8px; font-size: 12px; color: #666; display: flex; gap: 15px;">
+            <span>🟢 Đúng: <strong>${stat.correctCount}</strong></span>
+            <span>🟡 Đúng một phần: <strong>${stat.partialCount}</strong></span>
+            <span>🔴 Sai / Chưa làm: <strong>${stat.incorrectCount}</strong></span>
+          </div>
+        `;
+        statsList.appendChild(card);
+      });
+    }
+
+  
+    function unlockStudent(clientId) {
+      if (confirm('Bạn có chắc chắn muốn mở khóa bài làm của học viên này không? Các em sẽ có thể làm tiếp tục và nộp bài lại.')) {
+        ws.send(JSON.stringify({
+          type: 'UNLOCK_STUDENT',
+          payload: { clientId }
+        }));
+      }
+    }
+
+    function renderCategoryQuestions(category, questions) {
+      const section = document.getElementById('category-questions-section');
+      const titleSpan = document.getElementById('cat-questions-title');
+      const listDiv = document.getElementById('cat-questions-list');
+      
+      titleSpan.innerText = category;
+      listDiv.innerHTML = '';
+      section.style.display = 'block';
+
+      if (questions.length === 0) {
+        listDiv.innerHTML = '<p style="color: #666; font-style: italic; padding: 10px;">Không có câu hỏi nào thuộc chủ điểm này.</p>';
+        return;
+      }
+
+      questions.forEach((q, i) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.id = `q-card-${q.globalIndex}`;
+        itemDiv.style.backgroundColor = '#FFF';
+        itemDiv.style.border = '1px solid var(--gold-border)';
+        itemDiv.style.borderRadius = '6px';
+        itemDiv.style.padding = '12px';
+        itemDiv.style.marginBottom = '10px';
+
+        itemDiv.innerHTML = `
+          <div id="q-view-${q.globalIndex}">
+            <div style="font-weight: bold; color: var(--border-color); font-size: 14px; margin-bottom: 6px;">Câu ${i + 1}</div>
+            <p style="margin: 3px 0; font-size: 14px; color: #777;"><strong>Từ gợi ý:</strong> <span style="font-family: 'SimSun', serif; font-size: 16px; color: #333;">${q.scrambled}</span></p>
+            <p style="margin: 3px 0; font-size: 14px; color: #777;"><strong>Đáp án đúng:</strong> <span style="font-family: 'SimSun', serif; font-size: 18px; font-weight: bold; color: var(--primary-color);">${q.answer}</span></p>
+            <p style="margin: 3px 0; font-size: 14px; color: #777;"><strong>Pinyin:</strong> <span style="color: #444; font-style: italic;">${q.pinyin}</span></p>
+            <p style="margin: 3px 0; font-size: 14px; color: #777;"><strong>Dịch nghĩa:</strong> <span style="color: #444;">${q.vietnamese}</span></p>
+            <button onclick="toggleEditQuestion(${q.globalIndex})" style="margin-top: 8px; padding: 4px 10px; font-size: 12px; background-color: var(--box-bg); border: 1px solid var(--border-color); border-radius: 4px; cursor: pointer; color: var(--text-dark);">✏️ Sửa câu hỏi</button>
+          </div>
+          <div id="q-edit-${q.globalIndex}" style="display: none;">
+            <div style="font-weight: bold; color: var(--primary-color); font-size: 14px; margin-bottom: 8px;">Hiệu chỉnh Câu ${i + 1}</div>
+            
+            <div style="margin-bottom: 8px;">
+              <label style="font-size: 12px; color: #666; display: block; margin-bottom: 2px;">Từ gợi ý (các khối cách nhau bằng dấu /):</label>
+              <input type="text" id="edit-scrambled-${q.globalIndex}" value="${q.scrambled.replace(/"/g, '&quot;')}" style="width: 100%; padding: 6px; box-sizing: border-box; font-size: 14px; font-family: 'SimSun', serif; border: 1px solid var(--gold-border); border-radius: 4px;">
+            </div>
+
+            <div style="margin-bottom: 8px;">
+              <label style="font-size: 12px; color: #666; display: block; margin-bottom: 2px;">Đáp án đúng:</label>
+              <input type="text" id="edit-answer-${q.globalIndex}" value="${q.answer.replace(/"/g, '&quot;')}" style="width: 100%; padding: 6px; box-sizing: border-box; font-size: 14px; font-family: 'SimSun', serif; border: 1px solid var(--gold-border); border-radius: 4px;">
+            </div>
+
+            <div style="margin-bottom: 8px;">
+              <label style="font-size: 12px; color: #666; display: block; margin-bottom: 2px;">Pinyin:</label>
+              <input type="text" id="edit-pinyin-${q.globalIndex}" value="${q.pinyin.replace(/"/g, '&quot;')}" style="width: 100%; padding: 6px; box-sizing: border-box; font-size: 14px; border: 1px solid var(--gold-border); border-radius: 4px;">
+            </div>
+
+            <div style="margin-bottom: 8px;">
+              <label style="font-size: 12px; color: #666; display: block; margin-bottom: 2px;">Dịch nghĩa tiếng Việt:</label>
+              <input type="text" id="edit-vi-${q.globalIndex}" value="${q.vietnamese.replace(/"/g, '&quot;')}" style="width: 100%; padding: 6px; box-sizing: border-box; font-size: 14px; border: 1px solid var(--gold-border); border-radius: 4px;">
+            </div>
+
+            <div style="display: flex; gap: 8px; margin-top: 10px;">
+              <button onclick="saveQuestion(${q.globalIndex}, '${category.replace(/'/g, "\\'")}')" style="padding: 6px 12px; font-size: 12px; background-color: var(--primary-color); border: 1px solid var(--primary-color); border-radius: 4px; color: white; cursor: pointer;">💾 Lưu lại</button>
+              <button onclick="toggleEditQuestion(${q.globalIndex})" class="secondary" style="padding: 6px 12px; font-size: 12px; border-radius: 4px; cursor: pointer;">❌ Hủy</button>
+            </div>
+          </div>
+        `;
+        listDiv.appendChild(itemDiv);
+      });
+    }
+
+    function toggleEditQuestion(globalIndex) {
+      const viewDiv = document.getElementById(`q-view-${globalIndex}`);
+      const editDiv = document.getElementById(`q-edit-${globalIndex}`);
+      if (viewDiv.style.display === 'none') {
+        viewDiv.style.display = 'block';
+        editDiv.style.display = 'none';
+      } else {
+        viewDiv.style.display = 'none';
+        editDiv.style.display = 'block';
+      }
+    }
+
+    function saveQuestion(globalIndex, category) {
+      const scrambled = document.getElementById(`edit-scrambled-${globalIndex}`).value.trim();
+      const answer = document.getElementById(`edit-answer-${globalIndex}`).value.trim();
+      const pinyin = document.getElementById(`edit-pinyin-${globalIndex}`).value.trim();
+      const vietnamese = document.getElementById(`edit-vi-${globalIndex}`).value.trim();
+
+      if (!scrambled || !answer || !pinyin || !vietnamese) {
+        alert('Vui lòng điền đầy đủ tất cả các trường!');
+        return;
+      }
+
+      ws.send(JSON.stringify({
+        type: 'UPDATE_QUESTION',
+        payload: {
+          globalIndex,
+          scrambled,
+          answer,
+          pinyin,
+          vietnamese,
+          category
+        }
+      }));
+    }
+
+  </script>
+</body>
+</html>

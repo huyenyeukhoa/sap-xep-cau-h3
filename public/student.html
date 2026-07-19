@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luyện Tập Sắp Xếp Câu HSK 3 - Học Viên</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Offline Banner -->
+  <div id="offline-banner" style="display: none; background-color: #C00000; color: white; text-align: center; padding: 10px; font-weight: bold; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); font-size: 15px;">
+    ⚠️ Trình duyệt mất kết nối với lớp học! Vui lòng giữ nguyên màn hình và kiểm tra kết nối Wifi...
+  </div>
+
+  <div class="container">
+    <h1>Sắp Xếp Câu HSK 3</h1>
+
+    <!-- 1. Screen: Register Name -->
+    <div id="screen-register" class="view">
+      <h2>Đăng Ký Tham Gia</h2>
+      <div class="form-group">
+        <label for="student-name">Nhập họ và tên của em:</label>
+        <input type="text" id="student-name" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off">
+      </div>
+      <button onclick="registerName()">Vào lớp học</button>
+    </div>
+
+    <!-- 2. Screen: Waiting for Exam -->
+    <div id="screen-waiting-exam" class="view waiting-screen" style="display:none;">
+      <div class="spinner"></div>
+      <div class="waiting-title">Chào mừng <span id="display-name"></span>!</div>
+      <p>Đang chờ giáo viên chuẩn bị đề và phát bài tập...</p>
+    </div>
+
+    <!-- 3. Screen: Solving Exam -->
+    <div id="screen-exam" class="view" style="display:none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--gold-border); padding-bottom: 10px;">
+        <span style="font-weight: bold; color: var(--primary-color);" id="exam-progress">Câu 1 / --</span>
+        <span style="color: #666;" id="student-header-name"></span>
+      </div>
+
+      <div class="zone" id="source-zone">
+        <div class="zone-title">Các từ gợi ý (Click để ghép câu):</div>
+        <!-- Word blocks will be dynamically generated here -->
+      </div>
+
+      <div class="zone" id="target-zone">
+        <div class="zone-title">Câu của em (Click để hoàn tác):</div>
+        <!-- Word blocks will be moved here -->
+      </div>
+
+      <div style="display: flex; justify-content: space-between; gap: 15px; margin-top: 25px;">
+        <button id="btn-prev" class="secondary" onclick="prevQuestion()">Câu trước</button>
+        <button id="btn-next" onclick="nextQuestion()">Câu tiếp theo</button>
+        <button id="btn-submit" style="display:none;" onclick="submitExam()">Nộp bài</button>
+      </div>
+    </div>
+
+    <!-- 4. Screen: Waiting for Grading -->
+    <div id="screen-waiting-grading" class="view waiting-screen" style="display:none;">
+      <div class="spinner"></div>
+      <div class="waiting-title">Đã nộp bài thành công!</div>
+      <p>Vui lòng chờ giáo viên chấm điểm bài thi của em...</p>
+    </div>
+
+    <!-- 5. Screen: Graded Results -->
+    <div id="screen-result" class="view" style="display:none;">
+      <div style="text-align: center;">
+        <h2>KẾT QUẢ BÀI THI</h2>
+        <div class="score-badge" id="result-score">0 / 0</div>
+        <p style="font-size: 16px; color: var(--border-color); font-weight: 600;">Xem chi tiết bài làm bên dưới:</p>
+      </div>
+
+      <div class="graded-list" id="result-details">
+        <!-- Graded questions will be dynamically rendered here -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Generate or retrieve Client ID to persist state across refreshes
+    let clientId = localStorage.getItem('hsk3_clientId');
+    if (!clientId) {
+      clientId = Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('hsk3_clientId', clientId);
+    }
+
+    let ws = null;
+    let studentName = localStorage.getItem('hsk3_name') || '';
+    let questions = [];
+    let currentIdx = 0;
+    
+    // Answers array: [ { q_index: idx, user_answer: '', user_blocks: [] } ]
+    let studentAnswers = []; 
+    let lastServerMsg = null;
+
+    function connectWebSocket() {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const wsUrl = `${protocol}//${window.location.host}?clientId=${clientId}`;
+      ws = new WebSocket(wsUrl);
+
+      ws.onopen = () => {
+        console.log('Connected to Classroom Server.');
+        document.getElementById('offline-banner').style.display = 'none';
+        if (studentName) {
+          registerName(true);
+        } else {
+          showScreen('screen-register');
+        }
+      };
+
+      ws.onmessage = (event) => {
+        try {
+          const msg = JSON.parse(event.data);
+          console.log('Server Message:', msg.type);
+
+          if (!studentName) {
+            // Save state but do not transition screens yet
+            lastServerMsg = msg;
+            showScreen('screen-register');
+            return;
+          }
+
+          handleServerMessage(msg);
+        } catch (err) {
+          console.error('Error handling WebSocket message:', err);
+        }
+      };
+
+      ws.onclose = () => {
+        console.log('WebSocket closed. Reconnecting in 3s...');
+        document.getElementById('offline-banner').style.display = 'block';
+        setTimeout(connectWebSocket, 3000);
+      };
+    }
+
+    function showScreen(screenId) {
+      document.querySelectorAll('.view').forEach(view => view.style.display = 'none');
+      document.getElementById(screenId).style.display = 'block';
+    }
+
+    function handleServerMessage(msg) {
+      if (msg.type === 'FORCE_RE_REGISTER') {
+        localStorage.removeItem('hsk3_name');
+        studentName = '';
+        document.getElementById('student-name').value = '';
+        showScreen('screen-register');
+      } else if (msg.type === 'RESTORE_EXAM') {
+        studentAnswers = msg.answers;
+        showScreen('screen-exam');
+        loadQuestion(currentIdx);
+      } else if (msg.type === 'WAITING_FOR_EXAM') {
+        showScreen('screen-waiting-exam');
+      } else if (msg.type === 'START_EXAM') {
+        questions = msg.questions;
+        
+        // Initialize or restore answers structure
+        if (msg.answers && msg.answers.length === questions.length) {
+          studentAnswers = msg.answers;
+          console.log('Restored progress from server:', studentAnswers);
+        } else {
+          studentAnswers = questions.map(q => ({
+            q_index: q.index,
+            user_answer: '',
+            user_blocks: [] // stores blocks order
+          }));
+        }
+        
+        currentIdx = 0;
+        showScreen('screen-exam');
+        loadQuestion(0);
+      } else if (msg.type === 'WAITING_FOR_GRADING') {
+        showScreen('screen-waiting-grading');
+      } else if (msg.type === 'EXAM_RESULT') {
+        showScreen('screen-result');
+        showResults(msg.score, msg.total, msg.details);
+      } else if (msg.type === 'RESET_EXAM') {
+        studentAnswers = [];
+        questions = [];
+        currentIdx = 0;
+        showScreen('screen-waiting-exam');
+      }
+    }
+
+    function syncProgress() {
+      if (ws && ws.readyState === WebSocket.OPEN && studentName) {
+        ws.send(JSON.stringify({
+          type: 'UPDATE_PROGRESS',
+          payload: {
+            currentIdx: currentIdx,
+            answers: studentAnswers.map(a => ({
+              q_index: a.q_index,
+              user_answer: a.user_answer,
+              user_blocks: a.user_blocks || []
+            }))
+          }
+        }));
+      }
+    }
+
+    function registerName(isAuto = false) {
+      if (!isAuto) {
+        const inputVal = document.getElementById('student-name').value.trim();
+        if (!inputVal) {
+          alert('Vui lòng nhập họ và tên của em!');
+          return;
+        }
+        studentName = inputVal;
+        localStorage.setItem('hsk3_name', studentName);
+      }
+
+      document.getElementById('display-name').innerText = studentName;
+      document.getElementById('student-header-name').innerText = studentName;
+
+      ws.send(JSON.stringify({
+        type: 'REGISTER',
+        payload: { name: studentName }
+      }));
+
+      if (lastServerMsg) {
+        handleServerMessage(lastServerMsg);
+        lastServerMsg = null;
+      } else {
+        showScreen('screen-waiting-exam');
+      }
+    }
+
+    // Exam Screen Loading
+    function loadQuestion(idx) {
+      currentIdx = idx;
+      const q = questions[currentIdx];
+      // Sync progress when navigating questions
+      syncProgress();
+      const ansObj = studentAnswers[currentIdx];
+
+      document.getElementById('exam-progress').innerText = `Câu ${currentIdx + 1} / ${questions.length}`;
+
+      const sourceZone = document.getElementById('source-zone');
+      const targetZone = document.getElementById('target-zone');
+
+      // Clear previous word blocks (keeping titles)
+      Array.from(sourceZone.querySelectorAll('.word-block')).forEach(el => el.remove());
+      Array.from(targetZone.querySelectorAll('.word-block')).forEach(el => el.remove());
+
+      // Parse scrambled words: [A] / [B] / [C] -> ["A", "B", "C"]
+      const wordPattern = /\[([^\]]+)\]/g;
+      let match;
+      const words = [];
+      while ((match = wordPattern.exec(q.scrambled)) !== null) {
+        words.push(match[1]);
+      }
+
+      // Check if student already has structured blocks
+      if (ansObj.user_blocks.length > 0) {
+        // Render target blocks in student order
+        ansObj.user_blocks.forEach(word => {
+          createWordBlock(word, targetZone);
+        });
+
+        // Render remaining blocks in source zone
+        const usedCounts = {};
+        ansObj.user_blocks.forEach(w => usedCounts[w] = (usedCounts[w] || 0) + 1);
+
+        words.forEach(word => {
+          if (usedCounts[word] > 0) {
+            usedCounts[word]--;
+          } else {
+            createWordBlock(word, sourceZone);
+          }
+        });
+      } else {
+        // Render all blocks in source zone
+        words.forEach(word => {
+          createWordBlock(word, sourceZone);
+        });
+      }
+
+      // Handle buttons visibility
+      document.getElementById('btn-prev').style.visibility = currentIdx > 0 ? 'visible' : 'hidden';
+      
+      const btnNext = document.getElementById('btn-next');
+      const btnSubmit = document.getElementById('btn-submit');
+      if (currentIdx === questions.length - 1) {
+        btnNext.style.display = 'none';
+        btnSubmit.style.display = 'inline-block';
+      } else {
+        btnNext.style.display = 'inline-block';
+        btnSubmit.style.display = 'none';
+      }
+    }
+
+    function createWordBlock(word, zone) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'word-block';
+      btn.textContent = word;
+      btn.onclick = () => moveBlock(btn);
+      zone.appendChild(btn);
+    }
+
+    function moveBlock(el) {
+      const sourceZone = document.getElementById('source-zone');
+      const targetZone = document.getElementById('target-zone');
+      
+      if (el.parentElement.id === 'source-zone') {
+        targetZone.appendChild(el);
+      } else {
+        sourceZone.appendChild(el);
+      }
+
+      // Update current answer state
+      const userBlocks = Array.from(targetZone.querySelectorAll('.word-block')).map(b => b.textContent);
+      studentAnswers[currentIdx].user_blocks = userBlocks;
+      studentAnswers[currentIdx].user_answer = userBlocks.join('');
+      
+      // Sync progress in real-time
+      syncProgress();
+    }
+
+    function nextQuestion() {
+      if (currentIdx < questions.length - 1) {
+        loadQuestion(currentIdx + 1);
+      }
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        loadQuestion(currentIdx - 1);
+      }
+    }
+
+    function submitExam() {
+      // Check if all questions are answered
+      const unanswered = studentAnswers.filter(a => a.user_answer === '').length;
+      if (unanswered > 0) {
+        if (!confirm(`Em còn ${unanswered} câu chưa làm. Em có chắc chắn muốn nộp bài không?`)) {
+          return;
+        }
+      } else {
+        if (!confirm('Em có chắc chắn muốn nộp bài không?')) {
+          return;
+        }
+      }
+
+      ws.send(JSON.stringify({
+        type: 'SUBMIT_ANSWERS',
+        payload: {
+          answers: studentAnswers.map(a => ({
+            q_index: a.q_index,
+            user_answer: a.user_answer,
+            user_blocks: a.user_blocks || []
+          }))
+        }
+      }));
+
+      showScreen('screen-waiting-grading');
+    }
+
+    // Results screen rendering
+    function showResults(score, total, details) {
+      document.getElementById('result-score').innerText = `${score} / 10`;
+      const listContainer = document.getElementById('result-details');
+      listContainer.innerHTML = '';
+
+      details.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'graded-item';
+
+        let statusClass = 'incorrect';
+        let statusText = `✗ Chưa đúng (0/10)`;
+        let scoreColor = '#C00000'; // red
+
+        if (item.score === 10) {
+          statusClass = 'correct';
+          statusText = `✓ Chính xác (10/10)`;
+          scoreColor = '#385723'; // green
+        } else if (item.score > 0) {
+          statusClass = 'partial';
+          statusText = `⚠ Đúng một phần (${item.score}/10)`;
+          scoreColor = '#7F6000'; // gold
+        }
+
+        div.innerHTML = `
+          <div class="graded-header ${statusClass}">
+            <span>Câu ${idx + 1}: ${item.category}</span>
+            <span class="status-indicator">${statusText}</span>
+          </div>
+          <div class="graded-body">
+            <p style="margin: 0; font-size: 13px; color: #777;">Từ gợi ý:</p>
+            <div class="badge-container" style="margin-bottom: 5px;">
+              ${item.scrambled.match(/\[([^\]]+)\]/g).map(w => `<span class="word-badge">${w.slice(1, -1)}</span>`).join(' ')}
+            </div>
+            
+            <p style="margin: 0; font-size: 13px; color: #777;">Bài làm của em:</p>
+            <p style="font-weight: bold; margin: 0 0 5px 0; color: ${scoreColor}; font-size: 16px;">
+              ${item.userAnswer || '(Không trả lời)'}
+            </p>
+
+            <p style="margin: 0; font-size: 13px; color: #777;">Đáp án chuẩn:</p>
+            <h3 class="graded-chinese">${item.correctAnswer}</h3>
+            <p class="graded-pinyin">${item.pinyin}</p>
+            <p class="graded-vi">${item.vietnamese}</p>
+          </div>
+        `;
+        listContainer.appendChild(div);
+      });
+    }
+
+    // Initial connection
+    connectWebSocket();
+  </script>
+</body>
+</html>
