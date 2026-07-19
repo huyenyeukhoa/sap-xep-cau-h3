@@ -1675,10 +1675,10 @@
     ]
   },
   {
-    "scrambled": "[他] / [英语] / [学得] / [非常好]",
-    "answer": "他英语学得非常好。",
-    "pinyin": "Tā Yīngyǔ xué dé fēicháng hǎo.",
-    "vietnamese": "Anh ấy học tiếng Anh cực kỳ tốt.",
+    "scrambled": "[他] / [学英语] / [学得] / [非常好]",
+    "answer": "他学英语学得非常好。",
+    "pinyin": "Tā xué Yīngyǔ xué dé fēicháng hǎo.",
+    "vietnamese": "Anh ấy học tiếng Anh học cực kỳ tốt.",
     "category": "Câu có Bổ ngữ trạng thái / Trình độ (得)",
     "sources": [
       "HTML App"
