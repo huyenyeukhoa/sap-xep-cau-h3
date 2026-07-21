@@ -208,15 +208,38 @@ wss.on('connection', (ws, req) => {
         if (msg.type === 'INIT_EXAM') {
           // Select questions based on configuration
           const { numQuestions, categoriesFilter } = msg.payload;
+
+          const MIX_CATEGORIES = [
+            "Câu liên động / Cách thức hành động",
+            "Cấu trúc 马上就要... / 快要...",
+            "Câu song tân ngữ / Kiêm ngữ",
+            "Câu có Động từ năng nguyện (想/喜欢/会/能)",
+            "Câu vị ngữ tính từ / Trạng thái (很/非常/太)"
+          ];
           
           let filtered = [...rawQuestions];
           if (categoriesFilter && categoriesFilter !== 'all') {
-            filtered = rawQuestions.filter(q => q.category === categoriesFilter);
+            if (categoriesFilter === 'mix') {
+              filtered = rawQuestions.filter(q => MIX_CATEGORIES.includes(q.category));
+            } else {
+              filtered = rawQuestions.filter(q => q.category === categoriesFilter);
+            }
           }
 
-          // Shuffle or select sequential
-          filtered.sort(() => 0.5 - Math.random()); // Randomize selection for fun
+          // Seeded shuffle: same day => same order for all students
+          const today = new Date();
+          const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+          function seededRandom(s) {
+            let x = Math.sin(s) * 10000;
+            return x - Math.floor(x);
+          }
+          filtered.sort((a, b) => {
+            const ia = rawQuestions.indexOf(a);
+            const ib = rawQuestions.indexOf(b);
+            return seededRandom(seed + ia) - seededRandom(seed + ib);
+          });
           activeQuestions = filtered.slice(0, Math.min(numQuestions, filtered.length));
+
           
           gameState = 'EXAM';
 

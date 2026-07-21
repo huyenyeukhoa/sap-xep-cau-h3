@@ -20,6 +20,7 @@
           <label for="filter-category">Chủ điểm ngữ pháp:</label>
           <select id="filter-category">
             <option value="all">Tất cả chủ điểm (Trộn lẫn)</option>
+            <option value="mix">🎲 Mix (Câu liên động + 马上就要 + Song tân ngữ + Năng nguyện + Vị ngữ TT)</option>
             <option value="Câu chữ 把 (Bǎ)">Câu chữ 把 (Bǎ)</option>
             <option value="Câu chữ 被 (Bèi)">Câu chữ 被 (Bèi)</option>
             <option value="Câu so sánh 比 (Bǐ)">Câu so sánh 比 (Bǐ)</option>
@@ -290,15 +291,39 @@
       }
     };
 
+    const MIX_CATEGORIES = [
+      "Câu liên động / Cách thức hành động",
+      "Cấu trúc 马上就要... / 快要...",
+      "Câu song tân ngữ / Kiêm ngữ",
+      "Câu có Động từ năng nguyện (想/喜欢/会/能)",
+      "Câu vị ngữ tính từ / Trạng thái (很/非常/太)"
+    ];
+
     function updateLessonPlan() {
       const cat = document.getElementById("filter-category").value;
       const section = document.getElementById("lesson-plan-section");
       const titleSpan = document.getElementById("lesson-plan-title");
       const contentDiv = document.getElementById("lesson-plan-content");
 
-      if (cat === "all" || !grammarLessons[cat]) {
+      if (cat === "all" || cat === "mix" || !grammarLessons[cat]) {
         section.style.display = "none";
         document.getElementById("category-questions-section").style.display = "none";
+        if (cat === "mix") {
+          // Show mix info banner
+          section.style.display = "block";
+          titleSpan.innerText = "🎲 Mix";
+          contentDiv.innerHTML = `
+            <p style="margin: 6px 0;"><strong>Bộ đề Mix gồm 5 chủ điểm:</strong></p>
+            <ol style="margin: 8px 0 0 20px; line-height: 2;">
+              <li>Câu liên động / Cách thức hành động</li>
+              <li>Cấu trúc 马上就要... / 快要...</li>
+              <li>Câu song tân ngữ / Kiêm ngữ</li>
+              <li>Câu có Động từ năng nguyện (想/喜欢/会/能)</li>
+              <li>Câu vị ngữ tính từ / Trạng thái (很/非常/太)</li>
+            </ol>
+            <p style="margin-top: 10px; font-style: italic; color: #888;">📌 Câu hỏi được chọn ngẫu nhiên nhưng thứ tự hiện giống nhau cho tất cả học viên trong cùng một buổi.</p>
+          `;
+        }
         return;
       }
       
@@ -353,7 +378,14 @@
     function updateNumQuestionsDropdown() {
       const cat = document.getElementById("filter-category").value;
       const selectNum = document.getElementById("num-questions");
-      const maxAvailable = cat === 'all' ? 134 : (categoryCounts[cat] || 0);
+      let maxAvailable;
+      if (cat === 'all') {
+        maxAvailable = 134;
+      } else if (cat === 'mix') {
+        maxAvailable = MIX_CATEGORIES.reduce((sum, c) => sum + (categoryCounts[c] || 0), 0);
+      } else {
+        maxAvailable = categoryCounts[cat] || 0;
+      }
       
       Array.from(selectNum.options).forEach(opt => {
         const val = parseInt(opt.value);
