@@ -7,14 +7,25 @@
   <link rel="stylesheet" href="style.css">
   <style>
     @media print {
-      body * { visibility: hidden; }
-      #print-area, #print-area * { visibility: visible; }
-      #print-area { position: fixed; top: 0; left: 0; width: 100%; padding: 20px; }
-      #offline-banner, #screen-register, #screen-waiting-exam,
-      #screen-exam, #screen-waiting-grading, #btn-download-pdf { display: none !important; }
-      .graded-item { page-break-inside: avoid; }
-      h1 { font-size: 18px; }
-      .score-badge { font-size: 28px !important; }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      #offline-banner, #btn-download-pdf {
+        display: none !important;
+      }
+      body {
+        background-color: var(--bg-color) !important;
+        padding: 10px !important;
+      }
+      .container {
+        box-shadow: none !important;
+        border: 4px double var(--primary-color) !important;
+        background-color: #FDFBF7 !important;
+      }
+      .graded-item {
+        page-break-inside: avoid;
+      }
     }
   </style>
 </head>
