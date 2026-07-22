@@ -130,10 +130,10 @@
     ]
   },
   {
-    "scrambled": "[被我] / [吃了] / [蛋糕]",
-    "answer": "蛋糕被我吃了。",
-    "pinyin": "Dàngāo bèi wǒ chīle.",
-    "vietnamese": "Bánh ngọt bị tôi ăn rồi.",
+    "scrambled": "[小猫] / [苹果] / [吃] / [被] / [了]",
+    "answer": "苹果被小猫吃了。",
+    "pinyin": "Píngguǒ bèi xiǎomāo chī le.",
+    "vietnamese": "Quả táo bị chú mèo ăn rồi.",
     "category": "Câu chữ 被 (Bèi)",
     "sources": [
       "HTML App"
@@ -160,10 +160,10 @@
     ]
   },
   {
-    "scrambled": "[风] / [我的帽子] / [被] / [刮跑了]",
-    "answer": "我的帽子被风刮跑了。",
-    "pinyin": "Wǒ de mào zi bèi fēng guā pǎo le.",
-    "vietnamese": "Chiếc mũ của tôi bị gió thổi bay mất rồi.",
+    "scrambled": "[风] / [我的帽子] / [被] / [刮了]",
+    "answer": "我的帽子被风刮了。",
+    "pinyin": "Wǒ de mào zi bèi fēng guā le.",
+    "vietnamese": "Chiếc mũ của tôi bị gió thổi bay rồi.",
     "category": "Câu chữ 被 (Bèi)",
     "sources": [
       "PDF Đề 3"
@@ -190,10 +190,10 @@
     ]
   },
   {
-    "scrambled": "[风] / [她的帽子] / [被] / [刮跑了]",
-    "answer": "她的帽子被风刮跑了。",
-    "pinyin": "Tā de mào zi bèi fēng guā pǎo le.",
-    "vietnamese": "Chiếc mũ của cô ấy bị gió thổi bay mất rồi.",
+    "scrambled": "[我] / [那本书] / [借走] / [被] / [了]",
+    "answer": "那本书被我借走了。",
+    "pinyin": "Nà běn shū bèi wǒ jiè zǒu le.",
+    "vietnamese": "Quyển sách đó đã bị tôi mượn đi rồi.",
     "category": "Câu chữ 被 (Bèi)",
     "sources": [
       "PDF Đề 12"
@@ -210,20 +210,20 @@
     ]
   },
   {
-    "scrambled": "[面包] / [小狗] / [吃掉了] / [被]",
+    "scrambled": "[面包] / [小狗] / [吃了] / [被]",
     "answer": "面包被小狗吃掉了。",
-    "pinyin": "Miàn bāo bèi xiǎo gǒu chī diào le.",
-    "vietnamese": "Bánh mì bị chú chó nhỏ ăn mất rồi.",
+    "pinyin": "Miàn bāo bèi xiǎo gǒu chī le.",
+    "vietnamese": "Bánh mì bị chú chó nhỏ ăn rồi.",
     "category": "Câu chữ 被 (Bèi)",
     "sources": [
       "PDF Đề 19"
     ]
   },
   {
-    "scrambled": "[伞] / [她 的] / [被] / [大风] / [刮跑了]",
-    "answer": "她的伞被大风刮跑了。",
-    "pinyin": "Tā de sǎn bèi dà fēng guā pǎo le.",
-    "vietnamese": "Chiếc ô của cô ấy bị gió lớn thổi bay mất rồi.",
+    "scrambled": "[打扫干净] / [房间] / [我们] / [被] / [了]",
+    "answer": "房间被我们打扫干净了。",
+    "pinyin": "Fángjiān bèi wǒmen dǎsǎo gānjìng le.",
+    "vietnamese": "Phòng ngủ đã được chúng tôi dọn dẹp sạch sẽ rồi.",
     "category": "Câu chữ 被 (Bèi)",
     "sources": [
       "PDF Đề 20"
@@ -250,10 +250,10 @@
     ]
   },
   {
-    "scrambled": "[这个星期的天气] / [比较] / [冷]",
-    "answer": "这个星期的天气比较冷。",
-    "pinyin": "Zhè ge xīng qī de tiān qì bǐ jiào lěng.",
-    "vietnamese": "Thời tiết tuần này tương đối lạnh.",
+    "scrambled": "[今天比] / [冷] / [更] / [我觉得] / [昨天]",
+    "answer": "我觉得今天比昨天更冷。",
+    "pinyin": "Wǒ juéde jīntiān bǐ zuótiān gèng lěng.",
+    "vietnamese": "Tôi cảm thấy hôm nay còn lạnh hơn hôm qua.",
     "category": "Câu so sánh 比 (Bǐ)",
     "sources": [
       "PDF Đề 10"
@@ -433,10 +433,10 @@
     ]
   },
   {
-    "scrambled": "[你] / [普通话] / [交流] / [用] / [能不能]",
-    "answer": "你能不能用普通话交流？",
-    "pinyin": "Nǐ néng bù néng yòng pǔ tōng huà jiāo liú?",
-    "vietnamese": "Bạn có thể giao tiếp bằng tiếng phổ thông không?",
+    "scrambled": "[你] / [普通话] / [说话] / [用] / [能不能]",
+    "answer": "你能不能用普通话说话？",
+    "pinyin": "Nǐ néng bù néng yòng pǔtōnghuà shuōhuà?",
+    "vietnamese": "Bạn có thể nói chuyện bằng tiếng Phổ thông được không?",
     "category": "Câu liên động / Cách thức hành động",
     "sources": [
       "PDF Đề 14"
@@ -554,20 +554,20 @@
     ]
   },
   {
-    "scrambled": "[她妈妈] / [历史] / [在高中教]",
-    "answer": "她妈妈在高中教历史。",
-    "pinyin": "Tā mā mā zài gāo zhōng jiào lì shǐ.",
-    "vietnamese": "Mẹ của cô ấy dạy lịch sử ở trường cấp ba.",
+    "scrambled": "[她妈妈] / [历史] / [在学校] / [教]",
+    "answer": "她妈妈在学校教历史。",
+    "pinyin": "Tā māma zài xuéxiào jiāo lìshǐ.",
+    "vietnamese": "Mẹ của cô ấy dạy lịch sử ở trường.",
     "category": "Câu song tân ngữ / Kiêm ngữ",
     "sources": [
       "PDF Đề 8"
     ]
   },
   {
-    "scrambled": "[送给妈妈] / [那只] / [猫] / [一个礼物]",
-    "answer": "那只猫送给妈妈一个礼物。",
-    "pinyin": "Nà zhǐ māo sòng gěi mā mā yí gè lǐ wù.",
-    "vietnamese": "Con mèo đó tặng cho mẹ một món quà.",
+    "scrambled": "[送给] / [妈妈] / [我] / [一个礼物]",
+    "answer": "我送给妈妈一个礼物。",
+    "pinyin": "Wǒ sòng gěi māma yí gè lǐwù.",
+    "vietnamese": "Tôi tặng mẹ một món quà.",
     "category": "Câu song tân ngữ / Kiêm ngữ",
     "sources": [
       "PDF Đề 10"
