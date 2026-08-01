@@ -1,0 +1,678 @@
+[
+  {
+    "setId": "set_1",
+    "setName": "Bộ Bài Tập 1 (Phần 1: Nối câu)",
+    "choices": {
+      "A": "这个面包好吃极了。你在哪儿买的？",
+      "B": "头还疼吗？让我看看还发烧不。",
+      "C": "他感冒了，有点儿发烧。",
+      "D": "最近天气变化大，早晚很冷，别穿裙子了。",
+      "F": "知道了。你也小心点儿。"
+    },
+    "example": {
+      "question": "没关系，我明天去也可以。",
+      "answer": "E",
+      "text": "E. 没关系，我明天去也可以。"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "我已经吃药了，好多了。",
+        "answer": "B",
+        "pinyin": "Wǒ yǐ jing chī yào le, hǎo duō le.",
+        "vietnamese": "Tôi đã uống thuốc rồi, tốt hơn nhiều rồi.",
+        "explanation": "Câu nói về việc đã uống thuốc (吃药) và đỡ hơn (好多了), rất phù hợp với câu hỏi thăm sức khỏe: đau đầu (头疼) và sốt (发烧).",
+        "highlights": [
+          "吃药",
+          "好多了"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "那你在家休息几天吧。",
+        "answer": "C",
+        "pinyin": "Nà nǐ zài jiā xiū xi jǐ tiān ba.",
+        "vietnamese": "Vậy bạn ở nhà nghỉ ngơi vài ngày đi.",
+        "explanation": "Lời khuyên ở nhà nghỉ ngơi (休息) cực kỳ hợp lý khi bị bệnh cảm cúm (感冒), sốt (发烧).",
+        "highlights": [
+          "休息"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "三楼的灯坏了，你下楼时注意脚下。",
+        "answer": "F",
+        "pinyin": "Sān lóu de dēng huài le, nǐ xià lóu shí zhù yì jiǎo xià.",
+        "vietnamese": "Đèn tầng 3 hỏng rồi, khi xuống lầu bạn chú ý dưới chân nhé.",
+        "explanation": "Cảnh báo chú ý dưới chân (注意脚下) được đáp lại lịch sự bằng câu đồng ý cẩn thận (小心点儿).",
+        "highlights": [
+          "注意脚下"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "好，那我去换条裤子。",
+        "answer": "D",
+        "pinyin": "Hǎo, nà wǒ qù huàn tiáo kù zi.",
+        "vietnamese": "Được, vậy tôi đi thay cái quần dài.",
+        "explanation": "Đi thay quần dài (换裤子) vì thời tiết bên ngoài lạnh, khuyên đừng mặc váy (别穿裙子).",
+        "highlights": [
+          "换条裤子"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "我自己做的，从电视上学的。",
+        "answer": "A",
+        "pinyin": "Wǒ zì jǐ zuò de, cóng diàn shì shàng xué de.",
+        "vietnamese": "Tôi tự làm đấy, học trên tivi.",
+        "explanation": "Trả lời là tự làm (自己做) cho câu hỏi bánh mì ngon quá, mua ở đâu (在哪儿买).",
+        "highlights": [
+          "自己做",
+          "自己做的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "set_2",
+    "setName": "Bộ Bài Tập 2 (Phần 1: Nối câu)",
+    "choices": {
+      "A": "每天晚上，叔叔都会在楼下的公园里教我。",
+      "B": "那是我叔叔的儿子，一岁多了。",
+      "C": "能用一下你的词典吗？我想查查这个字怎么读。",
+      "D": "那你在这儿休息一下，我去前面看看有没有卖饮料的。",
+      "F": "祝您生日快乐！这是我送您的礼物。"
+    },
+    "example": {
+      "question": "没关系，我明天去也可以。",
+      "answer": "E",
+      "text": "E. 没关系，我明天去也可以。"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "我不饿，就是有点儿渴。",
+        "answer": "D",
+        "pinyin": "Wǒ bù è, jiù shì yǒu diǎn ér kě.",
+        "vietnamese": "Tôi không đói, chỉ là hơi khát thôi.",
+        "explanation": "Khát nước (渴) khớp với việc đề xuất đi mua nước ngọt (饮料).",
+        "highlights": [
+          "渴"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "大家来吃蛋糕吧，这块儿大的给你。",
+        "answer": "F",
+        "pinyin": "Dà jiā lái chī dàn gāo ba, zhè kuài ér dà de gěi nǐ.",
+        "vietnamese": "Mọi người đến ăn bánh kem đi, miếng to này cho bạn đấy.",
+        "explanation": "Ăn bánh kem (吃蛋糕) đi kèm lời chúc sinh nhật vui vẻ (生日快乐) và tặng quà (礼物).",
+        "highlights": [
+          "吃蛋糕",
+          "蛋糕"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "这个小孩儿胖胖的，真可爱。",
+        "answer": "B",
+        "pinyin": "Zhè ge xiǎo hái ér pàng pàng de, zhēn kě ài.",
+        "vietnamese": "Đứa trẻ này mũm mĩm, đáng yêu thật.",
+        "explanation": "Khen em bé dễ thương (小孩儿可爱) phù hợp với câu trả lời giới thiệu là con trai của chú, hơn 1 tuổi.",
+        "highlights": [
+          "胖胖的",
+          "小孩儿胖胖的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "我最近在学习打篮球。",
+        "answer": "A",
+        "pinyin": "Wǒ zuì jìn zài xué xí dǎ lán qiú.",
+        "vietnamese": "Dạo này tôi đang học chơi bóng rổ.",
+        "explanation": "Học bóng rổ (学习打篮球) đi kèm với hành động dạy của người chú (叔叔教我).",
+        "highlights": [
+          "打篮球"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "被小高借走了，你问他要吧。",
+        "answer": "C",
+        "pinyin": "Bèi Xiǎo Gāo jiè zǒu le, nǐ wèn tā yào ba.",
+        "vietnamese": "Bị Tiểu Cao mượn đi mất rồi, bạn hỏi cậu ấy mà đòi.",
+        "explanation": "Đồ vật bị mượn đi rồi (被借走) là câu trả lời khi hỏi mượn từ điển (词典).",
+        "highlights": [
+          "被小高借走了",
+          "借走"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "set_3",
+    "setName": "Bộ Bài Tập 3 (Phần 1: Nối câu)",
+    "choices": {
+      "A": "我们有七八年没见了吧？",
+      "B": "我明白，这是个坏习惯。",
+      "C": "放心吧，我们跟邻居说了，他们很愿意帮忙。",
+      "D": "别着急，你看看是不是放行李箱里了。",
+      "F": "祝大家节日快乐！笑口常开！"
+    },
+    "example": {
+      "question": "没关系，我明天去也可以。",
+      "answer": "E",
+      "text": "E. 没关系，我明天去 cũng được."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "你们去旅游，那小狗谁来照顾？",
+        "answer": "C",
+        "pinyin": "Nǐ men qù lǚ yóu, nà xiǎo gǒu shéi lái zhào gù?",
+        "vietnamese": "Các bạn đi du lịch thì chú chó nhỏ ai chăm sóc?",
+        "explanation": "Hỏi về người chăm sóc chó (小狗照顾) khi đi du lịch được đáp lại bằng việc nhờ hàng xóm giúp đỡ (邻居帮忙).",
+        "highlights": [
+          "小狗",
+          "照顾"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "今天是 2012 年 1 月 1 日，又是新的一年了。",
+        "answer": "F",
+        "pinyin": "Jīn tiān shì èr líng yī èr nián yī yuè yī rì, yòu shì xīn de yì nián le.",
+        "vietnamese": "Hôm nay là ngày 1 tháng 1 năm 2012, lại là một năm mới rồi.",
+        "explanation": "Câu nói về năm mới (新的一年) rất phù hợp đi kèm với lời chúc mừng ngày lễ vui vẻ (节日快乐).",
+        "highlights": [
+          "新的一年"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "我记得把机票拿出来了，怎么找不到了呢？",
+        "answer": "D",
+        "pinyin": "Wǒ jì de bǎ jī piào ná chū lai le, zěn me zhǎo bú dào le ne?",
+        "vietnamese": "Tôi nhớ đã lấy vé máy bay ra rồi, sao bây giờ không tìm thấy nữa nhỉ?",
+        "explanation": "Khi một người lo lắng không tìm thấy vé máy bay (机票), người kia khuyên bình tĩnh và tìm trong vali (行李箱).",
+        "highlights": [
+          "机票"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "你几乎没什么变化，还跟以前一样年轻。",
+        "answer": "A",
+        "pinyin": "Nǐ jī hū méi shén me biàn huà, hái gēn yǐ qián yí yàng nián qīng.",
+        "vietnamese": "Bạn hầu như không thay đổi gì, vẫn trẻ trung như trước đây.",
+        "explanation": "Khen ngợi vẻ bề ngoài trẻ trung (年轻) và không đổi (没变化) khớp với câu nói đã lâu không gặp (七八年没见).",
+        "highlights": [
+          "没什么变化"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "晚上不要吃得太多，太饱，那样睡觉会不舒服。",
+        "answer": "B",
+        "pinyin": "Wǎn shang bú yào chī de tài duō, tài bǎo, nà yàng shuì jiào huì bù shū fu.",
+        "vietnamese": "Buổi tối không nên ăn quá nhiều, quá no, như vậy ngủ sẽ không thoải mái.",
+        "explanation": "Lời khuyên ăn uống buổi tối đi kèm lời tự kiểm điểm thói quen xấu (坏习惯) của đối phương.",
+        "highlights": [
+          "吃得太多",
+          "太饱"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "set_4",
+    "setName": "Bộ Bài Tập 4 (Phần 1: Nối câu)",
+    "choices": {
+      "A": "我记得你弟弟以前特别胖。",
+      "B": "我希望早点儿离开这个国家。",
+      "C": "你不舒服吗？需不需要去房间休息一下？",
+      "D": "今天我来洗碗，你累一天了，去看电视吧。",
+      "F": "别担心，我坐出租车去，30 分钟就到学校了。"
+    },
+    "example": {
+      "question": "没关系，我明天去也可以。",
+      "answer": "E",
+      "text": "E. 没关系，我明天去也可以。"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "快点儿吧，再有一个小时就要 考试 了。",
+        "answer": "F",
+        "pinyin": "Kuài diǎn er ba, zài yǒu yí gè xiǎo shí jiù yào kǎo shì le.",
+        "vietnamese": "Nhanh lên nào, còn một tiếng nữa là thi rồi.",
+        "explanation": "Hối thúc sắp thi (考试) đi kèm câu giải thích sẽ đi taxi (坐出租车) để kịp đến trường trong 30 phút.",
+        "highlights": [
+          "考试"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "如果没什么变化，他应该已经上飞机了。",
+        "answer": "B",
+        "pinyin": "Rú guǒ méi shén me biàn huà, tā yīng gāi yǐ jīng shàng fēi jī le.",
+        "vietnamese": "Nếu không có gì thay đổi, anh ấy chắc đã lên máy bay rồi.",
+        "explanation": "Hành động lên máy bay (上飞机) khớp với câu thể hiện mong muốn rời khỏi đất nước (离开国家).",
+        "highlights": [
+          "没什么变化"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "没关系，我吃过药了。",
+        "answer": "C",
+        "pinyin": "Méi guān xi, wǒ chī guò yào le.",
+        "vietnamese": "Không sao, tôi uống thuốc rồi.",
+        "explanation": "Câu trả lời đã uống thuốc (吃过药) phản hồi cho lời hỏi thăm sức khỏe không khỏe (不舒服) và khuyên nghỉ ngơi (休息).",
+        "highlights": [
+          "吃过药"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "他从去年秋天开始锻炼，现在不到 70 公斤。",
+        "answer": "A",
+        "pinyin": "Tā cóng qù nián qiū tiān kāi shǐ duàn liàn, xiàn zài bú dào qī shí gōng jīn.",
+        "vietnamese": "Cậu ấy bắt đầu tập thể dục từ mùa thu năm ngoái, bây giờ chưa đầy 70 cân.",
+        "explanation": "Thông tin về cân nặng (70公斤) và tập luyện (锻炼) khớp với câu nói về việc trước đây người em trai rất mập (特别胖).",
+        "highlights": [
+          "锻炼",
+          "70公斤",
+          "70 公斤"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "不用，你把筷子和杯子拿过来就可以了。",
+        "answer": "D",
+        "pinyin": "Bú yòng, nǐ bǎ kuài zi hé bēi zi ná guò lai jiù kě yǐ le.",
+        "vietnamese": "Không cần đâu, bạn mang đũa và cốc qua đây là được rồi.",
+        "explanation": "Lời từ chối khi đối phương đề nghị rửa bát (洗碗), chỉ cần mang đũa (筷子) và cốc (杯子) qua.",
+        "highlights": [
+          "筷子",
+          "杯子"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "set_5",
+    "setName": "Bộ Bài Tập 5 (Phần 2: Điền chỗ trống)",
+    "choices": {
+      "A": "结婚",
+      "B": "聪明",
+      "C": "历史",
+      "D": "成绩",
+      "F": "回答"
+    },
+    "example": {
+      "question": "她说话的声音多好听啊！",
+      "answer": "E",
+      "text": "E. 声音  (例如：她说话的（ E ）多好听啊！)"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "谁能（ ）黑板上的这个问题？",
+        "answer": "F",
+        "pinyin": "Shéi néng huí dá hēi bǎn shàng de zhè ge wèn tí?",
+        "vietnamese": "Ai có thể trả lời câu hỏi này trên bảng đen?",
+        "explanation": "Nhìn chỗ trống: Phía trước là động từ năng nguyện '能' (có thể), phía sau là cụm tân ngữ '这个问题' (câu hỏi này). Ở giữa bắt buộc phải điền một Động từ hành động tác động lên tân ngữ đó. Chọn 回答 (trả lời).",
+        "highlights": [
+          "能（ ）",
+          "能（  ）",
+          "能"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "多吃鱼会使人变得更（ ）。",
+        "answer": "B",
+        "pinyin": "Duō chī yú huì shǐ rén biàn de gèng cōng ming.",
+        "vietnamese": "Ăn nhiều cá sẽ giúp con người trở nên thông minh hơn.",
+        "explanation": "Nhìn chỗ trống: Phía trước là từ chỉ mức độ so sánh '更' (hơn). Theo ngữ pháp bắt buộc phải điền một Tính từ biểu thị tính chất. Chọn 聪明 (thông minh).",
+        "highlights": [
+          "变得更（ ）",
+          "变得更（  ）",
+          "变得更"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "他们准备 8 月（ ）。",
+        "answer": "A",
+        "pinyin": "Tā men zhǔn bèi bā yuè jié hūn.",
+        "vietnamese": "Họ dự định kết hôn vào tháng 8.",
+        "explanation": "Nhìn chỗ trống: Đứng sau mốc thời gian '8月' (tháng 8) và trạng ngữ chỉ ý định '准备' (chuẩn bị) cần điền một Động từ chỉ hoạt động lớn. Chọn 结婚 (kết hôn).",
+        "highlights": [
+          "8 月（ ）",
+          "8月（ ）",
+          "8 月",
+          "8月"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "这个城市有几百年的（ ）了。",
+        "answer": "C",
+        "pinyin": "Zhè ge chéng shì yǒu jǐ bǎi nián de lì shǐ le.",
+        "vietnamese": "Thành phố này có mấy trăm năm lịch sử rồi.",
+        "explanation": "Nhìn chỗ trống: Phía trước là cụm lượng từ định ngữ chỉ thời gian '几百年' + trợ từ định ngữ '的' (của). Bắt buộc phải điền một Danh từ chính để bổ nghĩa. Chọn 历史 (lịch sử).",
+        "highlights": [
+          "几百年的（ ）",
+          "几百年的（  ）",
+          "几百年"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "只有努力了，才会有好（ ）。",
+        "answer": "D",
+        "pinyin": "Zhǐ yǒu nǔ lì le, cái huì yǒu hǎo chéng jì.",
+        "vietnamese": "Chỉ có nỗ lực rồi mới có thành tích tốt.",
+        "explanation": "Nhìn chỗ trống: Phía trước là tính từ bổ nghĩa '好' (tốt). Theo sau bắt buộc phải đi kèm một Danh từ làm trung tâm ngữ. Chọn 成绩 (thành tích/điểm số).",
+        "highlights": [
+          "有好（ ）",
+          "有好（  ）",
+          "有好"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "set_6",
+    "setName": "Bộ Bài Tập 6 (Phần 2: Điền chỗ trống)",
+    "choices": {
+      "A": "年轻",
+      "B": "解决",
+      "C": "筷子",
+      "D": "感冒",
+      "F": "然后"
+    },
+    "example": {
+      "question": "她说话的声音多好听啊！",
+      "answer": "E",
+      "text": "E. 声音  (例如：她说话的（ E ）多好听啊！)"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "服务员，请你再给我拿一双（ ）。",
+        "answer": "C",
+        "pinyin": "Fú wù yuán, qǐng nǐ zài gěi wǒ ná yì shuāng kuài zi.",
+        "vietnamese": "Người phục vụ ơi, làm ơn lấy cho tôi một đôi đũa nữa.",
+        "explanation": "Nhìn chỗ trống: Phía trước là lượng từ '一双' (một đôi). Theo sau bắt buộc phải điền một Danh từ chỉ các vật dụng đi liền theo đôi. Chọn 筷子 (đũa).",
+        "highlights": [
+          "一双（ ）",
+          "一双（  ）",
+          "一双"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "天气冷，你多穿点儿衣服，小心（ ）。",
+        "answer": "D",
+        "pinyin": "Tiān qì lěng, nǐ duō chuān diǎn er yī fu, xiǎo xīn gǎn mào.",
+        "vietnamese": "Trời lạnh, bạn mặc nhiều quần áo vào, coi chừng bị cảm.",
+        "explanation": "Nhìn chỗ trống: Phía trước là động từ cảnh báo '小心' (cẩn thận/coi chừng). Theo sau cần điền một căn bệnh hoặc một trạng thái không tốt để cảnh báo. Chọn 感冒 (cảm cúm).",
+        "highlights": [
+          "小心（ ）",
+          "小心（  ）",
+          "小心"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "我们已经找到（ ）问题的办法了。",
+        "answer": "B",
+        "pinyin": "Wǒ men yǐ jīng zhǎo dào jiě jué wèn tí de bàn fǎ le.",
+        "vietnamese": "Chúng tôi đã tìm thấy cách giải quyết vấn đề rồi.",
+        "explanation": "Nhìn chỗ trống: Phía sau là danh từ '问题' (vấn đề). Cần điền một Động từ thích hợp đi cùng để tạo thành cụm Động-Tân quen thuộc. Chọn 解决 (giải quyết) ➔ '解决问题'.",
+        "highlights": [
+          "（ ）问题",
+          "（  ）问题",
+          "问题"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "现在的（ ）人结婚越来越晚了。",
+        "answer": "A",
+        "pinyin": "Xiàn zài de nián qīng rén jié hūn yuè lái yuè wǎn le.",
+        "vietnamese": "Người trẻ ngày nay kết hôn ngày càng muộn rồi.",
+        "explanation": "Nhìn chỗ trống: Phía sau là danh từ chỉ người '人'. Ở trước cần một Tính từ đứng trước để tạo thành cụm danh từ. Chọn 年轻 (trẻ trung) để ghép thành cụm '年轻人' (người trẻ).",
+        "highlights": [
+          "（ ）人",
+          "（  ）人",
+          "人"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "明天早上我先去银行，（ ）再去找你。",
+        "answer": "F",
+        "pinyin": "Míng tiān zǎo shang wǒ xiān qù yín háng, rán hòu zài qù zhǎo nǐ.",
+        "vietnamese": "Sáng mai tôi đi ngân hàng trước, sau đó mới đi tìm bạn.",
+        "explanation": "Nhìn chỗ trống: Câu sử dụng cấu trúc chỉ trình tự thời gian quen thuộc '先... (thứ tự 1)... 然后... (thứ tự 2)...'. Chọn 然后 (sau đó).",
+        "highlights": [
+          "（ ）再",
+          "（  ）再",
+          "再"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "set_7",
+    "setName": "Bộ Bài Tập 7 (Phần 3: Đọc hiểu)",
+    "isPart3": true,
+    "choices": {},
+    "example": {
+      "question": "新买的这个空调比以前那个旧的好多了，它的声音非常小，几乎没有声音，不会影响我们的学习和休息。\n★ 新空调怎么样？\nA. 用电少\nB. 声音很小\nC. 出现了问题",
+      "answer": "B",
+      "text": "B. 声音很小 (Ví dụ mẫu)"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "paragraph": "新买的这个空调比以前那个旧的好多了，它的声音非常小，几乎没有声音，不会影响我们的学习和休息。",
+        "question": "★ 新空调怎么样？",
+        "options": {
+          "A": "用电少",
+          "B": "声音很小",
+          "C": "出现了问题"
+        },
+        "answer": "B",
+        "pinyin": "Xīn mǎi de zhè ge kōng tiáo bǐ yǐ qián nà ge jiù de hǎo duō le, tā de shēng yīn fēi cháng xiǎo, jī hū méi yǒu shēng yīn, bú huì yǐng xiǎng wǒ men de xué xí hé xiū xi.",
+        "vietnamese": "Chiếc điều hòa mới mua này tốt hơn nhiều so với chiếc cũ trước đây, tiếng của nó rất nhỏ, hầu như không có tiếng, sẽ không ảnh hưởng đến việc học tập và nghỉ ngơi của chúng ta.",
+        "explanation": "Mẹo: Tìm thông tin trực tiếp trong đoạn văn. Đoạn văn ghi rõ: '它的声音非常小' (tiếng của nó rất nhỏ), khớp hoàn toàn với đáp án B '声音很小'.",
+        "highlights": [
+          "休息"
+        ]
+      },
+      {
+        "index": 1,
+        "paragraph": "猫和人不同，它们不怕黑，因为它们的眼睛在晚上更容易看清楚东西。我们家的那只猫就总是习惯白天睡觉，晚上出来走动。",
+        "question": "★ 关于那只猫，可以知道什么？",
+        "options": {
+          "A": "害怕晚上",
+          "B": "喜欢换环境",
+          "C": "喜欢白天休息"
+        },
+        "answer": "C",
+        "pinyin": "Māo hé rén bù tóng, tā men bú pà hēi, yīn wèi tā men de yǎn jing zài wǎn shang gèng róng yì kàn qīng chu dōng xi. Wǒ men jiā de nà zhī māo jiù zǒng shì xí guàn bái tiān shuì jiào, wǎn shang chū lai zǒu dòng.",
+        "vietnamese": "Mèo và người khác nhau, chúng không sợ bóng tối, vì mắt của chúng vào ban đêm dễ dàng nhìn rõ đồ vật hơn. Con mèo nhà tôi luôn quen ngủ vào ban ngày, ban đêm mới ra ngoài chạy nhảy.",
+        "explanation": "Mẹo: Tìm từ đồng nghĩa. Đoạn văn nêu: '习惯白天睡觉' (quen ngủ ban ngày), ngủ chính là nghỉ ngơi (睡觉 = 休息), khớp với đáp án C '喜欢白天休息' (thích nghỉ ngơi ban ngày).",
+        "highlights": [
+          "白天睡觉",
+          "习惯白天睡觉"
+        ]
+      },
+      {
+        "index": 2,
+        "paragraph": "茶是我的最爱，花茶、绿茶、红茶，我都喜欢，天冷了或者你工作累了的时候，喝杯热茶，真是舒服极了。",
+        "question": "★ 关于他，可以知道：",
+        "options": {
+          "A": "口渴了",
+          "B": "没完成工作",
+          "C": "很喜欢喝茶"
+        },
+        "answer": "C",
+        "pinyin": "Chá shì wǒ de zuì ài, huā chá, lǜ chá, hóng chá, wǒ dōu xǐ huan, tiān lěng le huò zhě nǐ gōng zuò lèi le de shí hou, hē bēi rè chá, zhēn shì shū fu jí le.",
+        "vietnamese": "Trà là sở thích lớn nhất của tôi, trà hoa, trà xanh, trà hồng tôi đều thích, khi trời lạnh hoặc khi bạn làm việc mệt mỏi, uống một tách trà nóng thật là thoải mái vô cùng.",
+        "explanation": "Mẹo: Đọc câu mở đầu. Câu đầu tiên của đoạn văn nói rất rõ ràng: '茶是我的最爱' (Trà là thứ tôi yêu thích nhất), đồng nghĩa trực tiếp với đáp án C '很喜欢喝茶' (rất thích uống trà).",
+        "highlights": [
+          "茶是我的最爱"
+        ]
+      },
+      {
+        "index": 3,
+        "paragraph": "每次经过他家门口的时候，我几乎都能看到他的那只老猫在树下睡觉。",
+        "question": "★ 那只猫经常在哪儿睡觉？",
+        "options": {
+          "A": "树下",
+          "B": "椅子上",
+          "C": "办公室"
+        },
+        "answer": "A",
+        "pinyin": "Měi cì jīng guò tā jiā mén kǒu de shí hou, wǒ jī hū dōu néng kàn dào tā de nà zhī lǎo māo zài shù xià shuì jiào.",
+        "vietnamese": "Mỗi lần đi qua cửa nhà anh ấy, tôi hầu như đều có thể nhìn thấy con mèo già của anh ấy đang ngủ dưới gốc cây.",
+        "explanation": "Mẹo: Định vị địa điểm. Đoạn văn chỉ rõ địa điểm ngủ của mèo: '在树下睡觉' (ngủ dưới gốc cây), khớp hoàn toàn với đáp án A '树下'.",
+        "highlights": [
+          "能（ ）",
+          "能（  ）",
+          "能"
+        ]
+      },
+      {
+        "index": 4,
+        "paragraph": "这里的香蕉非常有名，每年 8 月这里会举行一个香蕉节，所以，夏季有很多人来这里玩儿。",
+        "question": "★ 这个地方：",
+        "options": {
+          "A": "常下雪",
+          "B": "很有名",
+          "C": "有很多故事"
+        },
+        "answer": "B",
+        "pinyin": "Zhè lǐ de xiāng jiāo fēi cháng yǒu míng, měi nián bā yuè zhè lǐ huì jǔ xíng yí gè xiāng jiāo jié, suǒ yǐ, xià jì yǒu hěn duō rén lái zhè lǐ wán er.",
+        "vietnamese": "Chuối ở đây cực kỳ nổi tiếng, tháng 8 hàng năm ở đây sẽ tổ chức một lễ hội chuối, vì vậy vào mùa hè có rất nhiều người đến đây vui chơi.",
+        "explanation": "Mẹo: Định vị từ khóa. Đoạn văn mở đầu bằng: '这里的香蕉非常有名' (Chuối ở nơi này cực kỳ nổi tiếng), cho thấy đây là một nơi rất nổi tiếng, khớp với đáp án B '很有名'.",
+        "highlights": [
+          "8 月（ ）",
+          "8月（ ）",
+          "8 月",
+          "8月"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "set_8",
+    "setName": "Bộ Bài Tập 8 (Phần 3: Đọc hiểu - Bộ 2)",
+    "isPart3": true,
+    "choices": {},
+    "example": {
+      "question": "不同的季节可以用不同的颜色来表示，我们用黄色表示秋季，那夏季呢？\n★ 黄色常被用来表示：\nA 春天\nB 秋天\nC 冬天",
+      "answer": "B",
+      "text": "B. 秋天 (Ví dụ mẫu)"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "paragraph": "不同的季节可以用不同的颜色来表示，我们用黄色表示秋季，那夏季呢？",
+        "question": "★ 黄色常被用来表示：",
+        "options": {
+          "A": "春天",
+          "B": "秋天",
+          "C": "冬天"
+        },
+        "answer": "B",
+        "pinyin": "Bù tóng de jì jié kě yǐ yòng bù tóng de yán sè lái biǎo shì, wǒ men yòng huáng sè biǎo shì qiū jì, nà xià jì ne?",
+        "vietnamese": "Các mùa khác nhau có thể dùng các màu sắc khác nhau để biểu thị, chúng tôi dùng màu vàng để biểu thị mùa thu, vậy còn mùa hè thì sao?",
+        "explanation": "Mẹo: Định vị thông tin trực tiếp trong đoạn văn. Quét thấy câu: '我们用黄色表示秋季' (chúng tôi dùng màu vàng biểu thị mùa thu), khớp hoàn toàn với đáp án B '秋天'.",
+        "highlights": [
+          "我们用黄色表示秋季",
+          "黄色表示秋季"
+        ]
+      },
+      {
+        "index": 1,
+        "paragraph": "听说你下个星期就要离开北京回国了？我下星期不在北京，没办法去机场送你了，这个小熊猫送给你，欢迎你明年再到中国来。",
+        "question": "★ 他为什么现在送礼物？",
+        "options": {
+          "A": "担心有变化",
+          "B": "想学习汉语",
+          "C": "下星期不在北京"
+        },
+        "answer": "C",
+        "pinyin": "Ting shuō nǐ xià gè xīng qī jiù yào lí kāi Běi jīng huí guó le? Wǒ xià xīng qī bú zài Běi jīng, méi bàn fǎ qù jī chǎng sòng nǐ le, zhè ge xiǎo xióng māo sòng gěi nǐ, huān yíng nǐ míng nián zài dào Zhōng guó lái.",
+        "vietnamese": "Nghe nói tuần sau bạn sẽ rời Bắc Kinh về nước rồi à? Tuần sau tôi không có ở Bắc Kinh, không thể ra sân bay tiễn bạn được, con gấu trúc nhỏ này tặng bạn, chào đón bạn năm sau lại tới Trung Quốc nhé.",
+        "explanation": "Mẹo: Định vị trực tiếp từ khóa nguyên nhân trong đoạn văn. Tác giả nói rõ lý do tặng quà bây giờ: '我下星期不在北京' (Tuần sau tôi không ở Bắc Kinh), khớp trực tiếp với đáp án C.",
+        "highlights": [
+          "下星期不在北京",
+          "我下星期不在北京"
+        ]
+      },
+      {
+        "index": 2,
+        "paragraph": "他在我生病的时候照顾过我，在我遇到问题的时候帮助过我，在我心中，他 是我最好的朋友。",
+        "question": "★ 我遇到问题时，他：",
+        "options": {
+          "A": "非常生气",
+          "B": "身体不太好",
+          "C": "帮我解决问题"
+        },
+        "answer": "C",
+        "pinyin": "Tā zài wǒ shēng bìng de shí hou zhào gù guò wǒ, zài wǒ yù dào wèn tí de shí hou bāng zhù guò wǒ, zài wǒ xīn zhōng, tā shì wǒ zuì hǎo de péng you.",
+        "vietnamese": "Anh ấy đã chăm sóc tôi khi tôi bị bệnh, đã giúp đỡ tôi khi tôi gặp khó khăn, trong lòng tôi, anh ấy là người bạn tốt nhất của tôi.",
+        "explanation": "Mẹo: Tìm từ đồng nghĩa. Đoạn văn ghi: '在我遇到问题的时候帮助过 tôi' ➔ giúp tôi khi gặp vấn đề, đồng nghĩa với đáp án C '帮我解决问题' (giúp tôi giải quyết vấn đề).",
+        "highlights": [
+          "帮助过我",
+          "在我遇到问题的时候帮助过我"
+        ]
+      },
+      {
+        "index": 3,
+        "paragraph": "小王上午脸色不太好，同事们以为他病了，问他怎么了，他笑着回答说：“昨晚看球赛，两点才睡觉。”",
+        "question": "★ 小王昨天晚上：",
+        "options": {
+          "A": "发烧了",
+          "B": "看比赛了",
+          "C": "看表演了"
+        },
+        "answer": "B",
+        "pinyin": "Xiǎo Wáng shàng wǔ liǎn sè bú tài hǎo, tóng shì men yǐ wéi tā bìng le, wèn tā zěn me le, tā xiào zhe huí dá shuō: “Zuó wǎn kàn qiú sài, liǎng diǎn cái shuì jiào.”",
+        "vietnamese": "Sáng nay sắc mặt Tiểu Vương không tốt lắm, đồng nghiệp cứ tưởng anh ấy bị ốm nên hỏi thăm, anh ấy cười đáp: 'Tối qua xem bóng đá, 2 giờ mới ngủ.'",
+        "explanation": "Mẹo: Tìm từ đồng nghĩa. Đoạn văn viết: '昨晚看球赛' (Tối qua xem trận đấu bóng), trong đó '球赛' (trận bóng) đồng nghĩa với '比赛' (trận đấu), khớp trực tiếp với đáp án B.",
+        "highlights": [
+          "昨晚看球赛",
+          "看球赛"
+        ]
+      },
+      {
+        "index": 4,
+        "paragraph": "没关系，她哭是因为刚才听到一个孩子在唱《月亮船》，这使她突然想起了很多过去的事情。",
+        "question": "★ 她为什么哭？",
+        "options": {
+          "A": "想起了过去",
+          "B": "鼻子不舒服",
+          "C": "不想说再见"
+        },
+        "answer": "A",
+        "pinyin": "Méi guān xi, tā kū shì yīn wèi gāng cái tīng dào yí gè hái zi zài chàng “Yuè liang chuán”, zhè shǐ tā tū rán xiǎng qǐ le hěn duō guò qù de shì qing.",
+        "vietnamese": "Không sao đâu, cô ấy khóc là vì vừa nãy nghe thấy một đứa trẻ hát bài 'Thuyền trăng', việc này khiến cô ấy đột ngột nhớ lại rất nhiều chuyện trong quá khứ.",
+        "explanation": "Mẹo: Định vị từ khóa nguyên nhân. Đoạn văn ghi: '使她突然想起了很多过去的事情' (khiến cô ấy nhớ lại nhiều chuyện quá khứ), khớp trực tiếp với đáp án A '想起了过去'.",
+        "highlights": [
+          "想起了很多过去的事情",
+          "使她突然想起了很多过去的事情"
+        ]
+      }
+    ]
+  }
+]

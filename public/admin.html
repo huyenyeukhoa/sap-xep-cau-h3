@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Điều Khiển Giáo Viên - Nối Cặp HSK 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container" style="max-width: 1100px;">
+    <h1>Tiếng Trung Mỹ Huyền - Bảng Điều Khiển Giáo Viên</h1>
+
+    <div class="admin-grid">
+      
+      <!-- Left Column: Operations & Settings -->
+      <div>
+        <h2>Cấu Hình Đề Thi</h2>
+        <div class="form-group">
+          <label for="select-set">Chọn bộ bài tập:</label>
+          <select id="select-set">
+            <!-- Dynamically populated -->
+          </select>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;">
+          <button id="btn-init" onclick="initExam()">Phát đề cho lớp</button>
+          <button id="btn-grade" class="secondary" onclick="gradeExam()" disabled>Khóa đề & Chấm điểm</button>
+          <button id="btn-reset" class="secondary" onclick="resetExam()" disabled>Làm phiên mới</button>
+          <button id="btn-clear-names" class="secondary" onclick="clearStudentNames()" style="background-color: #c00000; border-color: #a00000; box-shadow: 2px 2px 0px #800000; color: white;">Đặt lại tên cả lớp</button>
+        </div>
+
+        <h2>Trạng Thái Phòng Học</h2>
+        <div style="background-color: #FAF6ED; border: 1px solid var(--gold-border); padding: 15px; border-radius: 6px; font-size: 15px; margin-bottom: 20px;">
+          <p style="margin: 5px 0;"><strong>Trạng thái:</strong> <span id="room-status" style="font-weight: bold; color: var(--primary-color);">Chưa bắt đầu</span></p>
+          <p style="margin: 5px 0;"><strong>Bộ đề đang chạy:</strong> <span id="active-set-name" style="font-weight: bold;">--</span></p>
+          <p style="margin: 5px 0;"><strong>Số học viên kết nối:</strong> <span id="students-connected" style="font-weight: bold;">0</span></p>
+        </div>
+      </div>
+      
+      <!-- Right Column: Student Monitor & Leaderboard -->
+      <div>
+        <h2>Danh Sách Học Viên</h2>
+        <div style="overflow-x: auto; max-height: 400px; border: 1px solid #E6DBC4; border-radius: 6px; background-color: white;">
+          <table class="student-table" style="margin: 0;">
+            <thead>
+              <tr>
+                <th>Họ và Tên</th>
+                <th>Trạng Thái</th>
+                <th>Điểm Số</th>
+                <th>Thời Gian</th>
+              </tr>
+            </thead>
+            <tbody id="student-list-tbody">
+              <tr>
+                <td colspan="4" style="text-align: center; color: #888;">Chưa có học viên nào kết nối...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Leaderboard (Grading results) -->
+        <div id="leaderboard-section" style="margin-top: 30px; display: none;">
+          <h2>BẢNG XẾP HẠNG LỚP HỌC</h2>
+          <ol id="leaderboard-ol" style="padding-left: 20px; font-size: 16px; font-weight: bold; color: var(--border-color);">
+            <!-- Leaderboard ranks go here -->
+          </ol>
+        </div>
+
+        <!-- Question Statistics Section -->
+        <div id="stats-section" style="margin-top: 30px; display: none;">
+          <h2>THỐNG KÊ CÂU HỎI SAI NHIỀU NHẤT</h2>
+          <div id="stats-list" style="display: flex; flex-direction: column; gap: 15px; max-height: 400px; overflow-y: auto; padding-right: 5px;">
+            <!-- Question stats go here -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    let ws = null;
+    let students = [];
+    let questionSets = [];
+    let questionStats = [];
+    let state = 'IDLE';
+    let activeSetId = '';
+
+    function connectWebSocket() {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const wsUrl = `${protocol}//${window.location.host}?role=admin`;
+      ws = new WebSocket(wsUrl);
+
+      ws.onopen = () => {
+        console.log('Connected to admin server.');
+      };
+
+      ws.onmessage = (event) => {
+        try {
+          const msg = JSON.parse(event.data);
+          if (msg.type === 'STATE_UPDATE') {
+            students = msg.students;
+            state = msg.state;
+            activeSetId = msg.activeSetId;
+            questionSets = msg.questionSets;
+            questionStats = msg.questionStats;
+            
+            updateUI();
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      };
+
+      ws.onclose = () => {
+        console.log('WebSocket disconnected. Reconnecting...');
+        setTimeout(connectWebSocket, 3000);
+      };
+    }
+
+    function updateUI() {
+      // 1. Populate sets dropdown if empty
+      const selectSet = document.getElementById('select-set');
+      if (selectSet.children.length === 0 && questionSets.length > 0) {
+        questionSets.forEach(set => {
+          const opt = document.createElement('option');
+          opt.value = set.setId;
+          opt.innerText = `${set.setName} (${set.questionCount} câu)`;
+          selectSet.appendChild(opt);
+        });
+      }
+
+      // 2. Set Status Text
+      const statusText = document.getElementById('room-status');
+      const activeSetNameText = document.getElementById('active-set-name');
+      const connText = document.getElementById('students-connected');
+
+      connText.innerText = students.length;
+
+      if (state === 'IDLE') {
+        statusText.innerText = 'Đang chờ';
+        statusText.style.color = '#888';
+        activeSetNameText.innerText = '--';
+
+        document.getElementById('btn-init').disabled = false;
+        document.getElementById('btn-grade').disabled = true;
+        document.getElementById('btn-reset').disabled = true;
+        document.getElementById('select-set').disabled = false;
+        
+        document.getElementById('leaderboard-section').style.display = 'none';
+        document.getElementById('stats-section').style.display = 'none';
+      } else if (state === 'EXAM') {
+        statusText.innerText = 'Đang làm bài ✍️';
+        statusText.style.color = '#1565c0';
+        
+        const activeSet = questionSets.find(s => s.setId === activeSetId);
+        activeSetNameText.innerText = activeSet ? activeSet.setName : '--';
+
+        document.getElementById('btn-init').disabled = true;
+        document.getElementById('btn-grade').disabled = false;
+        document.getElementById('btn-reset').disabled = false;
+        document.getElementById('select-set').disabled = true;
+
+        document.getElementById('leaderboard-section').style.display = 'none';
+        document.getElementById('stats-section').style.display = 'none';
+      } else if (state === 'GRADING') {
+        statusText.innerText = 'Đã chấm xong 🏆';
+        statusText.style.color = '#2e7d32';
+
+        const activeSet = questionSets.find(s => s.setId === activeSetId);
+        activeSetNameText.innerText = activeSet ? activeSet.setName : '--';
+
+        document.getElementById('btn-init').disabled = true;
+        document.getElementById('btn-grade').disabled = true;
+        document.getElementById('btn-reset').disabled = false;
+        document.getElementById('select-set').disabled = true;
+
+        // Render Leaderboard & Stats
+        renderLeaderboard();
+        renderStats();
+      }
+
+      // 3. Render student table
+      const tbody = document.getElementById('student-list-tbody');
+      tbody.innerHTML = '';
+
+      if (students.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #888;">Chưa có học viên nào kết nối...</td></tr>`;
+      } else {
+        students.forEach(s => {
+          const tr = document.createElement('tr');
+
+          // Name
+          const nameTd = document.createElement('td');
+          nameTd.style.fontWeight = 'bold';
+          nameTd.innerText = s.name || `Chưa đăng ký (${s.clientId.slice(0, 4)}...)`;
+          tr.appendChild(nameTd);
+
+          // Status
+          const statusTd = document.createElement('td');
+          if (!s.name) {
+            statusTd.innerHTML = `<span class="status-badge waiting">Chờ đăng ký</span>`;
+          } else if (s.submitted) {
+            statusTd.innerHTML = `<span class="status-badge submitted">Đã nộp bài</span>`;
+          } else {
+            // Count selected answers
+            const selectedCount = s.answers ? s.answers.filter(a => a.user_answer).length : 0;
+            statusTd.innerHTML = `<span class="status-badge working">Đang làm (${selectedCount}/${s.totalQuestions})</span>`;
+          }
+          tr.appendChild(statusTd);
+
+          // Score
+          const scoreTd = document.createElement('td');
+          scoreTd.style.fontWeight = 'bold';
+          scoreTd.style.color = 'var(--primary-color)';
+          scoreTd.innerText = state === 'GRADING' ? `${s.score} / 10đ` : '--';
+          tr.appendChild(scoreTd);
+
+          // Solving Time
+          const timeTd = document.createElement('td');
+          if (s.submitted && s.solvingTime) {
+            let tStr = s.solvingTime;
+            if (s.solvingTimeMs) {
+              const sec = Math.floor(s.solvingTimeMs / 1000);
+              const m = Math.floor(sec / 60);
+              const s_rem = sec % 60;
+              tStr = m > 0 ? `${m}p ${s_rem}s` : `${s_rem}s`;
+            }
+            timeTd.innerText = tStr;
+            timeTd.style.fontWeight = 'bold';
+            timeTd.style.color = '#555';
+          } else {
+            timeTd.innerText = '--';
+          }
+          tr.appendChild(timeTd);
+
+          tbody.appendChild(tr);
+        });
+      }
+    }
+
+    function initExam() {
+      const setId = document.getElementById('select-set').value;
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({
+          type: 'INIT_EXAM',
+          payload: { setId }
+        }));
+      }
+    }
+
+    function gradeExam() {
+      if (confirm('Bạn có muốn khóa đề và chấm bài của cả lớp không?')) {
+        if (ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({
+            type: 'GRADE_EXAM'
+          }));
+        }
+      }
+    }
+
+    function resetExam() {
+      if (confirm('Làm mới phòng học? Các bài làm hiện tại sẽ bị xóa sạch.')) {
+        if (ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({
+            type: 'RESET_EXAM'
+          }));
+        }
+      }
+    }
+
+    function clearStudentNames() {
+      if (confirm('⚠️ Đặt lại tên cả lớp? Tất cả học sinh sẽ bị yêu cầu nhập lại tên từ đầu.')) {
+        if (ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({
+            type: 'FORCE_RESET_NAMES'
+          }));
+        }
+      }
+    }
+
+    function renderLeaderboard() {
+      const section = document.getElementById('leaderboard-section');
+      const ol = document.getElementById('leaderboard-ol');
+      ol.innerHTML = '';
+
+      // Sort students by score descending, then by solvingTimeMs ascending
+      const sorted = [...students].filter(s => s.name && s.submitted).sort((a, b) => {
+        if (b.score !== a.score) {
+          return b.score - a.score;
+        }
+        const tA = a.solvingTimeMs || 9999999;
+        const tB = b.solvingTimeMs || 9999999;
+        return tA - tB;
+      });
+
+      if (sorted.length > 0) {
+        section.style.display = 'block';
+        sorted.forEach(s => {
+          const li = document.createElement('li');
+          li.style.marginBottom = '8px';
+          
+          let tStr = '';
+          if (s.solvingTimeMs) {
+            const sec = Math.floor(s.solvingTimeMs / 1000);
+            const m = Math.floor(sec / 60);
+            const s_rem = sec % 60;
+            tStr = m > 0 ? `${m}p ${s_rem}s` : `${s_rem}s`;
+          }
+          const timeText = tStr ? ` (làm trong ${tStr})` : '';
+
+          li.innerHTML = `<span style="color: var(--text-dark);">${s.name}:</span> <span style="color: var(--primary-color);">${s.score}đ</span><span style="font-weight: normal; color: #888; font-size: 14px;">${timeText}</span>`;
+          ol.appendChild(li);
+        });
+      } else {
+        section.style.display = 'none';
+      }
+    }
+
+    function renderStats() {
+      const section = document.getElementById('stats-section');
+      const list = document.getElementById('stats-list');
+      list.innerHTML = '';
+
+      if (questionStats && questionStats.length > 0) {
+        section.style.display = 'block';
+        
+        // Sort stats: highest error rate first
+        const sortedStats = [...questionStats].sort((a, b) => b.errorRate - a.errorRate);
+
+        sortedStats.forEach(st => {
+          const card = document.createElement('div');
+          card.className = 'graded-card';
+          // Color based on error rate
+          if (st.errorRate > 50) {
+            card.style.borderColor = 'var(--error-red)';
+            card.style.backgroundColor = '#ffebee';
+          } else {
+            card.style.borderColor = 'var(--gold-border)';
+            card.style.backgroundColor = '#fafafa';
+          }
+
+          card.innerHTML = `
+            <div style="font-weight: bold; display: flex; justify-content: space-between;">
+              <span>Câu hỏi ${st.index + 1}: ${st.question}</span>
+              <span style="color: var(--error-red);">Tỷ lệ sai: ${st.errorRate}%</span>
+            </div>
+            <div style="margin-top: 8px; font-size: 14px; color: #555;">
+              <strong>Đáp án đúng:</strong> [${st.answer}] &mdash; Đúng: ${st.correctCount} học viên | Sai: ${st.incorrectCount} học viên
+            </div>
+          `;
+          list.appendChild(card);
+        });
+      } else {
+        section.style.display = 'none';
+      }
+    }
+
+    connectWebSocket();
+  </script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiếng Trung Mỹ Huyền - Học Viên Làm Bài</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styling for the summary badges */
+    .summary-badge {
+      background: #e0e0e0;
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 1.5px solid #ccc;
+      transition: 0.2s;
+    }
+    .summary-badge:hover {
+      background: #d5d5d5;
+      transform: translateY(-2px);
+    }
+    .summary-badge.answered {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-color: #a5d6a7;
+    }
+    .summary-badge.duplicate {
+      background: #ffebee;
+      color: var(--error-red);
+      border-color: #ef9a9a;
+      animation: shake 0.3s ease-in-out;
+    }
+    .summary-badge.active {
+      box-shadow: 0 0 0 3px var(--gold-border);
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Offline Banner -->
+  <div id="offline-banner" style="display: none; background-color: var(--error-red); color: white; text-align: center; padding: 10px; font-weight: bold; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); font-size: 15px;">
+    ⚠️ Trình duyệt mất kết nối với lớp học! Đang kết nối lại...
+  </div>
+
+  <div class="container">
+    <h1>Tiếng Trung Mỹ Huyền - Đọc Hiểu HSK 3</h1>
+
+    <!-- 1. Screen: Register Name -->
+    <div id="screen-register" class="view">
+      <h2>Đăng Ký Làm Bài</h2>
+      <div class="form-group">
+        <label for="student-name">Nhập họ và tên của học viên:</label>
+        <input type="text" id="student-name" placeholder="Ví dụ: Nguyễn Thị Cúc" autocomplete="off">
+      </div>
+      <button onclick="registerName()">Vào phòng học</button>
+    </div>
+
+    <!-- 2. Screen: Waiting for Exam -->
+    <div id="screen-waiting-exam" class="view waiting-screen" style="display:none;">
+      <div class="spinner"></div>
+      <div class="waiting-title">Chào em, <span id="display-name"></span>!</div>
+      <p>Vui lòng chờ giáo viên mở đề bài tập...</p>
+    </div>
+
+    <!-- 3. Screen: Solving Exam -->
+    <div id="screen-exam" class="view" style="display:none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--gold-border); padding-bottom: 10px;">
+        <span style="font-weight: bold; color: var(--primary-color);">Luyện Đọc HSK 3 - Phần 1 & 2</span>
+        <span style="color: #666; font-weight: 600;" id="student-header-name"></span>
+      </div>
+
+      <!-- Choices Panel -->
+      <div class="choices-panel" id="exam-choices-panel">
+        <h3>Khung Lựa Chọn</h3>
+        <!-- Choices will be rendered here -->
+      </div>
+
+      <div id="exam-example-parent" style="background-color: #fff9c4; padding: 10px 15px; border-radius: 6px; font-size: 14px; margin-bottom: 20px; font-weight: bold; border-left: 4px solid #fbc02d;">
+        ℹ️ Ví dụ mẫu đã được làm: <span id="exam-example-text"></span>
+      </div>
+
+      <!-- Pagination Progress Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: var(--primary-color); margin-bottom: 15px;">
+        <span id="question-progress-label">Câu 1 / 5</span>
+      </div>
+
+      <!-- Active Question Container -->
+      <div id="exam-questions-container">
+        <!-- Active question card will be rendered here -->
+      </div>
+
+      <!-- Navigation & Submit Controls -->
+      <div style="display: flex; justify-content: space-between; gap: 15px; margin-top: 20px;">
+        <button id="btn-prev" class="secondary" onclick="prevQuestion()" style="flex: 1;">Câu trước</button>
+        <button id="btn-next" onclick="nextQuestion()" style="flex: 1;">Câu tiếp theo</button>
+        <button id="btn-submit" onclick="submitExam()" style="flex: 1; display: none;">Nộp bài làm</button>
+      </div>
+
+      <!-- Summary progress row -->
+      <div style="margin-top: 30px; padding: 15px; border: 1.5px solid var(--gold-border); border-radius: 8px; background-color: #fafafa;">
+        <div style="font-weight: bold; font-size: 14px; margin-bottom: 10px; color: var(--border-color);">Tóm tắt lựa chọn (Click để nhảy câu):</div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;" id="summary-badges-container">
+          <!-- Clickable badges for Q1-Q5 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Screen: Waiting for Grading -->
+    <div id="screen-waiting-grading" class="view waiting-screen" style="display:none;">
+      <div class="spinner"></div>
+      <div class="waiting-title">Đã nộp bài thành công!</div>
+      <p>Vui lòng chờ giáo viên khóa đề và chấm điểm...</p>
+    </div>
+
+    <!-- 5. Screen: Graded Results -->
+    <div id="screen-result" class="view" style="display:none;">
+      <div style="text-align: center;">
+        <h2>KẾT QUẢ BÀI LÀM</h2>
+        <p id="result-student-name" style="font-size: 16px; font-weight: bold; color: #555; margin-bottom: 5px;"></p>
+        <p id="result-solving-time" style="font-size: 14px; font-weight: bold; color: var(--border-color); margin: 0;"></p>
+        <div class="score-badge" id="result-score">0 / 10</div>
+        <p style="font-weight: bold; color: #666;">Xem chi tiết bài sửa bên dưới:</p>
+      </div>
+
+      <div id="result-details-container" style="margin-top: 25px;">
+        <!-- Graded review cards will be rendered here -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let clientId = localStorage.getItem('hsk3_matching_clientId');
+    if (!clientId) {
+      clientId = Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('hsk3_matching_clientId', clientId);
+    }
+
+    let ws = null;
+    let studentName = localStorage.getItem('hsk3_matching_name') || '';
+    let choices = {};
+    let questions = [];
+    let example = {};
+    let studentAnswers = []; // [ { q_index: 0, user_answer: '' } ]
+    let lastServerMsg = null;
+
+    let currentIdx = 0;
+    let examStartTime = 0;
+
+    function connectWebSocket() {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const wsUrl = `${protocol}//${window.location.host}?clientId=${clientId}`;
+      ws = new WebSocket(wsUrl);
+
+      ws.onopen = () => {
+        console.log('Connected to classroom server.');
+        document.getElementById('offline-banner').style.display = 'none';
+        if (studentName) {
+          registerName(true);
+        } else {
+          showScreen('screen-register');
+        }
+      };
+
+      ws.onmessage = (event) => {
+        try {
+          const msg = JSON.parse(event.data);
+          console.log('Server Message:', msg.type);
+
+          if (!studentName) {
+            lastServerMsg = msg;
+            showScreen('screen-register');
+            return;
+          }
+
+          handleServerMessage(msg);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+
+      ws.onclose = () => {
+        document.getElementById('offline-banner').style.display = 'block';
+        setTimeout(connectWebSocket, 3000);
+      };
+    }
+
+    function showScreen(screenId) {
+      document.querySelectorAll('.view').forEach(view => view.style.display = 'none');
+      document.getElementById(screenId).style.display = 'block';
+    }
+
+    function handleServerMessage(msg) {
+      if (msg.type === 'FORCE_RE_REGISTER') {
+        localStorage.removeItem('hsk3_matching_name');
+        studentName = '';
+        document.getElementById('student-name').value = '';
+        showScreen('screen-register');
+      } else if (msg.type === 'WAITING_FOR_EXAM') {
+        showScreen('screen-waiting-exam');
+      } else if (msg.type === 'START_EXAM') {
+        choices = msg.choices;
+        questions = msg.questions;
+        example = msg.example;
+
+        // Start timer
+        examStartTime = Date.now();
+        currentIdx = 0;
+
+        // Restore or initialize answers
+        if (msg.answers && msg.answers.length === questions.length) {
+          studentAnswers = msg.answers;
+        } else {
+          studentAnswers = questions.map(q => ({
+            q_index: q.index,
+            user_answer: ''
+          }));
+        }
+
+        showScreen('screen-exam');
+        renderExam();
+      } else if (msg.type === 'WAITING_FOR_GRADING') {
+        showScreen('screen-waiting-grading');
+      } else if (msg.type === 'EXAM_RESULT') {
+        showScreen('screen-result');
+        showResults(msg.score, msg.total, msg.details);
+      } else if (msg.type === 'RESET_EXAM') {
+        studentAnswers = [];
+        questions = [];
+        choices = {};
+        currentIdx = 0;
+        showScreen('screen-waiting-exam');
+      }
+    }
+
+    function registerName(isAuto = false) {
+      if (!isAuto) {
+        const inputVal = document.getElementById('student-name').value.trim();
+        if (!inputVal) {
+          alert('Vui lòng nhập họ tên của em!');
+          return;
+        }
+        studentName = inputVal;
+        localStorage.setItem('hsk3_matching_name', studentName);
+      }
+
+      document.getElementById('display-name').innerText = studentName;
+      document.getElementById('student-header-name').innerText = studentName;
+
+      ws.send(JSON.stringify({
+        type: 'REGISTER',
+        payload: { name: studentName }
+      }));
+
+      if (lastServerMsg) {
+        handleServerMessage(lastServerMsg);
+        lastServerMsg = null;
+      } else {
+        showScreen('screen-waiting-exam');
+      }
+    }
+
+    function renderExam() {
+      const isPart3 = !!(questions && questions.length > 0 && questions[0].paragraph);
+
+      // 1. Show/Hide Choices Box and Example Label
+      document.getElementById('exam-choices-panel').style.display = isPart3 ? 'none' : 'block';
+      document.getElementById('exam-example-parent').style.display = isPart3 ? 'none' : 'block';
+
+      if (!isPart3) {
+        // Render Choices Box
+        const choicesPanel = document.getElementById('exam-choices-panel');
+        choicesPanel.innerHTML = '<h3>Khung Lựa Chọn</h3>';
+        Object.entries(choices).forEach(([letter, text]) => {
+          const row = document.createElement('div');
+          row.className = 'choice-row';
+          row.innerHTML = `<strong>${letter}.</strong> ${text}`;
+          choicesPanel.appendChild(row);
+        });
+
+        // Render Example Label
+        document.getElementById('exam-example-text').innerText = example.text || "";
+      }
+
+      // 3. Update Progress Label
+      document.getElementById('question-progress-label').innerText = `Câu số ${currentIdx + 1} / ${questions.length}`;
+
+      // 4. Render Active Question
+      const questionsContainer = document.getElementById('exam-questions-container');
+      questionsContainer.innerHTML = '';
+
+      const q = questions[currentIdx];
+      const card = document.createElement('div');
+      card.className = 'question-card';
+      card.id = `q-card-active`;
+
+      if (isPart3) {
+        // Render paragraph
+        const paraDiv = document.createElement('div');
+        paraDiv.className = 'paragraph-text';
+        paraDiv.style.fontSize = '19px';
+        paraDiv.style.fontWeight = 'bold';
+        paraDiv.style.lineHeight = '1.6';
+        paraDiv.style.marginBottom = '15px';
+        paraDiv.style.color = '#111';
+        paraDiv.style.padding = '12px 15px';
+        paraDiv.style.background = '#f1f8e9';
+        paraDiv.style.borderRadius = '8px';
+        paraDiv.style.borderLeft = '5px solid var(--primary-color)';
+        paraDiv.innerText = q.paragraph;
+        card.appendChild(paraDiv);
+
+        // Render question
+        const textDiv = document.createElement('div');
+        textDiv.className = 'question-text';
+        textDiv.style.fontSize = '18px';
+        textDiv.style.fontWeight = 'bold';
+        textDiv.style.marginBottom = '15px';
+        textDiv.style.color = 'var(--primary-color)';
+        textDiv.innerText = q.question;
+        card.appendChild(textDiv);
+
+        // Render choices A, B, C list
+        const optionsList = document.createElement('div');
+        optionsList.style.marginBottom = '20px';
+        optionsList.style.fontSize = '17px';
+        optionsList.style.fontWeight = '600';
+        optionsList.style.display = 'flex';
+        optionsList.style.flexDirection = 'column';
+        optionsList.style.gap = '8px';
+        optionsList.style.paddingLeft = '10px';
+        Object.entries(q.options).forEach(([letter, text]) => {
+          const optRow = document.createElement('div');
+          optRow.innerHTML = `<strong style="color: var(--primary-color); font-size: 18px;">${letter}.</strong> ${text}`;
+          optionsList.appendChild(optRow);
+        });
+        card.appendChild(optionsList);
+      } else {
+        const textDiv = document.createElement('div');
+        textDiv.className = 'question-text';
+        textDiv.innerText = `${currentIdx + 1}. ${q.question}`;
+        card.appendChild(textDiv);
+      }
+
+      const btnContainer = document.createElement('div');
+      btnContainer.className = 'matching-selector';
+
+      const ansObj = studentAnswers.find(a => a.q_index === q.index);
+      const selectedLetter = ansObj ? ansObj.user_answer : '';
+
+      const btnOptions = isPart3 ? ['A', 'B', 'C'] : ['A', 'B', 'C', 'D', 'F'];
+      btnOptions.forEach(letter => {
+        const btn = document.createElement('button');
+        btn.className = 'match-btn';
+        if (letter === selectedLetter) {
+          btn.classList.add('selected');
+        }
+        btn.innerText = letter;
+        btn.onclick = () => selectAnswer(letter);
+        btnContainer.appendChild(btn);
+      });
+
+      card.appendChild(btnContainer);
+      questionsContainer.appendChild(card);
+
+      // 5. Update Navigation Buttons
+      const btnPrev = document.getElementById('btn-prev');
+      const btnNext = document.getElementById('btn-next');
+      const btnSubmit = document.getElementById('btn-submit');
+
+      btnPrev.disabled = currentIdx === 0;
+
+      if (currentIdx === questions.length - 1) {
+        btnNext.style.display = 'none';
+        btnSubmit.style.display = 'block';
+      } else {
+        btnNext.style.display = 'block';
+        btnSubmit.style.display = 'none';
+      }
+
+      // 6. Render Bottom Summary Bar
+      renderSummaryBar();
+      syncProgress();
+    }
+
+    function selectAnswer(letter) {
+      const q = questions[currentIdx];
+      const ansObj = studentAnswers.find(a => a.q_index === q.index);
+      
+      if (ansObj) {
+        if (ansObj.user_answer === letter) {
+          ansObj.user_answer = '';
+        } else {
+          ansObj.user_answer = letter;
+        }
+      }
+
+      // Refresh active card styling & buttons
+      const btnContainer = document.querySelector('#q-card-active .matching-selector');
+      const buttons = btnContainer.querySelectorAll('.match-btn');
+      const currentAns = studentAnswers.find(a => a.q_index === q.index).user_answer;
+
+      buttons.forEach(btn => {
+        if (btn.innerText === currentAns) {
+          btn.classList.add('selected');
+        } else {
+          btn.classList.remove('selected');
+        }
+      });
+
+      renderSummaryBar();
+      syncProgress();
+    }
+
+    function prevQuestion() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderExam();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIdx < questions.length - 1) {
+        currentIdx++;
+        renderExam();
+      }
+    }
+
+    function jumpToQuestion(idx) {
+      if (idx >= 0 && idx < questions.length) {
+        currentIdx = idx;
+        renderExam();
+      }
+    }
+
+    function renderSummaryBar() {
+      const isPart3 = !!(questions && questions.length > 0 && questions[0].paragraph);
+
+      // Calculate selection counts to check duplicates (only if not Part 3)
+      const counts = {};
+      if (!isPart3) {
+        studentAnswers.forEach(ans => {
+          if (ans.user_answer) {
+            counts[ans.user_answer] = (counts[ans.user_answer] || 0) + 1;
+          }
+        });
+      }
+
+      // Update Active Card warning color if current answer has duplicate
+      const activeCard = document.getElementById('q-card-active');
+      const activeAns = studentAnswers.find(a => a.q_index === currentIdx).user_answer;
+      if (!isPart3 && activeAns && counts[activeAns] > 1) {
+        activeCard.style.borderColor = 'var(--error-red)';
+        activeCard.style.backgroundColor = '#ffebee';
+      } else {
+        activeCard.style.borderColor = 'var(--gold-border)';
+        activeCard.style.backgroundColor = '#fafafa';
+      }
+
+      // Build clickable badges
+      const container = document.getElementById('summary-badges-container');
+      container.innerHTML = '';
+
+      questions.forEach((q, idx) => {
+        const ansObj = studentAnswers.find(a => a.q_index === idx);
+        const ans = ansObj ? ansObj.user_answer : '';
+
+        const badge = document.createElement('div');
+        badge.className = 'summary-badge';
+        if (idx === currentIdx) {
+          badge.classList.add('active');
+        }
+
+        if (ans) {
+          if (!isPart3 && counts[ans] > 1) {
+            badge.classList.add('duplicate');
+            badge.innerText = `Câu ${idx + 1} [${ans} ⚠️]`;
+          } else {
+            badge.classList.add('answered');
+            badge.innerText = `Câu ${idx + 1} [${ans}]`;
+          }
+        } else {
+          badge.innerText = `Câu ${idx + 1} [-]`;
+        }
+
+        badge.onclick = () => jumpToQuestion(idx);
+        container.appendChild(badge);
+      });
+    }
+
+    function syncProgress() {
+      if (ws && ws.readyState === WebSocket.OPEN && studentName) {
+        ws.send(JSON.stringify({
+          type: 'UPDATE_PROGRESS',
+          payload: {
+            answers: studentAnswers
+          }
+        }));
+      }
+    }
+
+    function submitExam() {
+      const unanswered = studentAnswers.filter(a => !a.user_answer);
+      if (unanswered.length > 0) {
+        if (!confirm(`Em chưa nối hết ${unanswered.length} câu. Em có chắc chắn muốn nộp bài không?`)) {
+          return;
+        }
+      } else {
+        if (!confirm('Em có chắc chắn muốn nộp bài làm không?')) {
+          return;
+        }
+      }
+
+      // Compute total solving time
+      const solvingTimeMs = Date.now() - examStartTime;
+      const elapsedSec = Math.floor(solvingTimeMs / 1000);
+      const minutes = Math.floor(elapsedSec / 60);
+      const seconds = elapsedSec % 60;
+      const solvingTime = minutes > 0 ? `${minutes} phút ${seconds} giây` : `${seconds} giây`;
+
+      ws.send(JSON.stringify({
+        type: 'SUBMIT_ANSWERS',
+        payload: {
+          answers: studentAnswers,
+          solvingTime: solvingTime,
+          solvingTimeMs: solvingTimeMs
+        }
+      }));
+    }
+
+    function showResults(score, total, details) {
+      document.getElementById('result-student-name').innerText = `Học viên: ${studentName}`;
+      
+      // Look up and display solving time
+      // Search from details or retrieve elapsed time
+      const elapsedText = details.length > 0 && details[0].solvingTime ? details[0].solvingTime : '';
+      
+      // Set solving time label
+      const timeMs = details.length > 0 && details[0].solvingTimeMs ? details[0].solvingTimeMs : 0;
+      let timeString = '';
+      if (timeMs > 0) {
+        const totalSec = Math.floor(timeMs / 1000);
+        const mins = Math.floor(totalSec / 60);
+        const secs = totalSec % 60;
+        timeString = mins > 0 ? `${mins}p ${secs}s` : `${secs}s`;
+      }
+      
+      document.getElementById('result-solving-time').innerText = timeString ? `Thời gian làm bài: ${timeString}` : '';
+      document.getElementById('result-score').innerText = `${score} / ${total} điểm`;
+
+      const detailsContainer = document.getElementById('result-details-container');
+      detailsContainer.innerHTML = '';
+
+      details.forEach((d, idx) => {
+        const card = document.createElement('div');
+        card.className = `graded-card ${d.isCorrect ? 'correct' : 'incorrect'}`;
+
+        const title = document.createElement('div');
+        title.className = 'graded-title';
+        title.innerHTML = `
+          <span>Câu số ${idx + 1}: ${d.isCorrect ? '✅ ĐÚNG (+2đ)' : '❌ SAI (0đ)'}</span>
+          <span>Nối với: [ ${d.userAnswer || 'Chưa chọn'} ]</span>
+        `;
+        card.appendChild(title);
+
+        const reviewSec = document.createElement('div');
+        reviewSec.className = 'review-section';
+
+        let questionHtml = d.paragraph ? `${d.paragraph}<br><span style="color: var(--primary-color);">${d.question}</span>` : d.question;
+
+        if (d.highlights && d.highlights.length > 0) {
+          d.highlights.forEach(word => {
+            if (word) {
+              const regex = new RegExp(word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g');
+              questionHtml = questionHtml.replace(regex, `<span style="color: var(--error-red); font-weight: bold; text-decoration: underline;">${word}</span>`);
+            }
+          });
+        }
+
+        reviewSec.innerHTML = `
+          <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+            <strong>Câu hỏi gốc:</strong><br>
+            <span class="chinese-text" style="font-size: 18px; font-weight: bold; line-height: 1.5; display: block; margin-top: 4px; color: #111;">${questionHtml}</span>
+          </div>
+          <div class="review-row"><strong>Đáp án đúng:</strong> [${d.correctAnswer}] &mdash; ${d.choiceText}</div>
+          <div class="review-row" style="color: var(--error-red);"><strong>Dịch nghĩa câu hỏi:</strong> ${d.vietnamese}</div>
+          <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích mẹo:</strong> ${d.explanation}</div>
+        `;
+
+        card.appendChild(reviewSec);
+        detailsContainer.appendChild(card);
+      });
+    }
+
+    // Start WebSocket
+    connectWebSocket();
+  </script>
+</body>
+</html>

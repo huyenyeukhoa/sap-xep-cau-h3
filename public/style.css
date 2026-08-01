@@ -1,0 +1,341 @@
+/* Google Fonts - Mali */
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #2e7d32;    /* Xanh lá cổ phong (Mỹ Huyền brand) */
+  --bg-color: #FAF5EB;         /* Màu giấy xuyến chỉ */
+  --box-bg: #E1EFE0;           /* Màu nền khối chữ */
+  --border-color: #3E5A3D;     /* Nâu tre trúc */
+  --gold-border: #C8AE7D;      /* Vàng đồng cổ */
+  --text-dark: #2B2B2B;        /* Chữ mực tàu */
+  --error-red: #c62828;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Mali', cursive, sans-serif;
+  color: var(--text-dark);
+  margin: 0;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-image: radial-gradient(#d8ccaf 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #FDFBF7;
+  border: 4px double var(--primary-color);
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Corner Decorations */
+.container::before, .container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 3px solid var(--primary-color);
+}
+.container::before { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+.container::after { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  border-bottom: 2px dashed var(--gold-border);
+  padding-bottom: 15px;
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 20px;
+  margin-top: 0;
+  border-bottom: 1px solid var(--gold-border);
+  padding-bottom: 5px;
+}
+
+/* Forms and Inputs */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-weight: 600;
+  color: var(--border-color);
+}
+
+input[type="text"], select {
+  font-family: 'Mali', sans-serif;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid var(--gold-border);
+  border-radius: 4px;
+  background-color: #FCF9F2;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, select:focus {
+  border-color: var(--primary-color);
+}
+
+/* Buttons */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid #1b5e20;
+  padding: 12px 24px;
+  font-family: 'Mali', cursive;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 2px 2px 0px #1b5e20;
+  outline: none;
+}
+
+button:hover {
+  background-color: #2e7d32;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #1b5e20;
+}
+
+button.secondary {
+  background-color: #555555;
+  border-color: #333333;
+  box-shadow: 2px 2px 0px #333333;
+}
+
+button.secondary:hover {
+  background-color: #444444;
+}
+
+button:disabled {
+  background-color: #CCCCCC;
+  border-color: #AAAAAA;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Grid Layouts */
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 800px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Choices Panel */
+.choices-panel {
+  background-color: #f1f8e9;
+  border: 2px solid #c5e1a5;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.choices-panel h3 {
+  margin-top: 0;
+  color: #33691e;
+  border-bottom: 1px dashed #c5e1a5;
+  padding-bottom: 5px;
+}
+
+.choice-row {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Question List & Matching selector */
+.question-card {
+  background-color: #fafafa;
+  border: 1.5px solid var(--gold-border);
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.question-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #263238;
+}
+
+.matching-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.match-btn {
+  background: white;
+  border: 2px solid var(--gold-border);
+  color: var(--text-dark);
+  box-shadow: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.match-btn:hover {
+  background: var(--accent);
+  border-color: var(--primary-color);
+}
+
+.match-btn.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: #1b5e20;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.match-btn.disabled {
+  opacity: 0.4;
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
+
+/* Tables */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.student-table th, .student-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E6DBC4;
+}
+
+.student-table th {
+  background-color: #F1ECE0;
+  color: var(--border-color);
+  font-weight: bold;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-badge.waiting { background-color: #ffe082; color: #ff8f00; }
+.status-badge.working { background-color: #bbdefb; color: #1565c0; }
+.status-badge.submitted { background-color: #c8e6c9; color: #2e7d32; }
+
+/* Score badge */
+.score-badge {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 15px 0;
+  text-shadow: 1px 1px 0 #1b5e20;
+}
+
+/* Graded Review Item */
+.graded-card {
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  background: #fafafa;
+}
+
+.graded-card.correct {
+  border-color: #c8e6c9;
+  background-color: #f1f8e9;
+}
+
+.graded-card.incorrect {
+  border-color: #ffcdd2;
+  background-color: #ffebee;
+}
+
+.graded-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.review-section {
+  background: white;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: 1px solid #eee;
+}
+
+.review-row {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.review-row strong {
+  color: #555;
+}
+
+/* Spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.waiting-screen {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.waiting-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
