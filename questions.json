@@ -5,7 +5,7 @@
     "choices": {
       "A": "这个面包好吃极了。你在哪儿买的？",
       "B": "头还疼吗？让我看看还发烧不。",
-      "C": "他感冒了，有点儿发烧。",
+      "C": "你认识那位先生，是吗？",
       "D": "最近天气变化大，早晚很冷，别穿裙子了。",
       "F": "知道了。你也小心点儿。"
     },
@@ -29,13 +29,14 @@
       },
       {
         "index": 1,
-        "question": "那你在家休息几天吧。",
+        "question": "他是我的同事，需要我为你介绍一下吗？",
         "answer": "C",
-        "pinyin": "Nà nǐ zài jiā xiū xi jǐ tiān ba.",
-        "vietnamese": "Vậy bạn ở nhà nghỉ ngơi vài ngày đi.",
-        "explanation": "Lời khuyên ở nhà nghỉ ngơi (休息) cực kỳ hợp lý khi bị bệnh cảm cúm (感冒), sốt (发烧).",
+        "pinyin": "Tā shì wǒ de tóng shì, xū yào wǒ wèi nǐ jiè shào yí xià ma?",
+        "vietnamese": "Anh ấy là đồng nghiệp của tôi, có cần tôi giới thiệu cho bạn một chút không?",
+        "explanation": "Mẹo: Tìm mối liên hệ chủ đề. Câu hỏi nhắc đến '同事' (đồng nghiệp) và '介绍' (giới thiệu), rất phù hợp với câu lựa chọn '认识那位先生' (quen biết vị tiên sinh kia).",
         "highlights": [
-          "休息"
+          "同事",
+          "介绍"
         ]
       },
       {
