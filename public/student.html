@@ -151,6 +151,7 @@
     let example = {};
     let studentAnswers = []; // [ { q_index: 0, user_answer: '' } ]
     let lastServerMsg = null;
+    let activeSetId = '';
 
     let currentIdx = 0;
     let examStartTime = 0;
@@ -210,6 +211,7 @@
         choices = msg.choices;
         questions = msg.questions;
         example = msg.example;
+        activeSetId = msg.setId || '';
 
         // Start timer
         examStartTime = Date.now();
@@ -270,12 +272,13 @@
 
     function renderExam() {
       const isPart3 = !!(questions && questions.length > 0 && questions[0].paragraph);
+      const isListening = !!(questions && questions.length > 0 && questions[0].audio);
 
       // 1. Show/Hide Choices Box and Example Label
-      document.getElementById('exam-choices-panel').style.display = isPart3 ? 'none' : 'block';
-      document.getElementById('exam-example-parent').style.display = isPart3 ? 'none' : 'block';
+      document.getElementById('exam-choices-panel').style.display = (isPart3 || isListening) ? 'none' : 'block';
+      document.getElementById('exam-example-parent').style.display = (isPart3 || isListening) ? 'none' : 'block';
 
-      if (!isPart3) {
+      if (!isPart3 && !isListening) {
         // Render Choices Box
         const choicesPanel = document.getElementById('exam-choices-panel');
         choicesPanel.innerHTML = '<h3>Khung Lựa Chọn</h3>';
@@ -343,6 +346,103 @@
           optionsList.appendChild(optRow);
         });
         card.appendChild(optionsList);
+      } else if (isListening) {
+        // Render content (HTML of shared image) if available
+        if (q.content) {
+          const contentDiv = document.createElement('div');
+          contentDiv.style.marginBottom = '15px';
+          contentDiv.innerHTML = q.content;
+          card.appendChild(contentDiv);
+        }
+
+        // Render audio control box
+        const audioDiv = document.createElement('div');
+        audioDiv.className = 'audio-control-box';
+        audioDiv.style.display = 'flex';
+        audioDiv.style.flexDirection = 'column';
+        audioDiv.style.alignItems = 'center';
+        audioDiv.style.justifyContent = 'center';
+        audioDiv.style.background = '#e3f2fd';
+        audioDiv.style.border = '2px solid #90caf9';
+        audioDiv.style.borderRadius = '12px';
+        audioDiv.style.padding = '20px';
+        audioDiv.style.marginBottom = '25px';
+        audioDiv.style.gap = '10px';
+
+        const playKey = `playCount_${activeSetId}_${q.index}`;
+        let playCount = parseInt(localStorage.getItem(playKey) || '0');
+
+        const label = document.createElement('div');
+        label.style.fontWeight = 'bold';
+        label.style.fontSize = '16px';
+        label.style.color = '#1565c0';
+        label.innerText = `Lượt nghe của em: ${playCount} / 2`;
+
+        const playBtn = document.createElement('button');
+        playBtn.className = 'btn-control';
+        playBtn.style.padding = '12px 24px';
+        playBtn.style.fontSize = '17px';
+        playBtn.style.fontWeight = 'bold';
+        playBtn.style.cursor = 'pointer';
+        playBtn.style.borderRadius = '30px';
+        playBtn.style.border = 'none';
+        playBtn.style.transition = '0.2s';
+        playBtn.style.background = 'var(--primary-color)';
+        playBtn.style.color = 'white';
+
+        if (playCount >= 2) {
+          playBtn.innerText = '🚫 Đã hết lượt nghe';
+          playBtn.disabled = true;
+          playBtn.style.background = '#ccc';
+          playBtn.style.cursor = 'not-allowed';
+        } else {
+          playBtn.innerText = `🔈 Nghe lần ${playCount + 1}`;
+        }
+
+        let isPlaying = false;
+        let currentAudio = null;
+
+        playBtn.onclick = () => {
+          if (isPlaying || playCount >= 2) return;
+
+          playCount++;
+          localStorage.setItem(playKey, playCount.toString());
+          label.innerText = `Lượt nghe của em: ${playCount} / 2`;
+          playBtn.innerText = '🔊 Đang phát...';
+          playBtn.disabled = true;
+          playBtn.style.background = '#f57c00';
+          isPlaying = true;
+
+          currentAudio = new Audio(q.audio);
+          currentAudio.play().catch(err => {
+            console.error('Audio play failed:', err);
+            isPlaying = false;
+            playBtn.disabled = false;
+            playBtn.style.background = 'var(--primary-color)';
+            playBtn.innerText = `🔈 Nghe lần ${playCount}`;
+            playCount--;
+            localStorage.setItem(playKey, playCount.toString());
+            label.innerText = `Lượt nghe của em: ${playCount} / 2`;
+          });
+
+          currentAudio.onended = () => {
+            isPlaying = false;
+            if (playCount >= 2) {
+              playBtn.innerText = '🚫 Đã hết lượt nghe';
+              playBtn.disabled = true;
+              playBtn.style.background = '#ccc';
+              playBtn.style.cursor = 'not-allowed';
+            } else {
+              playBtn.disabled = false;
+              playBtn.style.background = 'var(--primary-color)';
+              playBtn.innerText = `🔈 Nghe lần ${playCount + 1}`;
+            }
+          };
+        };
+
+        audioDiv.appendChild(label);
+        audioDiv.appendChild(playBtn);
+        card.appendChild(audioDiv);
       } else {
         const textDiv = document.createElement('div');
         textDiv.className = 'question-text';
@@ -356,7 +456,7 @@
       const ansObj = studentAnswers.find(a => a.q_index === q.index);
       const selectedLetter = ansObj ? ansObj.user_answer : '';
 
-      const btnOptions = isPart3 ? ['A', 'B', 'C'] : ['A', 'B', 'C', 'D', 'F'];
+      const btnOptions = isListening ? ['A', 'B', 'C', 'D', 'E', 'F'] : (isPart3 ? ['A', 'B', 'C'] : ['A', 'B', 'C', 'D', 'F']);
       btnOptions.forEach(letter => {
         const btn = document.createElement('button');
         btn.className = 'match-btn';
@@ -443,10 +543,12 @@
 
     function renderSummaryBar() {
       const isPart3 = !!(questions && questions.length > 0 && questions[0].paragraph);
+      const isListening = !!(questions && questions.length > 0 && questions[0].audio);
+      const bypassDuplicateCheck = isPart3 || isListening;
 
-      // Calculate selection counts to check duplicates (only if not Part 3)
+      // Calculate selection counts to check duplicates (only if not bypassed)
       const counts = {};
-      if (!isPart3) {
+      if (!bypassDuplicateCheck) {
         studentAnswers.forEach(ans => {
           if (ans.user_answer) {
             counts[ans.user_answer] = (counts[ans.user_answer] || 0) + 1;
@@ -457,7 +559,7 @@
       // Update Active Card warning color if current answer has duplicate
       const activeCard = document.getElementById('q-card-active');
       const activeAns = studentAnswers.find(a => a.q_index === currentIdx).user_answer;
-      if (!isPart3 && activeAns && counts[activeAns] > 1) {
+      if (!bypassDuplicateCheck && activeAns && counts[activeAns] > 1) {
         activeCard.style.borderColor = 'var(--error-red)';
         activeCard.style.backgroundColor = '#ffebee';
       } else {
@@ -480,7 +582,7 @@
         }
 
         if (ans) {
-          if (!isPart3 && counts[ans] > 1) {
+          if (!bypassDuplicateCheck && counts[ans] > 1) {
             badge.classList.add('duplicate');
             badge.innerText = `Câu ${idx + 1} [${ans} ⚠️]`;
           } else {
@@ -575,25 +677,53 @@
         reviewSec.className = 'review-section';
 
         let questionHtml = d.paragraph ? `${d.paragraph}<br><span style="color: var(--primary-color);">${d.question}</span>` : d.question;
+        let highlightedTranscript = d.transcript || '';
+
+        const targetTextForHighlight = d.audio ? highlightedTranscript : questionHtml;
+        let finalHighlightedText = targetTextForHighlight;
 
         if (d.highlights && d.highlights.length > 0) {
           d.highlights.forEach(word => {
             if (word) {
               const regex = new RegExp(word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g');
-              questionHtml = questionHtml.replace(regex, `<span style="color: var(--error-red); font-weight: bold; text-decoration: underline;">${word}</span>`);
+              finalHighlightedText = finalHighlightedText.replace(regex, `<span style="color: var(--error-red); font-weight: bold; text-decoration: underline;">${word}</span>`);
             }
           });
         }
 
-        reviewSec.innerHTML = `
-          <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
-            <strong>Câu hỏi gốc:</strong><br>
-            <span class="chinese-text" style="font-size: 18px; font-weight: bold; line-height: 1.5; display: block; margin-top: 4px; color: #111;">${questionHtml}</span>
-          </div>
-          <div class="review-row"><strong>Đáp án đúng:</strong> [${d.correctAnswer}] &mdash; ${d.choiceText}</div>
-          <div class="review-row" style="color: var(--error-red);"><strong>Dịch nghĩa câu hỏi:</strong> ${d.vietnamese}</div>
-          <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích mẹo:</strong> ${d.explanation}</div>
-        `;
+        if (d.audio) {
+          highlightedTranscript = finalHighlightedText;
+          questionHtml = d.content ? `${d.content}` : '';
+          questionHtml += `<audio controls src="${d.audio}" style="width: 100%; margin-top: 10px; max-height: 40px;"></audio>`;
+        } else {
+          questionHtml = finalHighlightedText;
+        }
+
+        if (d.audio) {
+          reviewSec.innerHTML = `
+            <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+              <strong>Hình ảnh & Âm thanh nghe lại:</strong><br>
+              ${questionHtml}
+            </div>
+            <div class="review-row" style="margin-bottom: 12px; background: #fffde7; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #fbc02d;">
+              <strong>Script nghe chữ Hán:</strong><br>
+              <span class="chinese-text" style="font-size: 18px; font-weight: bold; line-height: 1.5; display: block; margin-top: 4px; color: #111;">${highlightedTranscript.replace(/\n/g, '<br>')}</span>
+            </div>
+            <div class="review-row"><strong>Đáp án đúng:</strong> [${d.correctAnswer}]</div>
+            <div class="review-row" style="color: var(--error-red);"><strong>Dịch nghĩa Script:</strong><br>${d.vietnamese.replace(/\n/g, '<br>')}</div>
+            <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích mẹo:</strong> ${d.explanation}</div>
+          `;
+        } else {
+          reviewSec.innerHTML = `
+            <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+              <strong>Câu hỏi gốc:</strong><br>
+              <span class="chinese-text" style="font-size: 18px; font-weight: bold; line-height: 1.5; display: block; margin-top: 4px; color: #111;">${questionHtml}</span>
+            </div>
+            <div class="review-row"><strong>Đáp án đúng:</strong> [${d.correctAnswer}] &mdash; ${d.choiceText}</div>
+            <div class="review-row" style="color: var(--error-red);"><strong>Dịch nghĩa câu hỏi:</strong> ${d.vietnamese}</div>
+            <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích mẹo:</strong> ${d.explanation}</div>
+          `;
+        }
 
         card.appendChild(reviewSec);
         detailsContainer.appendChild(card);

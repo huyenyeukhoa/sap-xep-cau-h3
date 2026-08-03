@@ -675,5 +675,160 @@
         ]
       }
     ]
+  },
+  {
+    "setId": "listen_set_1",
+    "setName": "Bộ Đề Luyện Nghe HSK 3 - Phần 1 (Bộ 1)",
+    "isListening": true,
+    "choices": {
+      "A": "Hình A",
+      "B": "Hình B",
+      "C": "Hình C",
+      "D": "Hình D",
+      "E": "Hình E",
+      "F": "Hình F"
+    },
+    "example": {
+      "question": "★ Ví dụ mẫu (Nghe):",
+      "answer": "E",
+      "text": "E. (Ví dụ mẫu)"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 1 (Nghe)",
+        "answer": "B",
+        "audio": "audio/hsk3_listen_q1.mp3",
+        "transcript": "女：你一直看手表，有什么着急的事情吗？\n男：我九点前必须回到办公室，经理有事情找我，再见。",
+        "vietnamese": "Nữ: Anh cứ nhìn đồng hồ đeo tay mãi, có chuyện gì vội à?\nNam: Tôi phải về văn phòng trước chín giờ, giám đốc có việc tìm tôi, tạm biệt.",
+        "explanation": "Mẹo: Trong đoạn hội thoại có nhắc đến 手表 (shǒubiǎo - đồng hồ đeo tay). Trong ảnh nhóm 1, hình B vẽ một người đàn ông đang xem đồng hồ đeo tay. Do đó, đáp án đúng là B.",
+        "highlights": [
+          "手表",
+          "看手表"
+        ]
+      },
+      {
+        "index": 1,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 2 (Nghe)",
+        "answer": "A",
+        "audio": "audio/hsk3_listen_q2.mp3",
+        "transcript": "男：听说你最近买了一只小狗，它长什么样？\n女：它全身都是白色的，眼睛特别大，非常可爱。",
+        "vietnamese": "Nam: Nghe nói dạo này bạn mới mua một chú chó nhỏ, nó trông thế nào?\nNữ: Nó toàn thân màu trắng, mắt đặc biệt to, rất dễ thương.",
+        "explanation": "Mẹo: Từ khóa chính là 小狗 (xiǎogǒu - chó nhỏ) và 白色 (báisè - màu trắng). Hình A vẽ một chú chó con màu trắng rất đáng yêu. Do đó, đáp án đúng là A.",
+        "highlights": [
+          "小狗",
+          "白色"
+        ]
+      },
+      {
+        "index": 2,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 3 (Nghe)",
+        "answer": "C",
+        "audio": "audio/hsk3_listen_q3.mp3",
+        "transcript": "女：天冷了，多吃点羊肉，对身体好。\n男：好的，谢谢阿姨，那我就不客气了。",
+        "vietnamese": "Nữ: Trời lạnh rồi, ăn nhiều thịt dê một chút, tốt cho sức khỏe.\nNam: Vâng, cảm ơn dì, thế cháu không khách sáo nữa đâu ạ.",
+        "explanation": "Mẹo: Từ khóa chính là 羊肉 (yángròu - thịt dê). Hình C biểu thị một nồi thịt ấm nóng hoặc món ăn liên quan. Do đó, đáp án đúng là C.",
+        "highlights": [
+          "羊肉"
+        ]
+      },
+      {
+        "index": 3,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 4 (Nghe)",
+        "answer": "D",
+        "audio": "audio/hsk3_listen_q4.mp3",
+        "transcript": "男：这块蛋糕是谁做的？真甜，味道棒极了。\n女：是我姐姐自己做的，如果你喜欢吃，就多吃一点吧。",
+        "vietnamese": "Nam: Chiếc bánh ngọt này là ai làm vậy? Thật ngọt, mùi vị tuyệt vời quá.\nNữ: Là chị gái tớ tự làm đấy, nếu cậu thích ăn thì ăn nhiều thêm một chút đi.",
+        "explanation": "Mẹo: Từ khóa chính là 蛋糕 (dàngāo - bánh ngọt/bánh kem). Hình D vẽ một chiếc bánh kem. Do đó, đáp án đúng là D.",
+        "highlights": [
+          "蛋糕"
+        ]
+      },
+      {
+        "index": 4,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 5 (Nghe)",
+        "answer": "F",
+        "audio": "audio/hsk3_listen_q5.mp3",
+        "transcript": "女：你今天怎么穿裙子了？平时不是喜欢穿裤子吗？\n男：今天晚上我们要去参加一个朋友的生日晚会，所以穿得漂亮一点。",
+        "vietnamese": "Nữ: Hôm nay sao cậu lại mặc váy rồi? Bình thường chẳng phải thích mặc quần sao?\nNam: Tối nay chúng tớ đi tham gia tiệc sinh nhật một người bạn, nên mặc đẹp một chút.",
+        "explanation": "Mẹo: Từ khóa chính là 裙子 (qúnzi - váy/đầm). Hình F vẽ một cô gái đang mặc váy đầm xinh xắn. Do đó, đáp án đúng là F.",
+        "highlights": [
+          "裙子"
+        ]
+      },
+      {
+        "index": 5,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 6 (Nghe)",
+        "answer": "B",
+        "audio": "audio/hsk3_listen_q6.mp3",
+        "transcript": "男：喂，你到哪儿了？大家都在等你呢。\n女：别急，我刚下地铁，步行大概五分钟就到饭馆了。",
+        "vietnamese": "Nam: Alo, cậu đến đâu rồi? Mọi người đang đợi cậu kìa.\nNữ: Đừng vội, tớ vừa xuống tàu điện ngầm, đi bộ tầm 5 phút là tới quán ăn rồi.",
+        "explanation": "Mẹo: Từ khóa chính là 地铁 (dìtiě - tàu điện ngầm). Trong ảnh nhóm 2, hình B vẽ ga tàu điện ngầm hoặc người đi tàu điện ngầm. Do đó, đáp án đúng là B.",
+        "highlights": [
+          "地铁",
+          "下地铁"
+        ]
+      },
+      {
+        "index": 6,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 7 (Nghe)",
+        "answer": "A",
+        "audio": "audio/hsk3_listen_q7.mp3",
+        "transcript": "女：你刚才去哪儿了？我打你手机一直没人接。\n男：对不起，我刚才去洗手间了，手机放在桌子上没带过去。",
+        "vietnamese": "Nữ: Vừa nãy anh đi đâu thế? Em gọi điện thoại mãi không thấy ai nghe máy.\nNam: Xin lỗi nhé, vừa nãy anh đi nhà vệ sinh, điện thoại để trên bàn không mang theo.",
+        "explanation": "Mẹo: Từ khóa chính là 手机 (shǒujī - điện thoại di động) và 桌子上 (zhuōzi shàng - trên bàn). Hình A vẽ một chiếc điện thoại di động để trên bàn. Do đó, đáp án đúng là A.",
+        "highlights": [
+          "手机",
+          "桌子上"
+        ]
+      },
+      {
+        "index": 7,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 8 (Nghe)",
+        "answer": "C",
+        "audio": "audio/hsk3_listen_q8.mp3",
+        "transcript": "男：服务员，我的这双筷子太脏了，能帮我换一双新的吗？\n女：好的，先生，请您稍等一下，我马上给您拿过来。",
+        "vietnamese": "Nam: Phục vụ ơi, đôi đũa này của tôi bẩn quá, có thể đổi giúp tôi đôi mới không?\nNữ: Dạ vâng, thưa ông, xin ông vui lòng đợi một chút, tôi mang lại ngay đây ạ.",
+        "explanation": "Mẹo: Từ khóa chính là 筷子 (kuàizi - đôi đũa). Hình C vẽ đôi đũa. Do đó, đáp án đúng là C.",
+        "highlights": [
+          "筷子"
+        ]
+      },
+      {
+        "index": 8,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 9 (Nghe)",
+        "answer": "D",
+        "audio": "audio/hsk3_listen_q9.mp3",
+        "transcript": "女：你昨晚几点睡觉的？怎么今天上课一直打哈欠？\n男：昨晚写作业，熬夜到两点，现在头还有点儿疼呢。",
+        "vietnamese": "Nữ: Tối qua cậu ngủ lúc mấy giờ thế? Sao hôm nay lên lớp cứ ngáp ngủ suốt vậy?\nNam: Tối qua viết bài tập, thức đêm đến 2 giờ, bây giờ đầu vẫn hơi đau đây.",
+        "explanation": "Mẹo: Từ khóa chính là 写作业 (xiě zuòyè - làm bài tập) và 打哈欠 (dǎ hāqian - ngáp ngủ). Hình D vẽ học sinh mệt mỏi học bài hoặc ngủ gật. Do đó, đáp án đúng là D.",
+        "highlights": [
+          "写作业",
+          "打哈欠"
+        ]
+      },
+      {
+        "index": 9,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 10 (Nghe)",
+        "answer": "E",
+        "audio": "audio/hsk3_listen_q10.mp3",
+        "transcript": "男：阿姨，我记得以前这里没有这条马路啊？\n女：对，这是今年刚建好的，比以前方便多了，去超市只要十分钟。",
+        "vietnamese": "Nam: Dì ơi, cháu nhớ trước đây ở chỗ này đâu có con đường này nhỉ?\nDì: Đúng thế, con đường này mới xây xong năm nay đấy, tiện hơn trước rất nhiều, đi siêu thị chỉ mất 10 phút.",
+        "explanation": "Mẹo: Từ khóa chính là 马路 (mǎlù - đường lộ/đường cái). Hình E vẽ hình ảnh đường sá. Do đó, đáp án đúng là E.",
+        "highlights": [
+          "马路"
+        ]
+      }
+    ]
   }
 ]

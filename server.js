@@ -164,11 +164,14 @@ wss.on('connection', (ws, req) => {
               type: 'START_EXAM',
               choices: activeChoices,
               example: activeExample,
+              setId: activeSetId,
               questions: activeQuestions.map(q => ({
                 index: q.index,
                 question: q.question,
                 paragraph: q.paragraph,
-                options: q.options
+                options: q.options,
+                audio: q.audio,
+                content: q.content
               }))
             });
 
@@ -207,12 +210,15 @@ wss.on('connection', (ws, req) => {
                 pinyin: q.pinyin,
                 vietnamese: q.vietnamese,
                 explanation: q.explanation,
-                choiceText: q.options ? q.options[q.answer] : (activeChoices[q.answer] || "")
+                choiceText: q.options ? q.options[q.answer] : (activeChoices[q.answer] || ""),
+                audio: q.audio,
+                transcript: q.transcript,
+                content: q.content
               });
             });
 
-            // Score out of 10 (each question is 2 points since there are 5 questions)
-            const finalScore = correctCount * 2;
+            // Score out of 10 dynamically (rounded to 1 decimal place)
+            const finalScore = activeQuestions.length > 0 ? Math.round((correctCount / activeQuestions.length) * 10 * 10) / 10 : 0;
 
             student.score = finalScore;
             student.gradedDetails = details;
