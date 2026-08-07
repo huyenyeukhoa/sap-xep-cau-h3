@@ -73,7 +73,8 @@
           "自己做的"
         ]
       }
-    ]
+    ],
+    "level": "HSK3"
   },
   {
     "setId": "set_2",
@@ -149,7 +150,8 @@
           "借走"
         ]
       }
-    ]
+    ],
+    "level": "HSK3"
   },
   {
     "setId": "set_3",
@@ -224,7 +226,8 @@
           "太饱"
         ]
       }
-    ]
+    ],
+    "level": "HSK3"
   },
   {
     "setId": "set_4",
@@ -300,7 +303,8 @@
           "杯子"
         ]
       }
-    ]
+    ],
+    "level": "HSK3"
   },
   {
     "setId": "set_5",
@@ -384,7 +388,8 @@
           "有好"
         ]
       }
-    ]
+    ],
+    "level": "HSK3"
   },
   {
     "setId": "set_6",
@@ -467,7 +472,8 @@
           "再"
         ]
       }
-    ]
+    ],
+    "level": "HSK3"
   },
   {
     "setId": "set_7",
@@ -571,7 +577,8 @@
           "8月"
         ]
       }
-    ]
+    ],
+    "level": "HSK3"
   },
   {
     "setId": "set_8",
@@ -674,11 +681,12 @@
           "使她突然想起了很多过去的事情"
         ]
       }
-    ]
+    ],
+    "level": "HSK3"
   },
   {
-    "setId": "listen_set_1",
-    "setName": "Bộ Đề Luyện Nghe HSK 3 - Phần 1 (Bộ 1)",
+    "setId": "listen_set_2",
+    "setName": "Nghe HSK 3 - Đề 1 (Câu 6-10)",
     "isListening": true,
     "choices": {
       "A": "Hình A",
@@ -690,143 +698,3023 @@
     },
     "example": {
       "question": "★ Ví dụ mẫu (Nghe):",
-      "answer": "E",
-      "text": "E. (Ví dụ mẫu)"
+      "answer": "F",
+      "text": "F. (Ví dụ mẫu)"
     },
     "questions": [
       {
         "index": 0,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 1 (Nghe)",
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_6_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 6 (Nghe)",
         "answer": "B",
-        "audio": "audio/hsk3_listen_q1.mp3",
-        "transcript": "女：你一直看手表，有什么着急的事情吗？\n男：我九点前必须回到办公室，经理有事情找我，再见。",
-        "vietnamese": "Nữ: Anh cứ nhìn đồng hồ đeo tay mãi, có chuyện gì vội à?\nNam: Tôi phải về văn phòng trước chín giờ, giám đốc có việc tìm tôi, tạm biệt.",
-        "explanation": "Mẹo: Trong đoạn hội thoại có nhắc đến 手表 (shǒubiǎo - đồng hồ đeo tay). Trong ảnh nhóm 1, hình B vẽ một người đàn ông đang xem đồng hồ đeo tay. Do đó, đáp án đúng là B.",
+        "audio": "audio/de6_q6.mp3",
+        "transcript": "男：他总是哭，有什么办法可以让他不哭吗？\n女：给他一块儿糖，或者和他做游戏。",
+        "vietnamese": "Nam: Thằng bé cứ khóc suốt, có cách nào làm nó nín khóc không?\nNữ: Cho nó một viên kẹo, hoặc là chơi trò chơi với nó.",
+        "explanation": "Mẹo: Từ khóa chính là 哭 (kū - khóc), 糖 (táng - kẹo), 做游戏 (zuò yóu xì - chơi trò chơi). Hình B vẽ một em bé đang khóc hoặc được dỗ dành bằng kẹo/trò chơi. Do đó, đáp án đúng là B.",
         "highlights": [
-          "手表",
-          "看手表"
+          "哭",
+          "糖",
+          "做游戏"
         ]
       },
       {
         "index": 1,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 2 (Nghe)",
-        "answer": "A",
-        "audio": "audio/hsk3_listen_q2.mp3",
-        "transcript": "男：听说你最近买了一只小狗，它长什么样？\n女：它全身都是白色的，眼睛特别大，非常可爱。",
-        "vietnamese": "Nam: Nghe nói dạo này bạn mới mua một chú chó nhỏ, nó trông thế nào?\nNữ: Nó toàn thân màu trắng, mắt đặc biệt to, rất dễ thương.",
-        "explanation": "Mẹo: Từ khóa chính là 小狗 (xiǎogǒu - chó nhỏ) và 白色 (báisè - màu trắng). Hình A vẽ một chú chó con màu trắng rất đáng yêu. Do đó, đáp án đúng là A.",
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_6_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 7 (Nghe)",
+        "answer": "C",
+        "audio": "audio/de6_q7.mp3",
+        "transcript": "女：这个电子词典的作用大不大？\n男：很大，我做练习的时候，它很有帮助。",
+        "vietnamese": "Nữ: Chiếc từ điển điện tử này tác dụng có lớn không?\nNam: Rất lớn, lúc anh làm bài tập nó giúp ích rất nhiều.",
+        "explanation": "Mẹo: Từ khóa chính là 电子词典 (diànzǐ cídiǎn - từ điển điện tử). Hình C vẽ chiếc từ điển điện tử. Do đó, đáp án đúng là C.",
         "highlights": [
-          "小狗",
-          "白色"
+          "电子词典"
         ]
       },
       {
         "index": 2,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 3 (Nghe)",
-        "answer": "C",
-        "audio": "audio/hsk3_listen_q3.mp3",
-        "transcript": "女：天冷了，多吃点羊肉，对身体好。\n男：好的，谢谢阿姨，那我就不客气了。",
-        "vietnamese": "Nữ: Trời lạnh rồi, ăn nhiều thịt dê một chút, tốt cho sức khỏe.\nNam: Vâng, cảm ơn dì, thế cháu không khách sáo nữa đâu ạ.",
-        "explanation": "Mẹo: Từ khóa chính là 羊肉 (yángròu - thịt dê). Hình C biểu thị một nồi thịt ấm nóng hoặc món ăn liên quan. Do đó, đáp án đúng là C.",
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_6_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 8 (Nghe)",
+        "answer": "A",
+        "audio": "audio/de6_q8.mp3",
+        "transcript": "男：眼镜，帽子，地图，啤酒，一个也不能少。\n女：好了，准备得很认真，我相信你已经准备好了。",
+        "vietnamese": "Nam: Kính mắt, mũ, bản đồ, bia, một thứ cũng không được thiếu.\nNữ: Được rồi, chuẩn bị rất nghiêm túc, em tin anh đã chuẩn bị sẵn sàng rồi.",
+        "explanation": "Mẹo: Liệt kê các đồ dùng chuẩn bị đi du lịch/dã ngoại như 眼镜 (mắt kính), 帽子 (mũ), 地图 (bản đồ), 啤酒 (bia). Hình A vẽ các đồ dùng này. Do đó, đáp án đúng là A.",
         "highlights": [
-          "羊肉"
+          "眼镜",
+          "帽子",
+          "地图",
+          "啤酒"
         ]
       },
       {
         "index": 3,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 4 (Nghe)",
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_6_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 9 (Nghe)",
         "answer": "D",
-        "audio": "audio/hsk3_listen_q4.mp3",
-        "transcript": "男：这块蛋糕是谁做的？真甜，味道棒极了。\n女：是我姐姐自己做的，如果你喜欢吃，就多吃一点吧。",
-        "vietnamese": "Nam: Chiếc bánh ngọt này là ai làm vậy? Thật ngọt, mùi vị tuyệt vời quá.\nNữ: Là chị gái tớ tự làm đấy, nếu cậu thích ăn thì ăn nhiều thêm một chút đi.",
-        "explanation": "Mẹo: Từ khóa chính là 蛋糕 (dàngāo - bánh ngọt/bánh kem). Hình D vẽ một chiếc bánh kem. Do đó, đáp án đúng là D.",
+        "audio": "audio/de6_q9.mp3",
+        "transcript": "女：我做饭，你洗盘子和碗，怎么样？\n男：那还是我做饭吧，我愿意做饭。",
+        "vietnamese": "Nữ: Em nấu cơm, anh rửa đĩa và bát nhé, thế nào?\nNam: Thế thì thà anh nấu cơm còn hơn, anh tình nguyện nấu cơm.",
+        "explanation": "Mẹo: Từ khóa chính là 做饭 (zuò fàn - nấu cơm) và 洗盘子和碗 (xǐ pánzi hé wǎn - rửa bát đĩa). Hình D liên quan đến công việc nhà hoặc ăn uống. Do đó, đáp án đúng là D.",
         "highlights": [
-          "蛋糕"
+          "做饭",
+          "洗盘子",
+          "碗"
         ]
       },
       {
         "index": 4,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_1.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 5 (Nghe)",
-        "answer": "F",
-        "audio": "audio/hsk3_listen_q5.mp3",
-        "transcript": "女：你今天怎么穿裙子了？平时不是喜欢穿裤子吗？\n男：今天晚上我们要去参加一个朋友的生日晚会，所以穿得漂亮一点。",
-        "vietnamese": "Nữ: Hôm nay sao cậu lại mặc váy rồi? Bình thường chẳng phải thích mặc quần sao?\nNam: Tối nay chúng tớ đi tham gia tiệc sinh nhật một người bạn, nên mặc đẹp một chút.",
-        "explanation": "Mẹo: Từ khóa chính là 裙子 (qúnzi - váy/đầm). Hình F vẽ một cô gái đang mặc váy đầm xinh xắn. Do đó, đáp án đúng là F.",
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_6_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 10 (Nghe)",
+        "answer": "E",
+        "audio": "audio/de6_q10.mp3",
+        "transcript": "男：告诉我你想看什么节目。\n女：没什么好看的，我还是读我的书吧。",
+        "vietnamese": "Nam: Nói cho anh biết em muốn xem chương trình gì đi.\nNữ: Chẳng có gì hay cả, em thà đọc sách của em còn hơn.",
+        "explanation": "Mẹo: Từ khóa chính là 读我的书 (dú wǒ de shū - đọc sách của tôi). Hình E vẽ hình ảnh đọc sách. Do đó, đáp án đúng là E.",
         "highlights": [
-          "裙子"
+          "读我的书",
+          "书"
+        ]
+      }
+    ],
+    "level": "HSK3"
+  },
+  {
+    "setId": "listen_set_3",
+    "setName": "Nghe HSK 3 - Đề 2 (Câu 6-10)",
+    "isListening": true,
+    "choices": {
+      "A": "Hình A",
+      "B": "Hình B",
+      "C": "Hình C",
+      "D": "Hình D",
+      "E": "Hình E",
+      "F": "Hình F"
+    },
+    "example": {
+      "question": "★ Ví dụ mẫu (Nghe):",
+      "answer": "F",
+      "text": "F. (Ví dụ mẫu)"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_12_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 6 (Nghe)",
+        "answer": "C",
+        "audio": "audio/de12_q6.mp3",
+        "transcript": "男：这是女儿想要的那种鞋吧？\n女：不是，不是这种，女儿喜欢那种上面有小动物的。",
+        "vietnamese": "Nam: Đây là kiểu giày mà con gái muốn đúng không?\nNữ: Không phải, không phải kiểu này, con gái thích loại trên đó có con vật nhỏ cơ.",
+        "explanation": "Mẹo: Từ khóa chính là 鞋 (xié - giày) và 小动物 (xiǎo dòngwù - động vật nhỏ). Hình C vẽ đôi giày. Do đó, đáp án đúng là C.",
+        "highlights": [
+          "鞋",
+          "小动物"
+        ]
+      },
+      {
+        "index": 1,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_12_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 7 (Nghe)",
+        "answer": "B",
+        "audio": "audio/de12_q7.mp3",
+        "transcript": "女：不要一边走一边看，对眼睛不好。\n男：好的，我上了飞机再看。",
+        "vietnamese": "Nữ: Đừng vừa đi vừa xem, không tốt cho mắt đâu.\nNam: Vâng, em lên máy bay rồi mới xem.",
+        "explanation": "Mẹo: Từ khóa chính là 飞机 (fēijī - máy bay) và 一边走一边看 (vừa đi vừa xem). Hình B liên quan đến đi lại hoặc máy bay. Do đó, đáp án đúng là B.",
+        "highlights": [
+          "一边走一边看",
+          "飞机"
+        ]
+      },
+      {
+        "index": 2,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_12_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 8 (Nghe)",
+        "answer": "A",
+        "audio": "audio/de12_q8.mp3",
+        "transcript": "男：洗手间里放的是什么花儿？\n女：那不是花儿，是一种草，昨天朋友送我的。",
+        "vietnamese": "Nam: Ở trong nhà vệ sinh đặt hoa gì thế?\nNữ: Đó không phải là hoa, là một loại cỏ, hôm qua bạn tặng mình đấy.",
+        "explanation": "Mẹo: Từ khóa chính là 洗手间 (xǐshǒujiān - nhà vệ sinh), 花儿 (huā'er - hoa), 草 (cǎo - cỏ). Hình A vẽ chậu cỏ/cây cảnh nhỏ. Do đó, đáp án đúng là A.",
+        "highlights": [
+          "洗手间",
+          "花儿",
+          "草"
+        ]
+      },
+      {
+        "index": 3,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_12_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 9 (Nghe)",
+        "answer": "E",
+        "audio": "audio/de12_q9.mp3",
+        "transcript": "女：我的电脑突然不能上网了，是不是又坏了？\n男：别担心，我来看看，应该不是电脑的问题。",
+        "vietnamese": "Nữ: Máy tính của em đột nhiên không lên mạng được, có phải lại hỏng rồi không?\nNam: Đừng lo, để anh xem thử, chắc không phải vấn đề của máy tính đâu.",
+        "explanation": "Mẹo: Từ khóa chính là 电脑 (diànnǎo - máy tính) và 不能上网 (bùnéng shàngwǎng - không lên mạng được). Hình E vẽ hình ảnh máy tính. Do đó, đáp án đúng là E.",
+        "highlights": [
+          "电脑",
+          "不能上网"
+        ]
+      },
+      {
+        "index": 4,
+        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"images/De_12_Listening_Part1_Questions_6_10.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
+        "question": "★ Câu 10 (Nghe)",
+        "answer": "D",
+        "audio": "audio/de12_q10.mp3",
+        "transcript": "男：这是给你的礼物，打开看看喜不喜欢？\n女：我还以为你忘了我的生日了，谢谢你！",
+        "vietnamese": "Nam: Đây là quà tặng em, mở ra xem thử có thích không?\nNữ: Em cứ tưởng anh quên sinh nhật em rồi chứ, cảm ơn anh nhé!",
+        "explanation": "Mẹo: Từ khóa chính là 礼物 (lǐwù - quà tặng) và 生日 (shēngrì - sinh nhật). Hình D vẽ hộp quà tặng xinh xắn. Do đó, đáp án đúng là D.",
+        "highlights": [
+          "礼物",
+          "生日"
+        ]
+      }
+    ],
+    "level": "HSK3"
+  },
+  {
+    "setId": "listen_set_4",
+    "setName": "Nghe HSK 3 - Đề 2 - Phần 2 (Câu 11-15)",
+    "isListening": true,
+    "questions": [
+      {
+        "index": 0,
+        "isListeningPart2": true,
+        "question": "★ 果汁是刚买的。",
+        "answer": "错",
+        "audio": "audio/de2_p2_q11.mp3",
+        "transcript": "这是我自己做的面包，果汁也是我自己用水果做的，你多来点儿，别客气。",
+        "pinyin": "Zhè shì wǒ zì jǐ zuò de miàn bāo, guǒ zhī yě shì wǒ zì jǐ yòng shuǐ guǒ zuò de, nǐ duō lái diǎnr, bié kè qi.",
+        "vietnamese": "Đây là bánh mì tự tay tôi làm, nước trái cây cũng là tôi tự làm từ hoa quả đấy, bạn dùng nhiều một chút nhé, đừng khách sáo.",
+        "explanation": "Mẹo: Tìm từ đồng nghĩa/trái nghĩa. Script ghi rõ: '果汁也是我自己...做的' (nước trái cây cũng là do tôi tự làm), mâu thuẫn hoàn toàn với khẳng định '刚买的' (vừa mới mua). Do đó đáp án là SAI (错).",
+        "highlights": [
+          "我自己",
+          "做的"
+        ]
+      },
+      {
+        "index": 1,
+        "isListeningPart2": true,
+        "question": "★ 老师多写了一个词语。",
+        "answer": "错",
+        "audio": "audio/de2_p2_q12.mp3",
+        "transcript": "老师，黑板上的那个句子是不是写错了？中间少了一个词。",
+        "pinyin": "Lǎo shī, hēi bǎn shàng de nà ge jù zi shì bú shì xiě cuò le? Zhōng jiān shǎo le yí gè cí.",
+        "vietnamese": "Thầy ơi, câu văn trên bảng kia có phải viết sai rồi không ạ? Ở giữa thiếu mất một từ rồi.",
+        "explanation": "Mẹo: Tìm từ đối nghĩa. Học sinh hỏi: '少了一个词' (thiếu một từ), đối lập với khẳng định '多写了一个词语' (viết thừa một từ). Do đó đáp án là SAI (错).",
+        "highlights": [
+          "少"
+        ]
+      },
+      {
+        "index": 2,
+        "isListeningPart2": true,
+        "question": "★ 他孩子经常带糖去学校。",
+        "answer": "对",
+        "audio": "audio/de2_p2_q13.mp3",
+        "transcript": "小孩子没有不喜欢 吃 糖的，我的孩子也是。她去学校上课的时候，书包里除了书和铅笔，经常还会出现两块儿糖。",
+        "pinyin": "Xiǎo hái zi méi yǒu bù xǐ huan chī táng de, wǒ de hái zi yě shì. Tā qù xué xiào shàng kè de shí hou, shū bāo lǐ chú le shū hé qiān bǐ, jīng cháng hái huì chū xiàn liǎng kuàir táng.",
+        "vietnamese": "Trẻ con không có đứa nào là không thích ăn kẹo cả, con tôi cũng vậy. Khi con bé đi học ở trường, trong cặp sách ngoài sách và bút chì ra thì thường sẽ xuất hiện thêm hai viên kẹo.",
+        "explanation": "Mẹo: Tìm từ khóa tương ứng trực tiếp. Script ghi: '经常还会出现两块儿糖' (thường xuất hiện hai viên kẹo [trong cặp khi đi học]), khớp hoàn toàn với khẳng định '经常带糖去学校' (thường mang kẹo đến trường). Do đó đáp án là ĐÚNG (对).",
+        "highlights": [
+          "经常",
+          "两块儿糖"
+        ]
+      },
+      {
+        "index": 3,
+        "isListeningPart2": true,
+        "question": "★ 他们现在在电梯里。",
+        "answer": "错",
+        "audio": "audio/de2_p2_q14.mp3",
+        "transcript": "刚才在电梯里我们见过面，没想到这么快又见面了。你也是来参加今天的考试的？",
+        "pinyin": "Gāng cái zài diàn tī lǐ wǒ men jiàn guò miàn, méi xiǎng dào zhè me kuài yòu jiàn miàn le. Nǐ yě shì lái cān jiā jīn tiān de kǎo shì de?",
+        "vietnamese": "Vừa nãy chúng ta đã gặp nhau ở trong thang máy rồi, không ngờ lại gặp lại nhanh thế này. Bạn cũng đến tham gia kỳ thi ngày hôm nay à?",
+        "explanation": "Mẹo: Định vị thời gian. Người nói dùng từ: '刚才在电梯里' (vừa nãy ở trong thang máy) ➔ chứng tỏ hiện tại họ không còn ở trong thang máy nữa. Do đó khẳng định '现在在电梯里' (bây giờ ở trong thang máy) là SAI (错).",
+        "highlights": [
+          "刚才",
+          "电梯里"
+        ]
+      },
+      {
+        "index": 4,
+        "isListeningPart2": true,
+        "question": "★ 今天的月亮很大。",
+        "answer": "对",
+        "audio": "audio/de2_p2_q15.mp3",
+        "transcript": "今天是中秋节，中秋节晚上的月亮像个大盘子，非常漂亮。",
+        "pinyin": "Jīn tiān shì Zhōng qiū jié, Zhōng qiū jié wǎn shang de yuè liang xiàng gè dà pán zi, fēi cháng piào liang.",
+        "vietnamese": "Hôm nay là Tết Trung Thu, trăng đêm Trung Thu tròn và to giống như cái đĩa lớn vậy, vô cùng đẹp mắt.",
+        "explanation": "Mẹo: Đọc hiểu ẩn dụ. Script ví von: '月亮像个大盘子' (mặt trăng giống như chiếc đĩa lớn) ➔ chứng tỏ trăng rất to và tròn, khớp với khẳng định '月亮很大' (trăng rất to). Do đó đáp án là ĐÚNG (对).",
+        "highlights": [
+          "像个大盘子"
+        ]
+      }
+    ],
+    "level": "HSK3"
+  },
+  {
+    "setId": "listen_set_5",
+    "setName": "Nghe HSK 3 - Đề 2 - Phần 2 (Câu 16-20)",
+    "isListening": true,
+    "questions": [
+      {
+        "index": 0,
+        "isListeningPart2": true,
+        "question": "★ 小鸡会游泳。",
+        "answer": "错",
+        "audio": "audio/de2_p2_q16.mp3",
+        "transcript": "小鸡和小狗准备学游泳。小鸡害怕水，第二天就不学了。小狗刚开始也不敢，但是下了一次水后，就不害怕了，慢慢地就学会了。",
+        "pinyin": "Xiǎo jī hé xiǎo gǒu zhǔn bèi xué yóu yǒng. Xiǎo jī hài pà shuǐ, dì èr tiān jiù bù xué le. Xiǎo gǒu gāng kāi shǐ yě bù gǎn, dàn shì xià le yí cì shuǐ hòu, jiù bú hài pà le, màn màn de jiù xué huì le.",
+        "vietnamese": "Gà con và cún con chuẩn bị học bơi. Gà con sợ nước nên ngày thứ hai đã không học nữa. Cún con lúc đầu cũng không dám, nhưng sau khi xuống nước một lần thì không sợ nữa, dần dần đã học bơi được rồi.",
+        "explanation": "Mẹo: Tìm từ khóa chủ thể. Script ghi rõ: '小鸡害怕水，第二天就不学了' (gà con sợ nước nên ngày thứ hai không học nữa) ➔ gà con không biết bơi. Mâu thuẫn với khẳng định '小鸡会游泳' (gà con biết bơi). Do đó đáp án là SAI (错).",
+        "highlights": [
+          "不学了"
+        ]
+      },
+      {
+        "index": 1,
+        "isListeningPart2": true,
+        "question": "★ 小王的丈夫爱看篮球比赛。",
+        "answer": "对",
+        "audio": "audio/de2_p2_q17.mp3",
+        "transcript": "我爱打篮球，不喜欢踢足球，小王的丈夫说他也爱打篮球。其实，她丈夫只是喜欢看比赛。",
+        "pinyin": "Wǒ ài dǎ lán qiú, bù xǐ huan tī zú qiú, xiǎo Wáng de zhàng fu shuō tā yě ài dǎ lán qiú. Qí shí, tā zhàng fu zhǐ shì xǐ huan kàn bǐ sài.",
+        "vietnamese": "Tôi thích chơi bóng rổ, không thích đá bóng, chồng của Tiểu Vương nói anh ấy cũng thích chơi bóng rổ. Thực ra, chồng cô ấy chỉ là thích xem thi đấu thôi.",
+        "explanation": "Mẹo: Tìm câu chứa kết luận. Script nói rõ thực tế: '其实，她丈夫只是喜欢看比赛' (Thực ra, chồng cô ấy chỉ thích xem thi đấu), khớp hoàn toàn với khẳng định '爱看篮球比赛' (thích xem thi đấu bóng rổ). Do đó đáp án là ĐÚNG (对).",
+        "highlights": [
+          "喜欢看比赛"
+        ]
+      },
+      {
+        "index": 2,
+        "isListeningPart2": true,
+        "question": "★ 努力的人机会多。",
+        "answer": "对",
+        "audio": "audio/de2_p2_q18.mp3",
+        "transcript": "有些人的机会特别多，这不奇怪。因为他们很努力，对工作非常认真，机会就是为这样的人准备的。",
+        "pinyin": "Yǒu xiē rén de jī huì tè bié duō, zhè bù qí guài. Yīn wèi tā men hěn nǔ lì, duì gōng zuò fēi cháng rèn zhēn, jī huì jiù shì wèi zhè yàng de rén zhǔn bèi de.",
+        "vietnamese": "Cơ hội của một số người đặc biệt nhiều, điều này không có gì lạ cả. Bởi vì họ rất nỗ lực, vô cùng nghiêm túc với công việc, cơ hội chính là chuẩn bị cho những người như vậy.",
+        "explanation": "Mẹo: Tìm quan hệ nhân quả. Script giải thích: '机会就是为这样 [努力] 的人准备的' ➔ cơ hội chính là chuẩn bị cho những người [nỗ lực] như vậy, khớp với khẳng định '努力的人机会多' (người nỗ lực cơ hội nhiều). Do đó đáp án là ĐÚNG (对).",
+        "highlights": [
+          "特别多",
+          "机会就是为这样的人准备的"
+        ]
+      },
+      {
+        "index": 3,
+        "isListeningPart2": true,
+        "question": "★ 葡萄不好吃。",
+        "answer": "错",
+        "audio": "audio/de2_p2_q19.mp3",
+        "transcript": "葡萄虽然好吃，但是不太容易洗干净，所以我更喜欢吃香蕉，因为吃香蕉很方便。",
+        "pinyin": "Pú tao suī rán hǎo chī, dàn shì bú tài róng yì xǐ gān jìng, suǒ yǐ wǒ gèng xǐ huan chī xiāng jiāo, yīn wèi chī xiāng jiāo hěn fāng biàn.",
+        "vietnamese": "Nho tuy rằng ngon, nhưng không dễ rửa sạch cho lắm, thế nên tôi thích ăn chuối hơn vì ăn chuối rất tiện lợi.",
+        "explanation": "Mẹo: Tìm cấu trúc tương phản mặc dù...nhưng. Script ghi: '葡萄虽然好吃' (nho tuy rằng ngon/ngon ăn) ➔ nho ngon. Mâu thuẫn với khẳng định '葡萄不好吃' (nho không ngon). Do đó đáp án là SAI (错).",
+        "highlights": [
+          "葡萄虽然好吃"
+        ]
+      },
+      {
+        "index": 4,
+        "isListeningPart2": true,
+        "question": "★ 老刘喝酒容易脸红。",
+        "answer": "对",
+        "audio": "audio/de2_p2_q20.mp3",
+        "transcript": "老刘每次喝一点儿啤酒，脸、鼻子、耳朵就会变红，而且喜欢跟人说话。你别担心，他休息一会儿就没事了。",
+        "pinyin": "Lǎo Liú měi cì hē yì diǎnr pí jiǔ, liǎn, bí zi, ěr duo jiù huì biàn hóng, ér qiě xǐ huan gēn rén shuō huà. Nǐ bié dān xīn, tā xiū xi yí huìr jiù méi shì le.",
+        "vietnamese": "Mỗi lần lão Lưu uống một chút bia, mặt, mũi, tai liền đỏ bừng lên, hơn nữa còn thích nói chuyện với người khác. Bạn đừng lo, ông ấy nghỉ ngơi một lát là không sao đâu.",
+        "explanation": "Mẹo: Tìm từ đồng nghĩa. Script mô tả: '喝一点儿啤酒，脸...就会变红' (uống chút bia là mặt liền đỏ lên), đồng nghĩa với khẳng định '喝酒容易脸红' (uống rượu dễ đỏ mặt). Do đó đáp án là ĐÚNG (对).",
+        "highlights": [
+          "脸",
+          "变红"
+        ]
+      }
+    ],
+    "level": "HSK3"
+  },
+  {
+    "setId": "listen_set_6",
+    "setName": "Nghe HSK 3 - Đề 3 - Phần 3 (Câu 21-25)",
+    "isListening": true,
+    "questions": [
+      {
+        "index": 0,
+        "isListeningPart3": true,
+        "question": "★ Câu 21 (Nghe)",
+        "options": {
+          "A": "几十个",
+          "B": "几百个",
+          "C": "一千多个"
+        },
+        "answer": "B",
+        "audio": "audio/de3_p3_q21.mp3",
+        "transcript": "女：你知道世界上有多少个国家吗？\n男：我不太清楚，应该有几百个吧？我上网查一查。\n问：男的认为世界上有多少个国家？",
+        "pinyin": "Nǚ: Nǐ zhī dào shì jiè shàng yǒu duō shǎo gè guó jiā ma?\nNán: Wǒ bú tài qīng chu, yīng gāi yǒu jǐ bǎi gè ba? Wǒ shàng wǎng chá yi chá.\nWèn: Nán de rèn wéi shì jiè shàng yǒu duō shǎo gè guó jiā?",
+        "vietnamese": "Nữ: Cậu có biết trên thế giới có bao nhiêu quốc gia không?\nNam: Tớ cũng không rõ lắm, chắc khoảng vài trăm nước nhỉ? Để tớ lên mạng tra cứu xem sao.\nHỏi: Người nam cho rằng trên thế giới có bao nhiêu quốc gia?",
+        "explanation": "Mẹo: Định vị thông tin trực tiếp. Người nam trả lời: '应该有几百个吧' (chắc là khoảng vài trăm nước nhỉ). Khớp với đáp án B. 几百个 (vài trăm cái).",
+        "highlights": [
+          "几百个"
+        ]
+      },
+      {
+        "index": 1,
+        "isListeningPart3": true,
+        "question": "★ Câu 22 (Nghe)",
+        "options": {
+          "A": "春季",
+          "B": "夏季",
+          "C": "秋季"
+        },
+        "answer": "B",
+        "audio": "audio/de3_p3_q22.mp3",
+        "transcript": "男：我也有一辆这样的自行车，颜色都一样，也是蓝色的。\n女：是吗？这是我今年夏天买的。\n问：这辆自行车是什么时候买的？",
+        "pinyin": "Nán: Wǒ yě yǒu yí liàng zhè yàng de zì xíng chē, yán sè dōu yí yàng, yě shì lán sè de.\nNǚ: Shì ma? Zhè shì wǒ jīn nián xià tiān mǎi de.\nWèn: Zhè liàng zì xíng chē shì shén me shí hou mǎi de?",
+        "vietnamese": "Nam: Tớ cũng có một chiếc xe đạp y hệt thế này, màu sắc cũng giống nhau, đều là màu xanh lam cả.\nNữ: Thế à? Chiếc này tớ mua vào mùa hè năm nay đấy.\nHỏi: Chiếc xe đạp này được mua khi nào?",
+        "explanation": "Mẹo: Tìm từ đồng nghĩa chỉ mùa. Người nữ nói: '这是我今年夏天买的' (đây là chiếc tớ mua vào mùa hè năm nay). '夏天' (mùa hè) đồng nghĩa với '夏季' (mùa hè/mùa hạ). Khớp với đáp án B.",
+        "highlights": [
+          "夏天"
+        ]
+      },
+      {
+        "index": 2,
+        "isListeningPart3": true,
+        "question": "★ Câu 23 (Nghe)",
+        "options": {
+          "A": "还要点菜",
+          "B": "羊肉不好吃",
+          "C": "还要一碗米饭"
+        },
+        "answer": "A",
+        "audio": "audio/de3_p3_q23.mp3",
+        "transcript": "女：服务员，把菜单给我拿一下，我们再点两个菜。\n男：好的，请等一下。\n问：女的主要是什么意思？",
+        "pinyin": "Nǚ: Fú wù yuán, bǎ cài dān gěi wǒ ná yí xià, wǒ men zài diǎn liǎng gè cài.\nNán: Hǎo de, qǐng děng yí xià.\nWèn: Nǚ de zhǔ yào shì shén me yì si?",
+        "vietnamese": "Nữ: Phục vụ ơi, lấy giúp tôi cái thực đơn với, chúng tôi gọi thêm hai món nữa.\nNam: Vâng ạ, xin vui lòng đợi một lát.\nHỏi: Ý chính của người nữ là gì?",
+        "explanation": "Mẹo: Tìm cụm từ đồng nghĩa. Người nữ yêu cầu: '我们再点两个菜' (chúng tôi gọi thêm hai món nữa), đồng nghĩa với '还要点菜' (muốn gọi thêm món). Khớp với đáp án A.",
+        "highlights": [
+          "再点两个菜"
+        ]
+      },
+      {
+        "index": 3,
+        "isListeningPart3": true,
+        "question": "★ Câu 24 (Nghe)",
+        "options": {
+          "A": "公司",
+          "B": "公园",
+          "C": "超市"
+        },
+        "answer": "C",
+        "audio": "audio/de3_p3_q24.mp3",
+        "transcript": "男：你从超市出来了吗？\n女：出来了，你再等我五分钟，我马上就 到。\n问：女的刚才去哪儿了？",
+        "pinyin": "Nán: Nǐ cóng chāo shì chū lái le ma?\nNǚ: Chū lái le, nǐ zài děng wǒ wǔ fēn zhōng, wǒ mǎ shàng jiù dào.\nWèn: Nǚ de gāng cái qù nǎr le?",
+        "vietnamese": "Nam: Em đã ra khỏi siêu thị chưa?\nNữ: Em ra rồi, anh đợi em thêm 5 phút nữa nhé, em đến ngay đây.\nHỏi: Người nữ vừa nãy đã đi đâu?",
+        "explanation": "Mẹo: Xác định địa điểm xuất phát. Người nam hỏi: '你从超市出来了吗' (em đã đi ra từ siêu thị chưa) và người nữ xác nhận '出来了' (ra rồi) ➔ chứng tỏ cô ấy vừa đi siêu thị (超市) xong. Khớp với đáp án C.",
+        "highlights": [
+          "超市",
+          "出来了"
+        ]
+      },
+      {
+        "index": 4,
+        "isListeningPart3": true,
+        "question": "★ Câu 25 (Nghe)",
+        "options": {
+          "A": "叔叔",
+          "B": "奶奶",
+          "C": "爷爷"
+        },
+        "answer": "C",
+        "audio": "audio/de3_p3_q25.mp3",
+        "transcript": "女：过两天就是爷爷七十岁生日，你准备礼物了吗？\n男：啊？我差点儿忘记了，我现在就去买。\n问：男的要给谁准备礼物？",
+        "pinyin": "Nǚ: Guò liǎng tiān jiù shì yé ye qī shí suì shēng rì, nǐ zhǔn bèi lǐ wù le ma?\nNán: Ā? Wǒ chà diǎnr wàng jì le, wǒ xiàn zài jiù qù mǎi.\nWèn: Nán de yào gěi shéi zhǔn bèi lǐ wù?",
+        "vietnamese": "Nữ: Qua hai ngày nữa là sinh nhật bảy mươi tuổi của ông nội rồi, anh đã chuẩn bị quà chưa?\nNam: Ủa? Em suýt chút nữa quên mất, bây giờ em đi mua ngay đây.\nHỏi: Người nam chuẩn bị quà cho ai?",
+        "explanation": "Mẹo: Tìm từ chỉ vai vế gia đình. Người nữ nhắc: '爷爷七十岁生日' (sinh nhật 70 tuổi của ông nội) ➔ người nam cần chuẩn bị quà cho ông nội (爷爷). Khớp với đáp án C.",
+        "highlights": [
+          "爷爷"
+        ]
+      }
+    ],
+    "level": "HSK3"
+  },
+  {
+    "setId": "listen_set_7",
+    "setName": "Nghe HSK 3 - Đề 3 - Phần 3 (Câu 26-30)",
+    "isListening": true,
+    "questions": [
+      {
+        "index": 0,
+        "isListeningPart3": true,
+        "question": "★ Câu 26 (Nghe)",
+        "options": {
+          "A": "太旧了",
+          "B": "有点儿小",
+          "C": "比红色的好看"
+        },
+        "answer": "B",
+        "audio": "audio/de3_p3_q26.mp3",
+        "transcript": "男：这双鞋有点儿小，我穿着不太舒服。\n女：那我帮您换一双大点儿的。\n问：男的觉得这双鞋怎么样？",
+        "pinyin": "Nán: Zhè shuāng xié yǒu diǎnr xiǎo, wǒ chuān zhe bú tài shū fu.\nNǚ: Nà wǒ bāng nín huàn yì shuāng dà diǎnr de.\nWèn: Nán de jué de zhè shuāng xié zěn me yàng?",
+        "vietnamese": "Nam: Đôi giày này hơi nhỏ một chút, tôi đi không được thoải mái lắm.\nNữ: Vậy thì để tôi giúp bác đổi một đôi lớn hơn nhé.\nHỏi: Người nam thấy đôi giày này thế nào?",
+        "explanation": "Mẹo: Từ khóa lặp lại trực tiếp. Người nam than phiền: '这双鞋有点儿小' (đôi giày này hơi nhỏ). Khớp hoàn toàn với đáp án B. 有点儿小.",
+        "highlights": [
+          "有点儿小"
+        ]
+      },
+      {
+        "index": 1,
+        "isListeningPart3": true,
+        "question": "★ Câu 27 (Nghe)",
+        "options": {
+          "A": "盘子",
+          "B": "筷子",
+          "C": "照相机"
+        },
+        "answer": "A",
+        "audio": "audio/de3_p3_q27.mp3",
+        "transcript": "女：这两个盘子，你觉得哪个漂亮？\n男：都很漂亮，我更喜欢右边这个。\n问：他们在看什么？",
+        "pinyin": "Nǚ: Zhè liǎng gè pán zi, nǐ jué de nǎ ge piào liang?\nNán: Dōu hěn piào liang, wǒ gèng xǐ huan yòu biān zhè ge.\nWèn: Tā men zài kàn shén me?",
+        "vietnamese": "Nữ: Hai cái đĩa này, anh thấy cái nào đẹp hơn?\nNam: Đều rất đẹp, anh thích cái bên phải này hơn.\nHỏi: Họ đang xem cái gì?",
+        "explanation": "Mẹo: Định danh đồ vật được nhắc đến đầu tiên. Người nữ hỏi: '这两个盘子...' (hai cái đĩa này...) ➔ chứng tỏ họ đang cùng xem những cái đĩa (盘子). Khớp với đáp án A.",
+        "highlights": [
+          "盘子"
+        ]
+      },
+      {
+        "index": 2,
+        "isListeningPart3": true,
+        "question": "★ Câu 28 (Nghe)",
+        "options": {
+          "A": "还不饿",
+          "B": "等同学",
+          "C": "不太舒服"
+        },
+        "answer": "A",
+        "audio": "audio/de3_p3_q28.mp3",
+        "transcript": "男：十一点半了，该吃午饭了。\n女：我早上吃太多了，现在还不饿，我晚一会儿去。\n问：女的为什么不去吃午饭？",
+        "pinyin": "Nán: Shí yī diǎn bàn le, gāi chī wǔ fàn le.\nNǚ: Wǒ zǎo shang chī tài duō le, xiàn zài hái bú è, wǒ wǎn yí huìr qù.\nWèn: Nǚ de wèi shén me bú qù chī wǔ fàn?",
+        "vietnamese": "Nam: Mười một giờ rưỡi rồi, đến giờ ăn trưa rồi đấy.\nNữ: Sáng nay em ăn nhiều quá, bây giờ vẫn chưa đói, em sẽ đi muộn một chút.\nHỏi: Tại sao người nữ chưa đi ăn trưa?",
+        "explanation": "Mẹo: Tìm từ khóa lý do trực tiếp. Người nữ giải thích: '现在还不饿' (bây giờ vẫn chưa đói). Khớp hoàn toàn với đáp án A. 还不饿 (vẫn chưa đói).",
+        "highlights": [
+          "还不饿"
+        ]
+      },
+      {
+        "index": 3,
+        "isListeningPart3": true,
+        "question": "★ Câu 29 (Nghe)",
+        "options": {
+          "A": "数学",
+          "B": "历史",
+          "C": "体育"
+        },
+        "answer": "B",
+        "audio": "audio/de3_p3_q29.mp3",
+        "transcript": "女：关老师，您是教历史的，您能给我介绍几本历史书吗？\n男：当然可以，你对历史有兴趣？\n问：女的 想看什么书？",
+        "pinyin": "Nǚ: Guān lǎo shī, nín shì jiāo lì shǐ de, nín néng gěi wǒ jiè shào jǐ běn lì shǐ shū ma?\nNán: Dāng rán kě yǐ, nǐ duì lì shǐ yǒu xìng qù?\nWèn: Nǚ de xiǎng kàn shén me shū?",
+        "vietnamese": "Nữ: Thầy Quan ơi, thầy dạy Lịch sử, thầy có thể giới thiệu cho em vài cuốn sách Lịch sử được không ạ?\nNam: Tất nhiên là được chứ, em có hứng thú với Lịch sử à?\nHỏi: Người nữ muốn đọc loại sách nào?",
+        "explanation": "Mẹo: Từ khóa lặp lại nhiều lần. Người nữ hỏi xin: '几本历史书' (vài cuốn sách lịch sử) ➔ cô ấy muốn đọc sách Lịch sử (历史). Khớp với đáp án B.",
+        "highlights": [
+          "历史书",
+          "历史"
+        ]
+      },
+      {
+        "index": 4,
+        "isListeningPart3": true,
+        "question": "★ Câu 30 (Nghe)",
+        "options": {
+          "A": "6 个小时",
+          "B": "两个星期",
+          "C": "一个多月"
+        },
+        "answer": "C",
+        "audio": "audio/de3_p3_q30.mp3",
+        "transcript": "男：张经理决定九月举行会议？\n女：是啊，我们还有一个多月的时间准备。\n问：准备时间有多长？",
+        "pinyin": "Nán: Zhāng jīng lǐ jué dìng jiǔ yuè jǔ xíng huì yì?\nNǚ: Shì a, wǒ men hái yǒu yí gè duō yuè de shí jiān zhǔn bèi.\nWèn: Zhǔn bèi shí jiān yǒu duō cháng?",
+        "vietnamese": "Nam: Giám đốc Trương đã quyết định tổ chức cuộc họp vào tháng 9 rồi à?\nNữ: Đúng vậy, chúng ta vẫn còn hơn một tháng nữa để chuẩn bị.\nHỏi: Thời gian chuẩn bị dài bao lâu?",
+        "explanation": "Mẹo: Từ chỉ khoảng thời gian lặp lại trực tiếp. Người nữ khẳng định: '还有一个多月的时间准备' (vẫn còn hơn một tháng thời gian để chuẩn bị). Khớp hoàn toàn với đáp án C. 一个多月.",
+        "highlights": [
+          "一个多月"
+        ]
+      }
+    ],
+    "level": "HSK3"
+  },
+  {
+    "setId": "hsk4_reading_set_1",
+    "setName": "Đọc HSK 4 - Đề 1 - Phần 1 (Câu 1-5)",
+    "level": "HSK4",
+    "choices": {
+      "A": "顺便 (shùnbiàn: nhân tiện, tiện thể)",
+      "B": "极其 (jíqí: cực kỳ, hết sức)",
+      "C": "随着 (suízhe: đi đôi với, theo)",
+      "D": "粗心 (cūxīn: cẩu thả, bất cẩn)",
+      "E": "甚至 (shènzhì: thậm chí)"
+    },
+    "example": {
+      "question": "★ Ví dụ mẫu (Đọc):",
+      "answer": "F",
+      "text": "F. 刚才 (gāngcái: vừa nãy)"
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "现代社会，许多人的生活 ________ 科学技术的发展而改变。",
+        "answer": "C",
+        "vietnamese": "Xã hội hiện đại, cuộc sống của nhiều người thay đổi theo sự phát triển của khoa học kỹ thuật.",
+        "explanation": "Giải thích: Cần giới từ đi với danh từ/cụm danh từ ở vế sau biểu thị sự phát triển đồng hành. '随着' (theo, đi đôi với) thường đi với cấu trúc '随着......的发展'. Do đó đáp án là C.",
+        "highlights": [
+          "随着",
+          "发展"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "考试时一定要认真读题，千万不能 ________。",
+        "answer": "D",
+        "vietnamese": "Khi làm bài thi nhất định phải đọc kỹ đề bài, vạn lần không được cẩu thả.",
+        "explanation": "Giải thích: Cần một tính từ ở sau phó từ phủ định '千万不能' biểu thị tính cách/trạng thái không tốt. '粗心' (cẩu thả, bất cẩn) phù hợp nhất về nghĩa. Do đó đáp án là D.",
+        "highlights": [
+          "认真",
+          "千万不能",
+          "粗心"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "他经常帮助别人，在班里 ________ 受欢迎。",
+        "answer": "B",
+        "vietnamese": "Cậu ấy thường xuyên giúp đỡ người khác, ở trong lớp cực kỳ được yêu mến.",
+        "explanation": "Giải thích: Cần phó từ chỉ mức độ để đứng trước động từ tâm lý hoặc tính từ '受欢迎' (được yêu mến). '极其' (cực kỳ, hết sức) thích hợp nhất. Do đó đáp án là B.",
+        "highlights": [
+          "极其",
+          "受欢迎"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "你下楼买牛奶时，________ 帮我寄封信吧。",
+        "answer": "A",
+        "vietnamese": "Lúc bạn xuống tầng mua sữa bò, nhân tiện giúp tôi gửi bức thư này nhé.",
+        "explanation": "Giải thích: Cần phó từ biểu thị hành động làm tiện tay khi làm việc khác. '顺便' (nhân tiện, tiện thể) đứng trước động từ '帮' là chính xác. Do đó đáp án là A.",
+        "highlights": [
+          "顺便",
+          "帮我"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "这个地方美极了，我 ________ 都不想回家了。",
+        "answer": "E",
+        "vietnamese": "Nơi này đẹp quá đi mất, tôi thậm chí còn không muốn về nhà nữa rồi.",
+        "explanation": "Giải thích: Cần phó từ liên kết nhấn mạnh sự leo thang mức độ. '甚至' (thậm chí) đứng trước '都' trong cấu trúc '甚至......都......' là cực kỳ chính xác. Do đó đáp án là E.",
+        "highlights": [
+          "甚至",
+          "都"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_1",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 1: Câu chữ 把 (Bộ 1)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 1: Câu chữ 把",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[把] / [扔进] / [空瓶子] / [请] / [垃圾桶]",
+        "answer": "请把空瓶子扔进垃圾桶。",
+        "vietnamese": "Hãy vứt chai rỗng vào thùng rác.",
+        "explanation": "Câu có **请** (xin hãy) nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **空瓶子**, sau đó ghép cụm **扔进**, vứt vào đâu thì chọn **垃圾桶** (thùng rác).",
+        "highlights": [
+          "把"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[我] / [客厅] / [把] / [收拾] / [好了]",
+        "answer": "我把客厅收拾好了。",
+        "vietnamese": "Tôi đã dọn dẹp phòng khách.",
+        "explanation": "Xác định chủ ngữ là **我** nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **客厅**, theo cấu trúc **把** thì sau đó là động từ nên chọn **收拾**, sau đó ghép cụm **好了**.",
+        "highlights": [
+          "把"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[顺序] / [别] / [把] / [弄乱了]",
+        "answer": "别把顺序弄乱了。",
+        "vietnamese": "Đừng nhầm lẫn thứ tự.",
+        "explanation": "Câu khuyên ngăn nên đặt phó từ phủ định **别** (đừng) ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **顺序**, theo cấu trúc **把** thì sau đó là động từ nên chọn **弄乱了**.",
+        "highlights": [
+          "把"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[你] / [收拾] / [把行李箱] / [一下]",
+        "answer": "你把行李箱收拾一下。",
+        "vietnamese": "Bạn đóng gói hành lý của bạn.",
+        "explanation": "Xác định chủ ngữ là **你** nên đặt ở đầu câu, sau đó ghép cụm **把行李箱**, theo cấu trúc **把** thì sau đó là động từ nên chọn **收拾**, sau đó ghép cụm **一下**.",
+        "highlights": [
+          "把"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[能帮我] / [把] / [抬到客厅] / [吗] / [沙发]",
+        "answer": "能帮我把沙发抬到客厅吗？",
+        "vietnamese": "Bạn có thể giúp tôi mang ghế sofa vào phòng khách được không?",
+        "explanation": "Đặt cụm từ **能帮我** ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **沙发**, sau đó ghép cụm **抬到客厅**, vì đây là câu hỏi nên cuối cùng thêm trợ từ nghi vấn **吗**.",
+        "highlights": [
+          "把"
         ]
       },
       {
         "index": 5,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 6 (Nghe)",
-        "answer": "B",
-        "audio": "audio/hsk3_listen_q6.mp3",
-        "transcript": "男：喂，你到哪儿了？大家都在等你呢。\n女：别急，我刚下地铁，步行大概五分钟就到饭馆了。",
-        "vietnamese": "Nam: Alo, cậu đến đâu rồi? Mọi người đang đợi cậu kìa.\nNữ: Đừng vội, tớ vừa xuống tàu điện ngầm, đi bộ tầm 5 phút là tới quán ăn rồi.",
-        "explanation": "Mẹo: Từ khóa chính là 地铁 (dìtiě - tàu điện ngầm). Trong ảnh nhóm 2, hình B vẽ ga tàu điện ngầm hoặc người đi tàu điện ngầm. Do đó, đáp án đúng là B.",
+        "question": "[塑料袋] / [里] / [把] / [毛巾和牙膏] / [放]",
+        "answer": "把毛巾和牙膏放塑料袋里。",
+        "vietnamese": "Cho khăn và kem đánh răng vào túi nhựa.",
+        "explanation": "Đặt cụm từ **把** ở đầu câu, sau **把** là danh từ chịu tác động nên tiếp theo là **毛巾和牙膏**, theo cấu trúc **把** thì sau đó là động từ nên chọn **放**, cho vào đâu thì chọn **塑料袋** (túi nilon), sau đó thêm danh từ chỉ vị trí **里** (bên trong) ở cuối câu.",
         "highlights": [
-          "地铁",
-          "下地铁"
+          "把"
         ]
       },
       {
         "index": 6,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 7 (Nghe)",
-        "answer": "A",
-        "audio": "audio/hsk3_listen_q7.mp3",
-        "transcript": "女：你刚才去哪儿了？我打你手机一直没人接。\n男：对不起，我刚才去洗手间了，手机放在桌子上没带过去。",
-        "vietnamese": "Nữ: Vừa nãy anh đi đâu thế? Em gọi điện thoại mãi không thấy ai nghe máy.\nNam: Xin lỗi nhé, vừa nãy anh đi nhà vệ sinh, điện thoại để trên bàn không mang theo.",
-        "explanation": "Mẹo: Từ khóa chính là 手机 (shǒujī - điện thoại di động) và 桌子上 (zhuōzi shàng - trên bàn). Hình A vẽ một chiếc điện thoại di động để trên bàn. Do đó, đáp án đúng là A.",
+        "question": "[弄脏了] / [她] / [把] / [裙子]",
+        "answer": "她把裙子弄脏了。",
+        "vietnamese": "Cô ấy làm bẩn váy của mình.",
+        "explanation": "Xác định chủ ngữ là **她** nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **裙子**, theo cấu trúc **把** thì sau đó là động từ nên chọn **弄脏了**.",
         "highlights": [
-          "手机",
-          "桌子上"
+          "把"
         ]
       },
       {
         "index": 7,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 8 (Nghe)",
-        "answer": "C",
-        "audio": "audio/hsk3_listen_q8.mp3",
-        "transcript": "男：服务员，我的这双筷子太脏了，能帮我换一双新的吗？\n女：好的，先生，请您稍等一下，我马上给您拿过来。",
-        "vietnamese": "Nam: Phục vụ ơi, đôi đũa này của tôi bẩn quá, có thể đổi giúp tôi đôi mới không?\nNữ: Dạ vâng, thưa ông, xin ông vui lòng đợi một chút, tôi mang lại ngay đây ạ.",
-        "explanation": "Mẹo: Từ khóa chính là 筷子 (kuàizi - đôi đũa). Hình C vẽ đôi đũa. Do đó, đáp án đúng là C.",
+        "question": "[你] / [关了] / [把窗户] / [吗]",
+        "answer": "你把窗户关了吗?",
+        "vietnamese": "Bạn đã đóng cửa sổ chưa?",
+        "explanation": "Xác định chủ ngữ là **你** nên đặt ở đầu câu, sau đó ghép cụm **把窗户**, theo cấu trúc **把** thì sau đó là động từ nên chọn **关了**, vì đây là câu hỏi nên cuối cùng thêm trợ từ nghi vấn **吗**.",
         "highlights": [
-          "筷子"
+          "把"
         ]
       },
       {
         "index": 8,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 9 (Nghe)",
-        "answer": "D",
-        "audio": "audio/hsk3_listen_q9.mp3",
-        "transcript": "女：你昨晚几点睡觉的？怎么今天上课一直打哈欠？\n男：昨晚写作业，熬夜到两点，现在头还有点儿疼呢。",
-        "vietnamese": "Nữ: Tối qua cậu ngủ lúc mấy giờ thế? Sao hôm nay lên lớp cứ ngáp ngủ suốt vậy?\nNam: Tối qua viết bài tập, thức đêm đến 2 giờ, bây giờ đầu vẫn hơi đau đây.",
-        "explanation": "Mẹo: Từ khóa chính là 写作业 (xiě zuòyè - làm bài tập) và 打哈欠 (dǎ hāqian - ngáp ngủ). Hình D vẽ học sinh mệt mỏi học bài hoặc ngủ gật. Do đó, đáp án đúng là D.",
+        "question": "[传真号码] / [请把] / [您的] / [发给我]",
+        "answer": "请把您的传真号码发给我。",
+        "vietnamese": "Xin vui lòng gửi cho tôi số fax của bạn.",
+        "explanation": "Đặt cụm từ kính ngữ **请把** ở đầu câu, tiếp theo là **您的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **传真号码** để tạo thành cụm danh từ **您的传真号码**, sau đó ghép cụm **发给我**.",
         "highlights": [
-          "写作业",
-          "打哈欠"
+          "把",
+          "的"
         ]
       },
       {
         "index": 9,
-        "content": "<div style=\"text-align: center; margin-bottom: 15px;\"><img src=\"HSK_Mock_Tests/HSK3/hsk-3-actual-test-6/images/q_group_2.png\" style=\"max-width: 100%; max-height: 250px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);\" /></div>",
-        "question": "★ Câu 10 (Nghe)",
-        "answer": "E",
-        "audio": "audio/hsk3_listen_q10.mp3",
-        "transcript": "男：阿姨，我记得以前这里没有这条马路啊？\n女：对，这是今年刚建好的，比以前方便多了，去超市只要十分钟。",
-        "vietnamese": "Nam: Dì ơi, cháu nhớ trước đây ở chỗ này đâu có con đường này nhỉ?\nDì: Đúng thế, con đường này mới xây xong năm nay đấy, tiện hơn trước rất nhiều, đi siêu thị chỉ mất 10 phút.",
-        "explanation": "Mẹo: Từ khóa chính là 马路 (mǎlù - đường lộ/đường cái). Hình E vẽ hình ảnh đường sá. Do đó, đáp án đúng là E.",
+        "question": "[那份申请] / [寄] / [出去了] / [导游] / [把]",
+        "answer": "导游把那份申请寄出去了。",
+        "vietnamese": "Hướng dẫn viên đã gửi đơn đăng ký.",
+        "explanation": "Xác định chủ ngữ là **导游** nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **那份申请**, sau đó ghép cụm **寄**, sau đó ghép cụm **出去了**.",
         "highlights": [
-          "马路"
+          "把"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_2",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 1: Câu chữ 把 (Bộ 2)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 1: Câu chữ 把",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[这篇文章] / [把] / [请] / [翻译成] / [中文]",
+        "answer": "请把这篇文章翻译成中文。",
+        "vietnamese": "Hãy dịch bài viết này sang tiếng Trung.",
+        "explanation": "Câu có **请** (xin hãy) nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **这篇文章**, theo cấu trúc **把** thì sau đó là động từ nên chọn **翻译成**, sau đó ghép cụm **中文**.",
+        "highlights": [
+          "把"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[房间] / [把] / [收拾得] / [姐姐] / [很整齐]",
+        "answer": "姐姐把房间收拾得很整齐。",
+        "vietnamese": "Chị tôi dọn phòng rất gọn gàng.",
+        "explanation": "Xác định chủ ngữ là **姐姐** nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **房间**, theo cấu trúc **把** thì sau đó là động từ nên chọn **收拾得**, sau đó ghép cụm **很整齐**.",
+        "highlights": [
+          "把",
+          "得"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[把] / [家里] / [母亲] / [整整齐齐] / [收拾得]",
+        "answer": "母亲把家里收拾得整整齐齐。",
+        "vietnamese": "Mẹ đã dọn dẹp nhà cửa.",
+        "explanation": "Xác định chủ ngữ là **母亲** nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **家里**, theo cấu trúc **把** thì sau đó là động từ nên chọn **收拾得**, sau đó ghép cụm **整整齐齐**.",
+        "highlights": [
+          "把",
+          "得"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[请] / [那张表格] / [把] / [两份] / [打印]",
+        "answer": "请把那张表格打印两份。",
+        "vietnamese": "Vui lòng in hai bản sao của mẫu đơn đó.",
+        "explanation": "Câu có **请** (xin hãy) nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **那张表格**, theo cấu trúc **把** thì sau đó là động từ nên chọn **打印**, sau đó ghép cụm **两份**.",
+        "highlights": [
+          "把"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[这次机会] / [把] / [教授] / [竟然] / [放弃了]",
+        "answer": "教授竟然把这次机会放弃了。",
+        "vietnamese": "Giáo sư thực sự đã từ bỏ cơ hội này.",
+        "explanation": "Xác định chủ ngữ là **教授** nên đặt ở đầu câu, sau đó ghép cụm **竟然**, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **这次机会**, theo cấu trúc **把** thì sau đó là động từ nên chọn **放弃了**.",
+        "highlights": [
+          "把"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[我的电子信箱里] / [把意见] / [请大家] / [发到]",
+        "answer": "请大家把意见发到我的电子信箱里。",
+        "vietnamese": "Xin vui lòng gửi ý kiến ​​​​của bạn đến e-mail của tôi.",
+        "explanation": "Đặt cụm từ kính ngữ **请大家** ở đầu câu, sau đó ghép cụm **把意见**, sau đó ghép cụm **发到**, sau đó ghép cụm **我的电子信箱里**.",
+        "highlights": [
+          "把",
+          "的"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[妹妹] / [弹钢琴的声音] / [吵醒了] / [把爷爷]",
+        "answer": "妹妹弹钢琴的声音把爷爷吵醒了。",
+        "vietnamese": "Tiếng đàn piano của chị tôi đánh thức ông tôi dậy.",
+        "explanation": "Xác định chủ ngữ là **妹妹** nên đặt ở đầu câu, sau đó ghép cụm **弹钢琴的声音**, sau đó ghép cụm **把爷爷**, theo cấu trúc **把** thì sau đó là động từ nên chọn **吵醒了**.",
+        "highlights": [
+          "把",
+          "的"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[房间] / [米小姐] / [把] / [收拾好了]",
+        "answer": "米小姐把房间收拾好了。",
+        "vietnamese": "Cô Mi dọn dẹp phòng.",
+        "explanation": "Xác định chủ ngữ là **米小姐** nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **房间**, theo cấu trúc **把** thì sau đó là động từ nên chọn **收拾好了**.",
+        "highlights": [
+          "把"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[那些] / [旧杂志] / [你] / [把] / [整理一下]",
+        "answer": "你把那些旧杂志整理一下。",
+        "vietnamese": "Bạn sắp xếp những tạp chí cũ.",
+        "explanation": "Xác định chủ ngữ là **你** nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **那些**, sau đó ghép cụm **旧杂志**, theo cấu trúc **把** thì sau đó là động từ nên chọn **整理一下**.",
+        "highlights": [
+          "把"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[香蕉皮] / [请] / [扔] / [垃圾桶里] / [把]",
+        "answer": "请把香蕉皮扔垃圾桶里。",
+        "vietnamese": "Hãy vứt vỏ chuối vào thùng rác.",
+        "explanation": "Câu có **请** (xin hãy) nên đặt ở đầu câu, sau đó là chữ **把**, sau **把** là danh từ chịu tác động nên tiếp theo là **香蕉皮**, theo cấu trúc **把** thì sau đó là động từ nên chọn **扔**, vứt vào đâu thì chọn **垃圾桶里** (vào thùng rác).",
+        "highlights": [
+          "把"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_3",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 2: Câu chữ 被",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 2: Câu chữ 被",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[很快就被] / [亲戚朋友们] / [这个消息] / [知道了]",
+        "answer": "这个消息很快就被亲戚朋友们知道了。",
+        "vietnamese": "Tin tức này nhanh chóng được người thân, bạn bè biết đến.",
+        "explanation": "Đặt cụm từ **这个消息** ở đầu câu, sau đó ghép cụm **很快就被**, sau đó ghép cụm **亲戚朋友们**, theo cấu trúc **被** thì tiếp theo là động từ **知道了**.",
+        "highlights": [
+          "被"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[儿童] / [被] / [好玩儿的游戏] / [接受] / [更容易]",
+        "answer": "好玩儿的游戏更容易被儿童接受。",
+        "vietnamese": "Những trò chơi vui nhộn thường được trẻ em đón nhận nhiều hơn.",
+        "explanation": "Đặt cụm từ **好玩儿的游戏** ở đầu câu, sau đó ghép cụm **更容易**, tiếp theo là chữ **被** để chỉ bị động, sau **被** là danh từ chỉ tác nhân nên tiếp theo là **儿童**, theo cấu trúc **被** thì tiếp theo là động từ **接受**.",
+        "highlights": [
+          "被",
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[吃光了] / [那盒饼干] / [被] / [儿子]",
+        "answer": "那盒饼干被儿子吃光了。",
+        "vietnamese": "Hộp bánh quy đã bị con trai tôi ăn mất.",
+        "explanation": "Đặt cụm từ **那盒饼干** ở đầu câu, tiếp theo là chữ **被** để chỉ bị động, sau **被** là danh từ chỉ tác nhân nên tiếp theo là **儿子**, theo cấu trúc **被** thì tiếp theo là động từ **吃光了**.",
+        "highlights": [
+          "被"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[他] / [外面的响声] / [吵醒了] / [被]",
+        "answer": "他被外面的响声吵醒了。",
+        "vietnamese": "Anh bị đánh thức bởi tiếng ồn ào bên ngoài.",
+        "explanation": "Xác định chủ ngữ là **他** nên đặt ở đầu câu, tiếp theo là chữ **被** để chỉ bị động, sau **被** là danh từ chỉ tác nhân nên tiếp theo là **外面的响声**, theo cấu trúc **被** thì tiếp theo là động từ **吵醒了**.",
+        "highlights": [
+          "被",
+          "的"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[那位] / [深受] / [演员] / [观众的喜爱] / [著名的]",
+        "answer": "那位著名的演员深受观众的喜爱。",
+        "vietnamese": "Nam diễn viên nổi tiếng được khán giả yêu mến.",
+        "explanation": "Đặt cụm từ **那位** ở đầu câu, tiếp theo là **著名的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **演员** để tạo thành cụm danh từ **著名的演员**, sau đó ghép cụm **深受**, sau đó ghép cụm **观众的喜爱**.",
+        "highlights": [
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_4",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 3: Câu so sánh 比",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 3: Câu so sánh 比",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[收入] / [比去年] / [今年公司的] / [增加了一倍]",
+        "answer": "今年公司的收入比去年增加了一倍。",
+        "vietnamese": "Doanh thu của công ty năm nay tăng gấp đôi so với năm ngoái.",
+        "explanation": "Đặt **今年公司的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **收入** để tạo thành cụm danh từ **今年公司的收入**, tiếp theo dùng từ so sánh **比去年**, sau **比** là đối tượng được so sánh nên tiếp theo là **增加了一倍**.",
+        "highlights": [
+          "比",
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[能力] / [重要] / [比知识] / [更]",
+        "answer": "能力比知识更重要。",
+        "vietnamese": "Khả năng quan trọng hơn kiến ​​thức.",
+        "explanation": "Đặt cụm từ **能力** ở đầu câu, tiếp theo dùng từ so sánh **比知识**, sau **比** là đối tượng được so sánh nên tiếp theo là **更**, tiếp theo là thành phần so sánh **重要**.",
+        "highlights": [
+          "比"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[比去年] / [今年报名的] / [人数] / [减少了] / [一半儿]",
+        "answer": "今年报名的人数比去年减少了一半儿。",
+        "vietnamese": "Số lượng người đăng ký năm nay giảm một nửa so với năm ngoái.",
+        "explanation": "Đặt **今年报名的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **人数** để tạo thành cụm danh từ **今年报名的人数**, tiếp theo dùng từ so sánh **比去年**, sau **比** là đối tượng được so sánh nên tiếp theo là **减少了**, sau đó ghép cụm **一半儿**.",
+        "highlights": [
+          "比",
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[参观的人数] / [增长了] / [三分之一] / [比] / [去年]",
+        "answer": "参观的人数比去年增长了三分之一。",
+        "vietnamese": "Số lượng du khách tăng 1/3 so với năm ngoái.",
+        "explanation": "Đặt cụm từ **参观的人数** ở đầu câu, tiếp theo dùng từ so sánh **比**, sau **比** là đối tượng được so sánh nên tiếp theo là **去年**, tiếp theo là thành phần so sánh **增长了**, sau đó ghép cụm **三分之一**.",
+        "highlights": [
+          "比",
+          "的"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[打针] / [好] / [比吃药] / [效果]",
+        "answer": "打针比吃药效果好。",
+        "vietnamese": "Thuốc tiêm có hiệu quả hơn dùng thuốc.",
+        "explanation": "Đặt cụm từ **打针** ở đầu câu, tiếp theo dùng từ so sánh **比吃药**, sau **比** là đối tượng được so sánh nên tiếp theo là **效果**, tiếp theo là thành phần so sánh **好**.",
+        "highlights": [
+          "比"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_5",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 4: Cấu trúc 越来越 & 又...又...",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 4: Cấu trúc 越来越 & 又...又...",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[他] / [越来越] / [厉害] / [得] / [咳嗽]",
+        "answer": "他咳嗽得越来越厉害。",
+        "vietnamese": "Anh càng ho nhiều hơn.",
+        "explanation": "Xác định chủ ngữ là **他** nên đặt ở đầu câu, sau đó ghép tiếp **咳嗽**, sau đó ghép tiếp **得**, sau đó ghép tiếp **越来越**, sau đó ghép tiếp **厉害**.",
+        "highlights": [
+          "越来越",
+          "得"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[的] / [弟弟] / [又脏又乱] / [房间]",
+        "answer": "弟弟的房间又脏又乱。",
+        "vietnamese": "Phòng của anh tôi bẩn thỉu và bừa bộn.",
+        "explanation": "Xác định chủ ngữ là **弟弟** nên đặt ở đầu câu, tiếp theo là **的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **房间** để tạo thành cụm danh từ **的房间**, sau đó ghép tiếp **又脏又乱**.",
+        "highlights": [
+          "又脏又乱",
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[个] / [又脏又破] / [那] / [白色的盒子]",
+        "answer": "那个白色的盒子又脏又破。",
+        "vietnamese": "Hộp màu trắng bị bẩn và vỡ.",
+        "explanation": "Đặt cụm từ **那** ở đầu câu, sau đó ghép tiếp **个**, sau đó ghép tiếp **白色的盒子**, sau đó ghép tiếp **又脏又破**.",
+        "highlights": [
+          "又脏又破",
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[中午] / [又酸又辣] / [的] / [菜]",
+        "answer": "中午的菜又酸又辣。",
+        "vietnamese": "Các món ăn trưa đều chua và cay.",
+        "explanation": "Đặt cụm từ **中午** ở đầu câu, tiếp theo là **的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **菜** để tạo thành cụm danh từ **的菜**, sau đó ghép tiếp **又酸又辣**.",
+        "highlights": [
+          "又酸又辣",
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_6",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 5: Câu liên động & Cấu trúc 马上就要",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 5: Câu liên động & Cấu trúc 马上就要",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[要] / [好习惯] / [的] / [养成] / [节约用水]",
+        "answer": "要养成节约用水的好习惯。",
+        "vietnamese": "Phát triển thói quen tốt về tiết kiệm nước.",
+        "explanation": "Đặt cụm từ **要** ở đầu câu, sau đó ghép tiếp **养成**, sau đó ghép tiếp **节约用水**, tiếp theo là **的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **好习惯** để tạo thành cụm danh từ **的好习惯**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[母亲] / [没] / [从来] / [去过] / [农村]",
+        "answer": "母亲从来没去过农村。",
+        "vietnamese": "Mẹ tôi chưa bao giờ về quê.",
+        "explanation": "Xác định chủ ngữ là **母亲** nên đặt ở đầu câu, sau đó ghép tiếp **从来**, sau đó ghép tiếp **没**, sau đó ghép tiếp **去过**, sau đó ghép tiếp **农村**.",
+        "highlights": [
+          "母亲"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[乘坐我们的] / [航班] / [欢迎] / [您再次]",
+        "answer": "欢迎您再次乘坐我们的航班。",
+        "vietnamese": "Chào mừng bạn bay cùng chúng tôi lần nữa.",
+        "explanation": "Đặt cụm từ **欢迎** ở đầu câu, sau đó ghép tiếp **您再次**, tiếp theo là **乘坐我们的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **航班** để tạo thành cụm danh từ **乘坐我们的航班**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[学校] / [去参观] / [长城] / [将] / [组织大家]",
+        "answer": "学校将组织大家去参观长城。",
+        "vietnamese": "Nhà trường sẽ tổ chức cho mọi người đi tham quan Vạn Lý Trường Thành.",
+        "explanation": "Đặt cụm từ **学校** ở đầu câu, sau đó ghép tiếp **将**, sau đó ghép tiếp **组织大家**, sau đó ghép tiếp **去参观**, sau đó ghép tiếp **长城**.",
+        "highlights": [
+          "学校"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[一头牛] / [看起来] / [那座山] / [像]",
+        "answer": "那座山看起来像一头牛。",
+        "vietnamese": "Ngọn núi đó trông giống như một con bò.",
+        "explanation": "Đặt cụm từ **那座山** ở đầu câu, sau đó ghép tiếp **看起来**, sau đó ghép tiếp **像**, sau đó ghép tiếp **一头牛**.",
+        "highlights": [
+          "那座"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[去] / [公园] / [你陪姐姐] / [散散步] / [吧]",
+        "answer": "你陪姐姐去公园散散步吧。",
+        "vietnamese": "Bạn đi dạo trong công viên với em gái của bạn.",
+        "explanation": "Đặt cụm từ **你陪姐姐** ở đầu câu, sau đó ghép tiếp **去**, sau đó ghép tiếp **公园**, sau đó ghép tiếp **散散步**, cuối câu thêm trợ từ ngữ khí **吧** để khuyên bảo/cầu khiến.",
+        "highlights": [
+          "你陪"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[这个班的] / [大部分学生] / [亚洲] / [来自]",
+        "answer": "这个班的大部分学生来自亚洲。",
+        "vietnamese": "Hầu hết học sinh trong lớp này đều đến từ Châu Á.",
+        "explanation": "Đặt **这个班的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **大部分学生** để tạo thành cụm danh từ **这个班的大部分学生**, sau đó ghép tiếp **来自**, sau đó ghép tiếp **亚洲**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[马上] / [结束了] / [就要] / [这场足球赛]",
+        "answer": "这场足球赛马上就要结束了。[OR] 马上这场足球赛就要结束了。",
+        "vietnamese": "Trận bóng đá này sắp kết thúc.",
+        "explanation": "Đặt cụm từ **这场足球赛** ở đầu câu, sau đó ghép tiếp **马上**, sau đó ghép tiếp **就要**, sau đó ghép tiếp **结束了**.",
+        "highlights": [
+          "马上就要"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_7",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 6: Bổ ngữ trạng thái 得 (Bộ 1)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 6: Bổ ngữ trạng thái 得",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[普通话] / [他的] / [说得] / [不太标准]",
+        "answer": "他的普通话说得不太标准。",
+        "vietnamese": "Tiếng Quan thoại của anh ấy không chuẩn lắm.",
+        "explanation": "Đặt **他的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **普通话** để tạo thành cụm danh từ **他的普通话**, sau động từ chính thêm trợ từ **说得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **不太标准**.",
+        "highlights": [
+          "得",
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[愉快] / [她们俩] / [聊得] / [非常]",
+        "answer": "她们俩聊得非常愉快。",
+        "vietnamese": "Cả hai đã có khoảng thời gian trò chuyện vui vẻ.",
+        "explanation": "Đặt cụm từ **她们俩** ở đầu câu, sau động từ chính thêm trợ từ **聊得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **非常**, sau đó ghép cụm **愉快**.",
+        "highlights": [
+          "得"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[都进行得] / [顺利] / [很] / [所有的事]",
+        "answer": "所有的事都进行得很顺利。",
+        "vietnamese": "Mọi thứ diễn ra suôn sẻ.",
+        "explanation": "Đặt cụm từ **所有的事** ở đầu câu, sau động từ chính thêm trợ từ **都进行得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **很**, sau đó ghép cụm **顺利**.",
+        "highlights": [
+          "得",
+          "有",
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[真] / [及时] / [下得] / [这场雨]",
+        "answer": "这场雨下得真及时!",
+        "vietnamese": "Cơn mưa này đến thật đúng lúc!",
+        "explanation": "Đặt cụm từ **这场雨** ở đầu câu, sau động từ chính thêm trợ từ **下得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **真**, sau đó ghép cụm **及时**.",
+        "highlights": [
+          "得"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[翻译] / [得] / [不对] / [这个句子]",
+        "answer": "这个句子翻译得不对。",
+        "vietnamese": "Câu này dịch không chính xác.",
+        "explanation": "Đặt cụm từ **这个句子** ở đầu câu, sau đó ghép cụm **翻译**, sau động từ chính thêm trợ từ **得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **不对**.",
+        "highlights": [
+          "得"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[哥哥] / [睡不着觉] / [得] / [兴奋]",
+        "answer": "哥哥兴奋得睡不着觉。",
+        "vietnamese": "Anh tôi vui mừng đến nỗi không ngủ được.",
+        "explanation": "Xác định chủ ngữ là **哥哥** nên đặt ở đầu câu, sau đó ghép cụm **兴奋**, sau động từ chính thêm trợ từ **得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **睡不着觉**.",
+        "highlights": [
+          "得"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[进行得] / [很] / [一切都] / [顺利]",
+        "answer": "一切都进行得很顺利。",
+        "vietnamese": "Mọi thứ diễn ra suôn sẻ.",
+        "explanation": "Đặt cụm từ **一切都** ở đầu câu, sau động từ chính thêm trợ từ **进行得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **很**, sau đó ghép cụm **顺利**.",
+        "highlights": [
+          "得"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[这场] / [赢得] / [比赛] / [非常漂亮]",
+        "answer": "这场比赛赢得非常漂亮。",
+        "vietnamese": "Trò chơi này đã thắng rất đẹp.",
+        "explanation": "Đặt cụm từ **这场** ở đầu câu, sau đó ghép cụm **比赛**, sau động từ chính thêm trợ từ **赢得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **非常漂亮**.",
+        "highlights": [
+          "比",
+          "得"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[很详细] / [这个传真机的] / [写] / [得] / [说明书]",
+        "answer": "这个传真机的说明书写得很详细。",
+        "vietnamese": "Hướng dẫn sử dụng máy fax này rất chi tiết.",
+        "explanation": "Đặt **这个传真机的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **说明书** để tạo thành cụm danh từ **这个传真机的说明书**, sau đó ghép cụm **写**, sau động từ chính thêm trợ từ **得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **很详细**.",
+        "highlights": [
+          "得",
+          "的"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[整理] / [儿子的复习笔记] / [得] / [很详细]",
+        "answer": "儿子的复习笔记整理得很详细。",
+        "vietnamese": "Ghi chú đánh giá của con trai tôi được sắp xếp rất chi tiết.",
+        "explanation": "Đặt cụm từ **儿子的复习笔记** ở đầu câu, sau đó ghép cụm **整理**, sau động từ chính thêm trợ từ **得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **很详细**.",
+        "highlights": [
+          "得",
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_8",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 6: Bổ ngữ trạng thái 得 (Bộ 2)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 6: Bổ ngữ trạng thái 得",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[中文] / [说得] / [你们校长] / [的] / [很流利]",
+        "answer": "你们校长的中文说得很流利。",
+        "vietnamese": "Hiệu trưởng của bạn nói tiếng Trung trôi chảy.",
+        "explanation": "Đặt cụm từ **你们校长** ở đầu câu, tiếp theo là **的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **中文** để tạo thành cụm danh từ **的中文**, sau động từ chính thêm trợ từ **说得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **很流利**.",
+        "highlights": [
+          "得",
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[您女儿] / [真] / [棒] / [钢琴] / [弹得]",
+        "answer": "您女儿钢琴弹得真棒!",
+        "vietnamese": "Con gái của bạn chơi piano rất tốt!",
+        "explanation": "Đặt cụm từ **您女儿** ở đầu câu, sau đó ghép cụm **钢琴**, sau động từ chính thêm trợ từ **弹得**, sau **得** là tính từ chỉ trạng thái nên tiếp theo là **真**, sau đó ghép cụm **棒**.",
+        "highlights": [
+          "得"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_9",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 7: Câu song tân ngữ & Kiêm ngữ (Bộ 1)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 7: Câu song tân ngữ & Kiêm ngữ",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[里] / [有两棵] / [张教授家的院子] / [苹果树]",
+        "answer": "张教授家的院子里有两棵苹果树。",
+        "vietnamese": "Trong sân nhà giáo sư Zhang có hai cây táo.",
+        "explanation": "Đặt cụm từ **张教授家的院子** ở đầu câu, sau đó thêm danh từ chỉ vị trí **里** (bên trong) ở cuối câu, sau đó ghép tiếp **有两棵**, sau đó ghép tiếp **苹果树**.",
+        "highlights": [
+          "有",
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[排好队] / [按照] / [顺序] / [请同学们]",
+        "answer": "请同学们按照顺序排好队。",
+        "vietnamese": "Yêu cầu học sinh xếp hàng theo thứ tự.",
+        "explanation": "Đặt cụm từ kính ngữ **请同学们** ở đầu câu, sau đó ghép tiếp **按照**, sau đó ghép tiếp **顺序**, sau đó ghép tiếp **排好队**.",
+        "highlights": [
+          "请同"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[观众] / [那个电影] / [让] / [很失望]",
+        "answer": "那个电影让观众很失望。",
+        "vietnamese": "Bộ phim đó khiến khán giả thất vọng.",
+        "explanation": "Đặt cụm từ **那个电影** ở đầu câu, sau đó ghép tiếp **让**, sau đó ghép tiếp **观众**, sau đó ghép tiếp **很失望**.",
+        "highlights": [
+          "让"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[很] / [感动] / [他的话] / [让] / [李教授]",
+        "answer": "他的话让李教授很感动。",
+        "vietnamese": "Giáo sư Li rất cảm động trước lời nói của ông.",
+        "explanation": "Đặt cụm từ **他的话** ở đầu câu, sau đó ghép tiếp **让**, sau đó ghép tiếp **李教授**, sau đó ghép tiếp **很**, sau đó ghép tiếp **感动**.",
+        "highlights": [
+          "让",
+          "的"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[这个消息] / [大吃一惊] / [让] / [都] / [所有人]",
+        "answer": "这个消息让所有人都大吃一惊。",
+        "vietnamese": "Tin tức đến như một sự ngạc nhiên đối với tất cả mọi người.",
+        "explanation": "Đặt cụm từ **这个消息** ở đầu câu, sau đó ghép tiếp **让**, sau đó ghép tiếp **所有人**, sau đó ghép tiếp **都**, sau đó ghép tiếp **大吃一惊**.",
+        "highlights": [
+          "让",
+          "有"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[儿童教育问题] / [谈] / [主要] / [这篇文章]",
+        "answer": "这篇文章主要谈儿童教育问题。",
+        "vietnamese": "Bài viết này chủ yếu nói về việc giáo dục trẻ em.",
+        "explanation": "Đặt cụm từ **这篇文章** ở đầu câu, sau đó ghép tiếp **主要**, sau đó ghép tiếp **谈**, sau đó ghép tiếp **儿童教育问题**.",
+        "highlights": [
+          "这篇"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[消息] / [真是] / [这个] / [激动了] / [太让人]",
+        "answer": "这个消息真是太让人激动了！",
+        "vietnamese": "Tin tức này thật thú vị!",
+        "explanation": "Đặt cụm từ **这个** ở đầu câu, sau đó ghép tiếp **消息**, sau đó ghép tiếp **真是**, sau đó ghép tiếp **太让人**, sau đó ghép tiếp **激动了**.",
+        "highlights": [
+          "让",
+          "是"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[不允许] / [医院] / [抽烟] / [里]",
+        "answer": "医院里不允许抽烟。",
+        "vietnamese": "Bệnh viện không được phép hút thuốc.",
+        "explanation": "Đặt cụm từ **医院** ở đầu câu, sau đó thêm danh từ chỉ vị trí **里** (bên trong) ở cuối câu, sau đó ghép tiếp **不允许**, sau đó ghép tiếp **抽烟**.",
+        "highlights": [
+          "医院"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[禁止] / [打电话] / [加油站] / [附近]",
+        "answer": "加油站附近禁止打电话。",
+        "vietnamese": "Cấm gọi điện thoại gần trạm xăng.",
+        "explanation": "Đặt cụm từ **加油站** ở đầu câu, sau đó ghép tiếp **附近**, sau đó ghép tiếp **禁止**, sau đó ghép tiếp **打电话**.",
+        "highlights": [
+          "禁止"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[加油站] / [使用] / [手机] / [禁止]",
+        "answer": "加油站禁止使用手机。",
+        "vietnamese": "Điện thoại di động bị cấm tại các trạm xăng.",
+        "explanation": "Đặt cụm từ **加油站** ở đầu câu, sau đó ghép tiếp **禁止**, sau đó ghép tiếp **使用**, sau đó ghép tiếp **手机**.",
+        "highlights": [
+          "使",
+          "禁止"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_10",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 7: Câu song tân ngữ & Kiêm ngữ (Bộ 2)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 7: Câu song tân ngữ & Kiêm ngữ",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[生活的压力] / [并没有] / [放弃] / [理想] / [使他]",
+        "answer": "生活的压力并没有使他放弃理想。",
+        "vietnamese": "Áp lực cuộc sống không làm anh từ bỏ lý tưởng của mình.",
+        "explanation": "Đặt cụm từ **生活的压力** ở đầu câu, sau đó ghép cụm **并没有**, sau đó ghép cụm **使他**, sau đó ghép cụm **放弃**, sau đó ghép cụm **理想**.",
+        "highlights": [
+          "使",
+          "有",
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_11",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 8: Động từ năng nguyện (Bộ 1)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 8: Động từ năng nguyện",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[就想] / [她从小] / [成为] / [一名演员]",
+        "answer": "她从小就想成为一名演员。",
+        "vietnamese": "Cô đã muốn trở thành một nữ diễn viên từ khi còn nhỏ.",
+        "explanation": "Đặt cụm từ **她从小** ở đầu câu, sau đó ghép cụm **就想**, sau đó ghép cụm **成为**, sau đó ghép cụm **一名演员**.",
+        "highlights": [
+          "她从"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[大家的] / [共同努力] / [保护环境] / [需要]",
+        "answer": "保护环境需要大家的共同努力。",
+        "vietnamese": "Bảo vệ môi trường đòi hỏi sự nỗ lực chung của mọi người.",
+        "explanation": "Đặt cụm từ **保护环境** ở đầu câu, sau đó ghép cụm **需要**, tiếp theo là **大家的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **共同努力** để tạo thành cụm danh từ **大家的共同努力**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[一个窗户旁边的] / [座位] / [我朋友] / [想要]",
+        "answer": "我朋友想要一个窗户旁边的座位。",
+        "vietnamese": "Bạn tôi muốn có một chỗ ngồi cạnh cửa sổ.",
+        "explanation": "Đặt cụm từ **我朋友** ở đầu câu, sau đó ghép cụm **想要**, tiếp theo là **一个窗户旁边的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **座位** để tạo thành cụm danh từ **一个窗户旁边的座位**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[解决] / [问题] / [发脾气] / [并] / [不能]",
+        "answer": "发脾气并不能解决问题。",
+        "vietnamese": "Mất bình tĩnh sẽ không giải quyết được vấn đề.",
+        "explanation": "Đặt cụm từ **发脾气** ở đầu câu, sau đó ghép cụm **并**, sau đó ghép cụm **不能**, sau đó ghép cụm **解决**, sau đó ghép cụm **问题**.",
+        "highlights": [
+          "发脾"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[经验] / [慢慢] / [是需要] / [积累的]",
+        "answer": "经验是需要慢慢积累的。",
+        "vietnamese": "Kinh nghiệm cần phải được tích lũy dần dần.",
+        "explanation": "Đặt cụm từ **经验** ở đầu câu, sau đó ghép cụm **是需要**, sau đó ghép cụm **慢慢**, sau đó ghép cụm **积累的**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[不打算] / [留学] / [我暂时] / [还]",
+        "answer": "我暂时还不打算留学。",
+        "vietnamese": "Tôi chưa có kế hoạch đi du học.",
+        "explanation": "Đặt cụm từ **我暂时** ở đầu câu, sau đó ghép cụm **还**, sau đó ghép cụm **不打算**, sau đó ghép cụm **留学**.",
+        "highlights": [
+          "我暂"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[下去] / [真希望] / [暖和] / [天气] / [继续]",
+        "answer": "真希望天气继续暖和下去。",
+        "vietnamese": "Tôi thực sự hy vọng thời tiết tiếp tục ấm lên.",
+        "explanation": "Đặt cụm từ **真希望** ở đầu câu, sau đó ghép cụm **天气**, sau đó ghép cụm **继续**, sau đó ghép cụm **暖和**, sau đó ghép cụm **下去**.",
+        "highlights": [
+          "真希"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[每个人] / [别人的尊重] / [都] / [希望获得]",
+        "answer": "每个人都希望获得别人的尊重。",
+        "vietnamese": "Mọi người đều muốn được người khác tôn trọng.",
+        "explanation": "Đặt cụm từ **每个人** ở đầu câu, sau đó ghép cụm **都**, sau đó ghép cụm **希望获得**, sau đó ghép cụm **别人的尊重**.",
+        "highlights": [
+          "得",
+          "的"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[提高] / [表达能力] / [坚持写日记] / [对] / [有好处]",
+        "answer": "坚持写日记对提高表达能力有好处。",
+        "vietnamese": "Viết nhật ký là cách tốt để cải thiện kỹ năng diễn đạt của bạn.",
+        "explanation": "Đặt cụm từ **坚持写日记** ở đầu câu, sau đó ghép cụm **对**, sau đó ghép cụm **提高**, sau đó ghép cụm **表达能力**, sau đó ghép cụm **有好处**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[这个城市] / [出租车的数量] / [决定] / [增加]",
+        "answer": "这个城市决定增加出租车的数量。",
+        "vietnamese": "Thành phố quyết định tăng số lượng taxi.",
+        "explanation": "Đặt cụm từ **这个城市** ở đầu câu, sau đó ghép cụm **决定**, sau đó ghép cụm **增加**, sau đó ghép cụm **出租车的数量**.",
+        "highlights": [
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_12",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 8: Động từ năng nguyện (Bộ 2)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 8: Động từ năng nguyện",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[我们] / [尊重] / [诚实的人] / [值得]",
+        "answer": "诚实的人值得我们尊重。",
+        "vietnamese": "Những người trung thực xứng đáng được chúng ta tôn trọng.",
+        "explanation": "Đặt cụm từ **诚实的人** ở đầu câu, sau đó ghép cụm **值得**, sau đó ghép cụm **我们**, sau đó ghép cụm **尊重**.",
+        "highlights": [
+          "得",
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[打扰] / [他] / [你最好] / [不要]",
+        "answer": "你最好不要打扰他。",
+        "vietnamese": "Tốt nhất bạn đừng làm phiền anh ấy.",
+        "explanation": "Đặt cụm từ **你最好** ở đầu câu, sau đó ghép cụm **不要**, sau đó ghép cụm **打扰**, sau đó ghép cụm **他**.",
+        "highlights": [
+          "你最"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[电梯] / [正常] / [使用了] / [已经可以]",
+        "answer": "电梯已经可以正常使用了。",
+        "vietnamese": "Thang máy đã sẵn sàng để sử dụng bình thường.",
+        "explanation": "Đặt cụm từ **电梯** ở đầu câu, sau đó ghép cụm **已经可以**, sau đó ghép cụm **正常**, sau đó ghép cụm **使用了**.",
+        "highlights": [
+          "使"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[你最好] / [一个密码] / [重新] / [换]",
+        "answer": "你最好重新换一个密码。",
+        "vietnamese": "Tốt nhất bạn nên thay đổi mật khẩu của mình.",
+        "explanation": "Đặt cụm từ **你最好** ở đầu câu, sau đó ghép cụm **重新**, sau đó ghép cụm **换**, sau đó ghép cụm **一个密码**.",
+        "highlights": [
+          "你最"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[招聘] / [银行] / [高级主管] / [决定] / [一名]",
+        "answer": "银行决定招聘一名高级主管。",
+        "vietnamese": "Ngân hàng đã quyết định tuyển dụng một giám đốc điều hành cấp cao.",
+        "explanation": "Đặt cụm từ **银行** ở đầu câu, sau đó ghép cụm **决定**, sau đó ghép cụm **招聘**, sau đó ghép cụm **一名**, sau đó ghép cụm **高级主管**.",
+        "highlights": [
+          "银行"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[200] / [估计报名人数] / [王老师] / [超过] / [会]",
+        "answer": "王老师估计报名人数会超过 200。",
+        "vietnamese": "Thầy Vương ước tính số lượng người đăng ký sẽ vượt quá 200.",
+        "explanation": "Xác định chủ ngữ là **王老师** nên đặt ở đầu câu, sau đó ghép cụm **估计报名人数**, sau đó ghép cụm **会**, sau đó ghép cụm **超过**, sau đó ghép cụm **200**.",
+        "highlights": [
+          "王老"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[我] / [陪叔叔] / [去长城] / [看看] / [打算]",
+        "answer": "我打算陪叔叔去长城看看。",
+        "vietnamese": "Tôi dự định cùng chú tôi đi thăm Vạn Lý Trường Thành.",
+        "explanation": "Xác định chủ ngữ là **我** nên đặt ở đầu câu, sau đó ghép cụm **打算**, sau đó ghép cụm **陪叔叔**, sau đó ghép cụm **去长城**, sau đó ghép cụm **看看**.",
+        "highlights": [
+          "我打"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[语言表达能力] / [经常阅读报纸] / [提高] / [能]",
+        "answer": "经常阅读报纸能提高语言表达能力。",
+        "vietnamese": "Đọc báo thường xuyên có thể cải thiện kỹ năng diễn đạt ngôn ngữ.",
+        "explanation": "Đặt cụm từ **经常阅读报纸** ở đầu câu, sau đó ghép cụm **能**, sau đó ghép cụm **提高**, sau đó ghép cụm **语言表达能力**.",
+        "highlights": [
+          "经常"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[举行] / [这次电影艺术节] / [在北京] / [也许] / [会]",
+        "answer": "这次电影艺术节也许会在北京举行。[OR] 也许这次电影艺术节会在北",
+        "vietnamese": "Liên hoan phim và nghệ thuật này có thể được tổ chức tại Bắc Kinh.",
+        "explanation": "Đặt cụm từ **这次电影艺术节** ở đầu câu, sau đó ghép cụm **也许**, sau đó ghép cụm **会**, sau đó ghép cụm **在北京**, sau đó ghép cụm **举行**.",
+        "highlights": [
+          "在"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[请假休息] / [重感冒] / [让他] / [不得不]",
+        "answer": "重感冒让他不得不请假休息。",
+        "vietnamese": "Một cơn cảm lạnh nặng buộc anh phải dành thời gian để nghỉ ngơi.",
+        "explanation": "Đặt cụm từ **重感冒** ở đầu câu, sau đó ghép cụm **让他**, sau đó ghép cụm **不得不**, sau đó ghép cụm **请假休息**.",
+        "highlights": [
+          "得",
+          "让"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_13",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 8: Động từ năng nguyện (Bộ 3)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 8: Động từ năng nguyện",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[告诉他] / [答案] / [你] / [最好] / [别]",
+        "answer": "你最好别告诉他答案。",
+        "vietnamese": "Tốt nhất bạn không nên cho anh ấy biết câu trả lời.",
+        "explanation": "Xác định chủ ngữ là **你** nên đặt ở đầu câu, sau đó ghép cụm **最好**, sau đó ghép cụm **别**, sau đó ghép cụm **告诉他**, sau đó ghép cụm **答案**.",
+        "highlights": [
+          "你最"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[计划] / [原来的] / [他不得不] / [改变]",
+        "answer": "他不得不改变原来的计划。",
+        "vietnamese": "Anh phải thay đổi kế hoạch ban đầu của mình.",
+        "explanation": "Đặt cụm từ **他不得不** ở đầu câu, sau đó ghép cụm **改变**, tiếp theo là **原来的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **计划** để tạo thành cụm danh từ **原来的计划**.",
+        "highlights": [
+          "得",
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[最多] / [这部电梯] / [16] / [个人] / [乘坐] / [能]",
+        "answer": "这部电梯最多能乘坐 16 个人。",
+        "vietnamese": "Thang máy này có thể chứa tối đa 16 người.",
+        "explanation": "Đặt cụm từ **这部电梯** ở đầu câu, sau đó ghép cụm **最多**, sau đó ghép cụm **能**, sau đó ghép cụm **乘坐**, sau đó ghép cụm **16**, sau đó ghép cụm **个人**.",
+        "highlights": [
+          "这部"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[慢慢] / [积累的] / [是需要] / [知识]",
+        "answer": "知识是需要慢慢积累的。",
+        "vietnamese": "Kiến thức cần được tích lũy dần dần.",
+        "explanation": "Đặt cụm từ **知识** ở đầu câu, sau đó ghép cụm **是需要**, sau đó ghép cụm **慢慢**, sau đó ghép cụm **积累的**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_14",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 9: Câu tồn tại & Vị trí địa điểm",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 9: Câu tồn tại & Vị trí địa điểm",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[发生] / [在] / [这个故事] / [上个世纪末]",
+        "answer": "这个故事发生在上个世纪末。",
+        "vietnamese": "Câu chuyện này xảy ra vào cuối thế kỷ trước.",
+        "explanation": "Đặt cụm từ **这个故事** ở đầu câu, sau đó ghép cụm **发生**, sau đó ghép cụm **在**, sau đó ghép cụm **上个世纪末**.",
+        "highlights": [
+          "在"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[沙发] / [你的钥匙] / [在] / [上]",
+        "answer": "你的钥匙在沙发上。",
+        "vietnamese": "Chìa khóa của bạn ở trên ghế dài.",
+        "explanation": "Đặt cụm từ **你的钥匙** ở đầu câu, sau đó ghép cụm **在**, sau đó ghép cụm **沙发**, sau đó ghép cụm **上**.",
+        "highlights": [
+          "在",
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[好处] / [抽烟对你] / [没有] / [一点儿]",
+        "answer": "抽烟对你没有一点儿好处。[OR] 抽烟对你一点儿好处没有。",
+        "vietnamese": "Hút thuốc không mang lại lợi ích gì cho bạn.",
+        "explanation": "Đặt cụm từ **抽烟对你** ở đầu câu, sau đó ghép cụm **没有**, sau đó ghép cụm **一点儿**, sau đó ghép cụm **好处**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[这个] / [没有] / [语法错误] / [句子]",
+        "answer": "这个句子没有语法错误。",
+        "vietnamese": "Không có lỗi ngữ pháp trong câu này.",
+        "explanation": "Đặt cụm từ **这个** ở đầu câu, sau đó ghép cụm **句子**, sau đó ghép cụm **没有**, sau đó ghép cụm **语法错误**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[钥匙] / [里] / [在] / [塑料袋]",
+        "answer": "钥匙在塑料袋里。",
+        "vietnamese": "Chìa khóa nằm trong một túi nhựa.",
+        "explanation": "Đặt cụm từ **钥匙** ở đầu câu, sau đó ghép cụm **在**, cho vào đâu thì chọn **塑料袋** (túi nilon), sau đó thêm danh từ chỉ vị trí **里** (bên trong) ở cuối câu.",
+        "highlights": [
+          "在"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[我还剩] / [没] / [做完] / [几个填空题]",
+        "answer": "我还剩几个填空题没做完。",
+        "vietnamese": "Tôi vẫn còn một số câu hỏi điền vào chỗ trống cần hoàn thành.",
+        "explanation": "Đặt cụm từ **我还剩** ở đầu câu, sau đó ghép cụm **几个填空题**, sau đó ghép cụm **没**, sau đó ghép cụm **做完**.",
+        "highlights": [
+          "我还"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[好处] / [抽烟] / [对身体] / [没有]",
+        "answer": "抽烟对身体没有好处。",
+        "vietnamese": "Hút thuốc không tốt cho cơ thể của bạn.",
+        "explanation": "Đặt cụm từ **抽烟** ở đầu câu, sau đó ghép cụm **对身体**, sau đó ghép cụm **没有**, sau đó ghép cụm **好处**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[森林] / [狮子] / [里] / [住着] / [一群]",
+        "answer": "森林里住着一群狮子。",
+        "vietnamese": "Có một đàn sư tử sống trong rừng.",
+        "explanation": "Đặt cụm từ **森林** ở đầu câu, sau đó thêm danh từ chỉ vị trí **里** (bên trong) ở cuối câu, sau đó ghép cụm **住着**, sau đó ghép cụm **一群**, sau đó ghép cụm **狮子**.",
+        "highlights": [
+          "森林"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_15",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 10: Câu chữ 是 & Cấu trúc 是...的 (Bộ 1)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 10: Câu chữ 是 & Cấu trúc 是...的",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[著名的] / [是] / [她丈夫] / [京剧演员]",
+        "answer": "她丈夫是著名的京剧演员。",
+        "vietnamese": "Chồng cô là một diễn viên Kinh kịch nổi tiếng.",
+        "explanation": "Đặt cụm từ **她丈夫** ở đầu câu, sau đó ghép cụm **是**, tiếp theo là **著名的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **京剧演员** để tạo thành cụm danh từ **著名的京剧演员**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[爱情] / [并] / [生命的全部] / [不是]",
+        "answer": "爱情并不是生命的全部。",
+        "vietnamese": "Tình yêu không phải là tất cả trong cuộc sống.",
+        "explanation": "Đặt cụm từ **爱情** ở đầu câu, sau đó ghép cụm **并**, sau đó ghép cụm **不是**, sau đó ghép cụm **生命的全部**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[他] / [是] / [京剧演员] / [20] / [世纪] / [最有名的]",
+        "answer": "他是 20 世纪最有名的京剧演员。[OR] 20 世纪最有名的京剧演员是他。",
+        "vietnamese": "Ông là diễn viên Kinh kịch nổi tiếng nhất thế kỷ 20.",
+        "explanation": "Xác định chủ ngữ là **他** nên đặt ở đầu câu, sau đó ghép cụm **是**, sau đó ghép cụm **20**, sau đó ghép cụm **世纪**, tiếp theo là **最有名的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **京剧演员** để tạo thành cụm danh từ **最有名的京剧演员**.",
+        "highlights": [
+          "有",
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[这双袜子] / [给我的] / [是] / [父亲]",
+        "answer": "这双袜子是父亲给我的。",
+        "vietnamese": "Đôi tất này được bố tôi tặng cho tôi.",
+        "explanation": "Đặt cụm từ **这双袜子** ở đầu câu, sau đó ghép cụm **是**, sau đó ghép cụm **父亲**, sau đó ghép cụm **给我的**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[地球是] / [共同的] / [家] / [我们]",
+        "answer": "地球是我们共同的家。",
+        "vietnamese": "Trái đất là ngôi nhà chung của chúng ta.",
+        "explanation": "Đặt cụm từ **地球是** ở đầu câu, sau đó ghép cụm **我们**, tiếp theo là **共同的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **家** để tạo thành cụm danh từ **共同的家**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[去年秋天] / [我孙子] / [出生] / [是] / [的]",
+        "answer": "我孙子是去年秋天出生的。",
+        "vietnamese": "Cháu trai tôi chào đời vào mùa thu năm ngoái.",
+        "explanation": "Đặt cụm từ **我孙子** ở đầu câu, sau đó ghép cụm **是**, sau đó ghép cụm **去年秋天**, sau đó ghép cụm **出生**, sau đó ghép cụm **的**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[工具书] / [是] / [一本] / [现代汉语词典]",
+        "answer": "现代汉语词典是一本工具书。",
+        "vietnamese": "Từ điển tiếng Trung hiện đại là một cuốn sách tham khảo.",
+        "explanation": "Đặt cụm từ **现代汉语词典** ở đầu câu, sau đó ghép cụm **是**, sau đó ghép cụm **一本**, sau đó ghép cụm **工具书**.",
+        "highlights": [
+          "是"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[汤] / [这儿的] / [免费的] / [是]",
+        "answer": "这儿的汤是免费的。",
+        "vietnamese": "Súp ở đây là miễn phí.",
+        "explanation": "Đặt **这儿的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **汤** để tạo thành cụm danh từ **这儿的汤**, sau đó ghép cụm **是**, sau đó ghép cụm **免费的**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[她] / [儿童医院的] / [是] / [护士] / [当地]",
+        "answer": "她是当地儿童医院的护士。",
+        "vietnamese": "Cô là y tá tại bệnh viện nhi địa phương.",
+        "explanation": "Xác định chủ ngữ là **她** nên đặt ở đầu câu, sau đó ghép cụm **是**, sau đó ghép cụm **当地**, tiếp theo là **儿童医院的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **护士** để tạo thành cụm danh từ **儿童医院的护士**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[是] / [负责的] / [由李经理] / [这次调查]",
+        "answer": "这次调查是由李经理负责的。",
+        "vietnamese": "Cuộc điều tra này do Giám đốc Li chỉ đạo.",
+        "explanation": "Đặt cụm từ **这次调查** ở đầu câu, sau đó ghép cụm **是**, sau đó ghép cụm **由李经理**, sau đó ghép cụm **负责的**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_16",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 10: Câu chữ 是 & Cấu trúc 是...的 (Bộ 2)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 10: Câu chữ 是 & Cấu trúc 是...的",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[2009] / [年] / [7] / [月] / [8] / [号] / [我孙子] / [是] / [出生的]",
+        "answer": "我孙子是 2009 年 7 月 8 号出生的。",
+        "vietnamese": "Cháu trai tôi sinh ngày 8 tháng 7 năm 2009.",
+        "explanation": "Đặt cụm từ **我孙子** ở đầu câu, sau đó ghép cụm **是**, sau đó ghép cụm **2009**, sau đó ghép cụm **年**, sau đó ghép cụm **7**, sau đó ghép cụm **月**, sau đó ghép cụm **8**, sau đó ghép cụm **号**, sau đó ghép cụm **出生的**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[每个人的] / [是我们] / [责任] / [保护环境]",
+        "answer": "保护环境是我们每个人的责任。",
+        "vietnamese": "Bảo vệ môi trường là trách nhiệm của mỗi chúng ta.",
+        "explanation": "Đặt cụm từ **保护环境** ở đầu câu, sau đó ghép cụm **是我们**, tiếp theo là **每个人的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **责任** để tạo thành cụm danh từ **每个人的责任**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[他父亲] / [当地的] / [一位律师] / [是]",
+        "answer": "他父亲是当地的一位律师。",
+        "vietnamese": "Cha anh là một luật sư địa phương.",
+        "explanation": "Đặt cụm từ **他父亲** ở đầu câu, sau đó ghép cụm **是**, tiếp theo là **当地的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **一位律师** để tạo thành cụm danh từ **当地的一位律师**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[果然是] / [这] / [好消息] / [一个激动人心的]",
+        "answer": "这果然是一个激动人心的好消息。",
+        "vietnamese": "Đây thực sự là một tin tức thú vị.",
+        "explanation": "Đặt cụm từ **这** ở đầu câu, sau đó ghép cụm **果然是**, tiếp theo là **一个激动人心的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **好消息** để tạo thành cụm danh từ **一个激动人心的好消息**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_17",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 11: Câu vị ngữ tính từ (Bộ 1)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 11: Câu vị ngữ tính từ",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[儿童牙膏] / [十分] / [受欢迎] / [这种]",
+        "answer": "这种儿童牙膏十分受欢迎。",
+        "vietnamese": "Kem đánh răng dành cho trẻ em này rất được ưa chuộng.",
+        "explanation": "Đặt cụm từ **这种** ở đầu câu, sau đó ghép cụm **儿童牙膏**, sau đó ghép cụm **十分**, sau đó ghép cụm **受欢迎**.",
+        "highlights": [
+          "这种"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[不错] / [这台] / [质量] / [洗衣机的]",
+        "answer": "这台洗衣机的质量不错。",
+        "vietnamese": "Chất lượng của máy giặt này là tốt.",
+        "explanation": "Đặt cụm từ **这台** ở đầu câu, tiếp theo là **洗衣机的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **质量** để tạo thành cụm danh từ **洗衣机的质量**, sau đó ghép cụm **不错**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[很成熟] / [制造技术] / [已经] / [这种电梯的]",
+        "answer": "这种电梯的制造技术已经很成熟。",
+        "vietnamese": "Công nghệ sản xuất loại thang máy này đã rất trưởng thành.",
+        "explanation": "Đặt **这种电梯的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **制造技术** để tạo thành cụm danh từ **这种电梯的制造技术**, sau đó ghép cụm **已经**, sau đó ghép cụm **很成熟**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[印象] / [那位导游] / [很深的] / [给我] / [留下了]",
+        "answer": "那位导游给我留下了很深的印象。",
+        "vietnamese": "Người hướng dẫn viên du lịch đã để lại ấn tượng sâu sắc trong tôi.",
+        "explanation": "Đặt cụm từ **那位导游** ở đầu câu, sau đó ghép cụm **给我**, sau đó ghép cụm **留下了**, tiếp theo là **很深的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **印象** để tạo thành cụm danh từ **很深的印象**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[附近的森林] / [很熟悉] / [邻居] / [对]",
+        "answer": "邻居对附近的森林很熟悉。",
+        "vietnamese": "Người hàng xóm quen thuộc với khu rừng gần đó.",
+        "explanation": "Đặt cụm từ **邻居** ở đầu câu, sau đó ghép cụm **对**, sau đó ghép cụm **附近的森林**, sau đó ghép cụm **很熟悉**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[那个司机] / [当地的] / [气候] / [不太适应]",
+        "answer": "那个司机不太适应当地的气候。",
+        "vietnamese": "Người lái xe không thích nghi tốt với khí hậu địa phương.",
+        "explanation": "Đặt cụm từ **那个司机** ở đầu câu, sau đó ghép cụm **不太适应**, tiếp theo là **当地的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **气候** để tạo thành cụm danh từ **当地的气候**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[很] / [他] / [可爱] / [刚睡醒的样子]",
+        "answer": "他刚睡醒的样子很可爱。",
+        "vietnamese": "Trông anh ấy thật dễ thương khi vừa thức dậy.",
+        "explanation": "Xác định chủ ngữ là **他** nên đặt ở đầu câu, sau đó ghép cụm **刚睡醒的样子**, sau đó ghép cụm **很**, sau đó ghép cụm **可爱**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[这条] / [稍微] / [裤子] / [厚] / [有点儿]",
+        "answer": "这条裤子稍微有点儿厚。",
+        "vietnamese": "Quần này hơi dày.",
+        "explanation": "Đặt cụm từ **这条** ở đầu câu, sau đó ghép cụm **裤子**, sau đó ghép cụm **稍微**, sau đó ghép cụm **有点儿**, sau đó ghép cụm **厚**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[欢迎] / [那个] / [法律节目] / [很] / [受]",
+        "answer": "那个法律节目很受欢迎。",
+        "vietnamese": "Chương trình pháp lý đó rất nổi tiếng.",
+        "explanation": "Đặt cụm từ **那个** ở đầu câu, sau đó ghép cụm **法律节目**, sau đó ghép cụm **很**, sau đó ghép cụm **受**, sau đó ghép cụm **欢迎**.",
+        "highlights": [
+          "那个"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[非常] / [大] / [影响范围] / [这场降水] / [的]",
+        "answer": "这场降水的影响范围非常大。",
+        "vietnamese": "Tác động của lượng mưa này là rất lớn.",
+        "explanation": "Đặt cụm từ **这场降水** ở đầu câu, tiếp theo là **的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **影响范围** để tạo thành cụm danh từ **的影响范围**, sau đó ghép cụm **非常**, sau đó ghép cụm **大**.",
+        "highlights": [
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_18",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 11: Câu vị ngữ tính từ (Bộ 2)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 11: Câu vị ngữ tính từ",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[完全] / [国家的] / [这么做] / [符合] / [法律规定]",
+        "answer": "这么做完全符合国家的法律规定。",
+        "vietnamese": "Điều này hoàn toàn phù hợp với quy định pháp luật của nước này.",
+        "explanation": "Đặt cụm từ **这么做** ở đầu câu, sau đó ghép cụm **完全**, sau đó ghép cụm **符合**, tiếp theo là **国家的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **法律规定** để tạo thành cụm danh từ **国家的法律规定**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[笑话] / [非常] / [父亲讲的] / [有趣]",
+        "answer": "父亲讲的笑话非常有趣。",
+        "vietnamese": "Những câu nói đùa của bố thật buồn cười.",
+        "explanation": "Đặt **父亲讲的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **笑话** để tạo thành cụm danh từ **父亲讲的笑话**, sau đó ghép cụm **非常**, sau đó ghép cụm **有趣**.",
+        "highlights": [
+          "有",
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[她们俩的] / [不一样] / [性格] / [完全]",
+        "answer": "她们俩的性格完全不一样。",
+        "vietnamese": "Tính cách của họ hoàn toàn khác nhau.",
+        "explanation": "Đặt **她们俩的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **性格** để tạo thành cụm danh từ **她们俩的性格**, sau đó ghép cụm **完全**, sau đó ghép cụm **不一样**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[答案] / [的] / [他] / [完全] / [正确]",
+        "answer": "他的答案完全正确。",
+        "vietnamese": "Câu trả lời của anh ấy là hoàn toàn chính xác.",
+        "explanation": "Xác định chủ ngữ là **他** nên đặt ở đầu câu, tiếp theo là **的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **答案** để tạo thành cụm danh từ **的答案**, sau đó ghép cụm **完全**, sau đó ghép cụm **正确**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[饺子] / [香] / [奶奶] / [做的] / [真]",
+        "answer": "奶奶做的饺子真香。",
+        "vietnamese": "Bánh bao bà ngoại làm ngon quá.",
+        "explanation": "Đặt cụm từ **奶奶** ở đầu câu, tiếp theo là **做的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **饺子** để tạo thành cụm danh từ **做的饺子**, sau đó ghép cụm **真**, sau đó ghép cụm **香**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[改变] / [第一印象往往] / [很] / [难]",
+        "answer": "第一印象往往很难改变。",
+        "vietnamese": "Ấn tượng đầu tiên thường khó thay đổi.",
+        "explanation": "Đặt cụm từ **第一印象往往** ở đầu câu, sau đó ghép cụm **很**, sau đó ghép cụm **难**, sau đó ghép cụm **改变**.",
+        "highlights": [
+          "第一"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[看法] / [我] / [跟你的] / [差不多]",
+        "answer": "我跟你的看法差不多。",
+        "vietnamese": "Tôi có quan điểm tương tự như của bạn.",
+        "explanation": "Xác định chủ ngữ là **我** nên đặt ở đầu câu, tiếp theo là **跟你的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **看法** để tạo thành cụm danh từ **跟你的看法**, sau đó ghép cụm **差不多**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[对] / [非常感谢您] / [理解和支持] / [我们工作的]",
+        "answer": "非常感谢您对我们工作的理解和支持。",
+        "vietnamese": "Cảm ơn bạn rất nhiều vì sự hiểu biết và hỗ trợ của bạn cho công việc của chúng tôi.",
+        "explanation": "Đặt cụm từ **非常感谢您** ở đầu câu, sau đó ghép cụm **对**, tiếp theo là **我们工作的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **理解和支持** để tạo thành cụm danh từ **我们工作的理解和支持**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[温度] / [比较] / [室内] / [低]",
+        "answer": "室内温度比较低。",
+        "vietnamese": "Nhiệt độ trong nhà tương đối thấp.",
+        "explanation": "Đặt cụm từ **室内** ở đầu câu, sau đó ghép cụm **温度**, sau đó ghép cụm **比较**, sau đó ghép cụm **低**.",
+        "highlights": [
+          "比"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[效果] / [很] / [好] / [这个方法]",
+        "answer": "这个方法效果很好。",
+        "vietnamese": "Phương pháp này hoạt động rất tốt.",
+        "explanation": "Đặt cụm từ **这个方法** ở đầu câu, sau đó ghép cụm **效果**, sau đó ghép cụm **很**, sau đó ghép cụm **好**.",
+        "highlights": [
+          "这个"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_19",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 11: Câu vị ngữ tính từ (Bộ 3)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 11: Câu vị ngữ tính từ",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[爷爷] / [非常] / [感兴趣] / [对] / [京剧]",
+        "answer": "爷爷对京剧非常感兴趣。",
+        "vietnamese": "Ông nội rất quan tâm đến Kinh kịch.",
+        "explanation": "Xác định chủ ngữ là **爷爷** nên đặt ở đầu câu, sau đó ghép cụm **对**, sau đó ghép cụm **京剧**, sau đó ghép cụm **非常**, sau đó ghép cụm **感兴趣**.",
+        "highlights": [
+          "爷爷"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[下雨] / [很湿润] / [后] / [空气]",
+        "answer": "下雨后空气很湿润。[OR] 空气下雨后很湿润。",
+        "vietnamese": "Không khí rất ẩm sau mưa.",
+        "explanation": "Đặt cụm từ **下雨** ở đầu câu, sau đó ghép cụm **后**, sau đó ghép cụm **空气**, sau đó ghép cụm **很湿润**.",
+        "highlights": [
+          "下雨"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[有名] / [这本小说的] / [非常] / [作者]",
+        "answer": "这本小说的作者非常有名。",
+        "vietnamese": "Tác giả cuốn tiểu thuyết này rất nổi tiếng.",
+        "explanation": "Đặt **这本小说的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **作者** để tạo thành cụm danh từ **这本小说的作者**, sau đó ghép cụm **非常**, sau đó ghép cụm **有名**.",
+        "highlights": [
+          "有",
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[在加油站] / [危险] / [打电话] / [很]",
+        "answer": "在加油站打电话很危险。",
+        "vietnamese": "Nói chuyện điện thoại ở trạm xăng rất nguy hiểm.",
+        "explanation": "Đặt cụm từ **在加油站** ở đầu câu, sau đó ghép cụm **打电话**, sau đó ghép cụm **很**, sau đó ghép cụm **危险**.",
+        "highlights": [
+          "在"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[准确] / [万先生的] / [一直] / [判断力] / [很]",
+        "answer": "万先生的判断力一直很准确。",
+        "vietnamese": "Nhận định của ông Vạn luôn chính xác.",
+        "explanation": "Đặt **万先生的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **判断力** để tạo thành cụm danh từ **万先生的判断力**, sau đó ghép cụm **一直**, sau đó ghép cụm **很**, sau đó ghép cụm **准确**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[儿童] / [欢迎] / [很] / [这个节目] / [受]",
+        "answer": "这个节目很受儿童欢迎。",
+        "vietnamese": "Chương trình này rất được trẻ em yêu thích.",
+        "explanation": "Đặt cụm từ **这个节目** ở đầu câu, sau đó ghép cụm **很**, sau đó ghép cụm **受**, sau đó ghép cụm **儿童**, sau đó ghép cụm **欢迎**.",
+        "highlights": [
+          "这个"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[很] / [诚实] / [那个] / [确实] / [司机]",
+        "answer": "那个司机确实很诚实。",
+        "vietnamese": "Người lái xe đó thực sự rất trung thực.",
+        "explanation": "Đặt cụm từ **那个** ở đầu câu, sau đó ghép cụm **司机**, sau đó ghép cụm **确实**, sau đó ghép cụm **很**, sau đó ghép cụm **诚实**.",
+        "highlights": [
+          "那个"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[有点儿] / [咸] / [中午的] / [西红柿鸡蛋汤] / [稍微]",
+        "answer": "中午的西红柿鸡蛋汤稍微有点儿咸。",
+        "vietnamese": "Súp cà chua và trứng vào buổi trưa hơi mặn.",
+        "explanation": "Đặt **中午的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **西红柿鸡蛋汤** để tạo thành cụm danh từ **中午的西红柿鸡蛋汤**, sau đó ghép cụm **稍微**, sau đó ghép cụm **有点儿**, sau đó ghép cụm **咸**.",
+        "highlights": [
+          "有",
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_20",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 12: Câu hỏi dùng đại từ nghi vấn (Bộ 1)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 12: Câu hỏi dùng đại từ nghi vấn",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[先] / [调查一下] / [难道] / [你没有]",
+        "answer": "难道你没有先调查一下？",
+        "vietnamese": "Không phải cậu đã điều tra trước sao?",
+        "explanation": "Đặt cụm từ **难道** ở đầu câu, sau đó ghép cụm **你没有**, sau đó ghép cụm **先**, sau đó ghép cụm **调查一下**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[出发还] / [吗] / [你现在] / [来得及]",
+        "answer": "你现在出发还来得及吗？",
+        "vietnamese": "Bây giờ có quá muộn để bạn rời đi không?",
+        "explanation": "Đặt cụm từ **你现在** ở đầu câu, sau đó ghép cụm **出发还**, sau đó ghép cụm **来得及**, vì đây là câu hỏi nên cuối cùng thêm trợ từ nghi vấn **吗**.",
+        "highlights": [
+          "得",
+          "在"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[了] / [寄出去] / [你的申请材料] / [吗]",
+        "answer": "你的申请材料寄出去了吗?",
+        "vietnamese": "Tài liệu đăng ký của bạn đã được gửi đi chưa?",
+        "explanation": "Đặt cụm từ kính ngữ **你的申请材料** ở đầu câu, sau đó ghép cụm **寄出去**, sau đó ghép cụm **了**, vì đây là câu hỏi nên cuối cùng thêm trợ từ nghi vấn **吗**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[词语的用法] / [区别] / [这两个] / [有什么]",
+        "answer": "这两个词语的用法有什么区别？",
+        "vietnamese": "Sự khác biệt giữa cách sử dụng hai từ này là gì?",
+        "explanation": "Đặt cụm từ **这两个** ở đầu câu, sau đó ghép cụm **词语的用法**, sau đó ghép cụm **有什么**, sau đó ghép cụm **区别**.",
+        "highlights": [
+          "有",
+          "的"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[太] / [严格] / [这个标准] / [了] / [吧]",
+        "answer": "这个标准太严格了吧?",
+        "vietnamese": "Liệu tiêu chuẩn này có quá khắt khe?",
+        "explanation": "Đặt cụm từ **这个标准** ở đầu câu, sau đó ghép cụm **太**, sau đó ghép cụm **严格**, sau đó ghép cụm **了**, cuối câu thêm trợ từ ngữ khí **吧** để khuyên bảo/cầu khiến.",
+        "highlights": [
+          "这个"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[还有] / [联系] / [你和] / [那位记者] / [吗]",
+        "answer": "你和那位记者还有联系吗？",
+        "vietnamese": "Bạn vẫn còn liên lạc với phóng viên đó chứ?",
+        "explanation": "Đặt cụm từ **你和** ở đầu câu, sau đó ghép cụm **那位记者**, sau đó ghép cụm **还有**, sau đó ghép cụm **联系**, vì đây là câu hỏi nên cuối cùng thêm trợ từ nghi vấn **吗**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[安全标准] / [符合] / [国家] / [这些食品] / [吗]",
+        "answer": "这些食品符合国家安全标准吗?",
+        "vietnamese": "Những thực phẩm này có đáp ứng tiêu chuẩn an toàn quốc gia không?",
+        "explanation": "Đặt cụm từ **这些食品** ở đầu câu, sau đó ghép cụm **符合**, sau đó ghép cụm **国家**, sau đó ghép cụm **安全标准**, vì đây là câu hỏi nên cuối cùng thêm trợ từ nghi vấn **吗**.",
+        "highlights": [
+          "这些"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[你们] / [解决问题的] / [方法了吗] / [商量出]",
+        "answer": "你们商量出解决问题的方法了吗？",
+        "vietnamese": "Bạn đã thảo luận về giải pháp cho vấn đề chưa?",
+        "explanation": "Đặt cụm từ **你们** ở đầu câu, sau đó ghép cụm **商量出**, tiếp theo là **解决问题的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **方法了吗** để tạo thành cụm danh từ **解决问题的方法了吗**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[发生了] / [这儿究竟] / [什么] / [事情]",
+        "answer": "这儿究竟发生了什么事情？",
+        "vietnamese": "Chuyện gì đang xảy ra ở đây vậy?",
+        "explanation": "Đặt cụm từ **这儿究竟** ở đầu câu, sau đó ghép cụm **发生了**, sau đó ghép cụm **什么**, sau đó ghép cụm **事情**.",
+        "highlights": [
+          "这儿"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[质量] / [你的] / [怎么样] / [笔记本电脑]",
+        "answer": "你的笔记本电脑质量怎么样?",
+        "vietnamese": "Chất lượng laptop của bạn như thế nào?",
+        "explanation": "Đặt **你的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **笔记本电脑** để tạo thành cụm danh từ **你的笔记本电脑**, sau đó ghép cụm **质量**, sau đó ghép cụm **怎么样**.",
+        "highlights": [
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_21",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 12: Câu hỏi dùng đại từ nghi vấn (Bộ 2)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 12: Câu hỏi dùng đại từ nghi vấn",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[不知道] / [难道你] / [连这个规定] / [都]",
+        "answer": "难道你连这个规定都不知道?",
+        "vietnamese": "Bạn thậm chí không biết quy tắc này?",
+        "explanation": "Đặt cụm từ **难道你** ở đầu câu, sau đó ghép cụm **连这个规定**, sau đó ghép cụm **都**, sau đó ghép cụm **不知道**.",
+        "highlights": [
+          "难道"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[离大使馆] / [友谊宾馆] / [远] / [吗]",
+        "answer": "友谊宾馆离大使馆远吗?",
+        "vietnamese": "Khách sạn Hữu nghị có xa đại sứ quán không?",
+        "explanation": "Đặt cụm từ **友谊宾馆** ở đầu câu, sau đó ghép cụm **离大使馆**, sau đó ghép cụm **远**, vì đây là câu hỏi nên cuối cùng thêm trợ từ nghi vấn **吗**.",
+        "highlights": [
+          "使"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[举个例子] / [你能] / [证明] / [吗]",
+        "answer": "你能举个例子证明吗?",
+        "vietnamese": "Bạn có thể đưa ra một ví dụ để chứng minh điều đó?",
+        "explanation": "Đặt cụm từ **你能** ở đầu câu, sau đó ghép cụm **举个例子**, sau đó ghép cụm **证明**, vì đây là câu hỏi nên cuối cùng thêm trợ từ nghi vấn **吗**.",
+        "highlights": [
+          "你能"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[集合] / [到底什么时候] / [呢] / [明天]",
+        "answer": "明天到底什么时候集合呢?",
+        "vietnamese": "Khi nào chúng ta sẽ tập hợp vào ngày mai?",
+        "explanation": "Đặt cụm từ **明天** ở đầu câu, sau đó ghép cụm **到底什么时候**, sau đó ghép cụm **集合**, sau đó ghép cụm **呢**.",
+        "highlights": [
+          "明天"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_22",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 13: Câu biểu thị Số lượng & Giá cả (Bộ 1)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 13: Câu biểu thị Số lượng & Giá cả",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[大约] / [1084] / [公里] / [北京] / [离上海]",
+        "answer": "北京离上海大约 1084 公里。",
+        "vietnamese": "Bắc Kinh cách Thượng Hải khoảng 1084 km.",
+        "explanation": "Đặt cụm từ **北京** ở đầu câu, sau đó ghép cụm **离上海**, sau đó ghép cụm **大约**, sau đó ghép cụm **1084**, sau đó ghép cụm **公里**.",
+        "highlights": [
+          "北京"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[两] / [公里] / [大概有] / [加油站离这儿]",
+        "answer": "加油站离这儿大概有两公里。",
+        "vietnamese": "Trạm xăng cách đây khoảng hai cây số.",
+        "explanation": "Đặt cụm từ **加油站离这儿** ở đầu câu, sau đó ghép cụm **大概有**, sau đó ghép cụm **两**, sau đó ghép cụm **公里**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[一万公里] / [是] / [这两个城市] / [距离] / [的]",
+        "answer": "这两个城市的距离是一万公里。",
+        "vietnamese": "Khoảng cách giữa hai thành phố này là 10.000 km.",
+        "explanation": "Đặt cụm từ **这两个城市** ở đầu câu, tiếp theo là **的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **距离** để tạo thành cụm danh từ **的距离**, sau đó ghép cụm **是**, sau đó ghép cụm **一万公里**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[页] / [一共] / [400] / [多] / [这本小说]",
+        "answer": "这本小说一共 400 多页。",
+        "vietnamese": "Tổng cộng cuốn tiểu thuyết có hơn 400 trang.",
+        "explanation": "Đặt cụm từ **这本小说** ở đầu câu, sau đó ghép cụm **一共**, sau đó ghép cụm **400**, sau đó ghép cụm **多**, sau đó ghép cụm **页**.",
+        "highlights": [
+          "这本"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[降落在] / [飞机] / [首都机场] / [将于] / [15] / [分钟后]",
+        "answer": "飞机将于 15 分钟后降落在首都机场。",
+        "vietnamese": "Máy bay sẽ hạ cánh tại Sân bay Thủ đô sau 15 phút nữa.",
+        "explanation": "Đặt cụm từ **飞机** ở đầu câu, sau đó ghép cụm **将于**, sau đó ghép cụm **15**, sau đó ghép cụm **分钟后**, sau đó ghép cụm **降落在**, sau đó ghép cụm **首都机场**.",
+        "highlights": [
+          "在"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[有] / [1000] / [米] / [大概] / [从左到右]",
+        "answer": "从左到右大概有 1000 米。",
+        "vietnamese": "Từ trái sang phải khoảng 1000m.",
+        "explanation": "Đặt cụm từ **从左到右** ở đầu câu, sau đó ghép cụm **大概**, sau đó ghép cụm **有**, sau đó ghép cụm **1000**, sau đó ghép cụm **米**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[很] / [吃起来] / [香] / [东北大米]",
+        "answer": "东北大米吃起来很香。",
+        "vietnamese": "Gạo Đông Bắc có vị rất thơm.",
+        "explanation": "Đặt cụm từ **东北大米** ở đầu câu, sau đó ghép cụm **吃起来**, sau đó ghép cụm **很**, sau đó ghép cụm **香**.",
+        "highlights": [
+          "东北"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[我的] / [两倍] / [他的工资] / [是]",
+        "answer": "他的工资是我的两倍。",
+        "vietnamese": "Lương của anh ấy gấp đôi lương của tôi.",
+        "explanation": "Đặt cụm từ **他的工资** ở đầu câu, sau đó ghép cụm **是**, tiếp theo là **我的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **两倍** để tạo thành cụm danh từ **我的两倍**.",
+        "highlights": [
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[反对这样做] / [大概] / [三分之二的人] / [有]",
+        "answer": "大概有三分之二的人反对这样做。",
+        "vietnamese": "Khoảng hai phần ba phản đối việc làm như vậy.",
+        "explanation": "Đặt cụm từ **大概** ở đầu câu, sau đó ghép cụm **有**, sau đó ghép cụm **三分之二的人**, sau đó ghép cụm **反对这样做**.",
+        "highlights": [
+          "有",
+          "的"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[邀请信] / [收到] / [三分之一的报名者] / [会]",
+        "answer": "三分之一的报名者会收到邀请信。",
+        "vietnamese": "Một phần ba số người nộp đơn sẽ nhận được thư mời.",
+        "explanation": "Đặt cụm từ **三分之一的报名者** ở đầu câu, sau đó ghép cụm **会**, sau đó ghép cụm **收到**, sau đó ghép cụm **邀请信**.",
+        "highlights": [
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_23",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 13: Câu biểu thị Số lượng & Giá cả (Bộ 2)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 13: Câu biểu thị Số lượng & Giá cả",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[两名售货员] / [招聘] / [楼下的商店] / [要]",
+        "answer": "楼下的商店要招聘两名售货员。",
+        "vietnamese": "Cửa hàng ở tầng dưới đang tìm hai nhân viên bán hàng.",
+        "explanation": "Đặt cụm từ **楼下的商店** ở đầu câu, sau đó ghép cụm **要**, sau đó ghép cụm **招聘**, sau đó ghép cụm **两名售货员**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[亿元] / [许多家饭店的] / [都超过了] / [年收入]",
+        "answer": "许多家饭店的年收入都超过了亿元。",
+        "vietnamese": "Doanh thu hàng năm của nhiều khách sạn vượt quá 100 triệu nhân dân tệ.",
+        "explanation": "Đặt **许多家饭店的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **年收入** để tạo thành cụm danh từ **许多家饭店的年收入**, sau đó ghép cụm **都超过了**, sau đó ghép cụm **亿元**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[提前] / [15] / [分钟] / [你最好] / [出发]",
+        "answer": "你最好提前 15 分钟出发。",
+        "vietnamese": "Tốt nhất bạn nên về sớm 15 phút.",
+        "explanation": "Đặt cụm từ **你最好** ở đầu câu, sau đó ghép cụm **提前**, sau đó ghép cụm **15**, sau đó ghép cụm **分钟**, sau đó ghép cụm **出发**.",
+        "highlights": [
+          "你最"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[90%的] / [通过了考试] / [同学] / [大约有]",
+        "answer": "大约有 90%的同学通过了考试。",
+        "vietnamese": "Khoảng 90% học sinh đã vượt qua kỳ thi.",
+        "explanation": "Đặt cụm từ **大约有** ở đầu câu, tiếp theo là **90%的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **同学** để tạo thành cụm danh từ **90%的同学**, sau đó ghép cụm **通过了考试**.",
+        "highlights": [
+          "有",
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_24",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 14: Câu vị ngữ động từ thường (Bộ 1)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 14: Câu vị ngữ động từ thường",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[意见和看法] / [谈了] / [大家] / [都] / [自己的]",
+        "answer": "大家都谈了自己的意见和看法。",
+        "vietnamese": "Mọi người đều nói về ý kiến ​​và quan điểm của mình.",
+        "explanation": "Xác định chủ ngữ là **大家** nên đặt ở đầu câu, sau đó ghép cụm **都**, sau đó ghép cụm **谈了**, tiếp theo là **自己的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **意见和看法** để tạo thành cụm danh từ **自己的意见和看法**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[她] / [一遍] / [又重新] / [检查了]",
+        "answer": "她又重新检查了一遍。",
+        "vietnamese": "Cô kiểm tra lại lần nữa.",
+        "explanation": "Xác định chủ ngữ là **她** nên đặt ở đầu câu, sau đó ghép cụm **又重新**, sau đó ghép cụm **检查了**, sau đó ghép cụm **一遍**.",
+        "highlights": [
+          "她又"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[正在] / [发展] / [国家的经济] / [逐渐]",
+        "answer": "国家的经济正在逐渐发展。",
+        "vietnamese": "Nền kinh tế đất nước đang dần phát triển.",
+        "explanation": "Đặt cụm từ **国家的经济** ở đầu câu, sau đó ghép cụm **正在**, sau đó ghép cụm **逐渐**, sau đó ghép cụm **发展**.",
+        "highlights": [
+          "在",
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[阳光] / [任何] / [植物] / [离不开] / [都]",
+        "answer": "任何植物都离不开阳光。",
+        "vietnamese": "Không có loài thực vật nào có thể sống được nếu không có ánh sáng mặt trời.",
+        "explanation": "Đặt cụm từ **任何** ở đầu câu, sau đó ghép cụm **植物**, sau đó ghép cụm **都**, sau đó ghép cụm **离不开**, sau đó ghép cụm **阳光**.",
+        "highlights": [
+          "任何"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[我们] / [完成任务] / [保证] / [按时]",
+        "answer": "我们保证按时完成任务。",
+        "vietnamese": "Chúng tôi đảm bảo hoàn thành nhiệm vụ đúng thời hạn.",
+        "explanation": "Đặt cụm từ **我们** ở đầu câu, sau đó ghép cụm **保证**, sau đó ghép cụm **按时**, sau đó ghép cụm **完成任务**.",
+        "highlights": [
+          "我们"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[饮料] / [火车上] / [不提供] / [免费的]",
+        "answer": "火车上不提供免费的饮料。",
+        "vietnamese": "Không có đồ uống miễn phí trên tàu.",
+        "explanation": "Đặt cụm từ **火车上** ở đầu câu, sau đó ghép cụm **不提供**, tiếp theo là **免费的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **饮料** để tạo thành cụm danh từ **免费的饮料**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[拉近] / [了] / [人与人之间的] / [手机] / [距离]",
+        "answer": "手机拉近了人与人之间的距离。",
+        "vietnamese": "Điện thoại di động đã rút ngắn khoảng cách giữa con người với nhau.",
+        "explanation": "Đặt cụm từ **手机** ở đầu câu, sau đó ghép cụm **拉近**, sau đó ghép cụm **了**, tiếp theo là **人与人之间的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **距离** để tạo thành cụm danh từ **人与人之间的距离**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[经验] / [积累了] / [丰富的] / [弟弟在工作中]",
+        "answer": "弟弟在工作中积累了丰富的经验。",
+        "vietnamese": "Em trai tôi đã tích lũy được nhiều kinh nghiệm trong công việc.",
+        "explanation": "Đặt cụm từ **弟弟在工作中** ở đầu câu, sau đó ghép cụm **积累了**, tiếp theo là **丰富的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **经验** để tạo thành cụm danh từ **丰富的经验**.",
+        "highlights": [
+          "在",
+          "的"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[什么] / [区别] / [你们俩的看法] / [没]",
+        "answer": "你们俩的看法没什么区别。",
+        "vietnamese": "Không có sự khác biệt giữa hai ý kiến ​​​​của bạn.",
+        "explanation": "Đặt cụm từ **你们俩的看法** ở đầu câu, sau đó ghép cụm **没**, sau đó ghép cụm **什么**, sau đó ghép cụm **区别**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[我] / [已经] / [这里的气候] / [逐渐] / [适应了]",
+        "answer": "我已经逐渐适应了这里的气候。",
+        "vietnamese": "Tôi đã dần thích nghi với khí hậu ở đây.",
+        "explanation": "Xác định chủ ngữ là **我** nên đặt ở đầu câu, sau đó ghép cụm **已经**, sau đó ghép cụm **逐渐**, sau đó ghép cụm **适应了**, sau đó ghép cụm **这里的气候**.",
+        "highlights": [
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_25",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 14: Câu vị ngữ động từ thường (Bộ 2)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 14: Câu vị ngữ động từ thường",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[共同语言] / [他们俩] / [许多] / [有]",
+        "answer": "他们俩有许多共同语言。",
+        "vietnamese": "Cả hai đều có rất nhiều điểm chung.",
+        "explanation": "Đặt cụm từ **他们俩** ở đầu câu, sau đó ghép cụm **有**, sau đó ghép cụm **许多**, sau đó ghép cụm **共同语言**.",
+        "highlights": [
+          "有"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[任何事情的] / [发生] / [有原因的] / [都是]",
+        "answer": "任何事情的发生都是有原因的。",
+        "vietnamese": "Mọi thứ xảy ra đều có lý do.",
+        "explanation": "Đặt **任何事情的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **发生** để tạo thành cụm danh từ **任何事情的发生**, sau đó ghép cụm **都是**, sau đó ghép cụm **有原因的**.",
+        "highlights": [
+          "有",
+          "是",
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[互联网] / [距离] / [人与人之间的] / [拉近了]",
+        "answer": "互联网拉近了人与人之间的距离。",
+        "vietnamese": "Internet đã rút ngắn khoảng cách giữa con người với nhau.",
+        "explanation": "Đặt cụm từ **互联网** ở đầu câu, sau đó ghép cụm **拉近了**, tiếp theo là **人与人之间的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **距离** để tạo thành cụm danh từ **人与人之间的距离**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[他] / [一个] / [美丽的] / [小城市] / [出生在]",
+        "answer": "他出生在一个美丽的小城市。",
+        "vietnamese": "Anh sinh ra ở một thành phố nhỏ xinh đẹp.",
+        "explanation": "Xác định chủ ngữ là **他** nên đặt ở đầu câu, sau đó ghép cụm **出生在**, sau đó ghép cụm **一个**, tiếp theo là **美丽的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **小城市** để tạo thành cụm danh từ **美丽的小城市**.",
+        "highlights": [
+          "在",
+          "的"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[为我们] / [提供了] / [牙刷和牙膏] / [宾馆]",
+        "answer": "宾馆为我们提供了牙刷和牙膏。",
+        "vietnamese": "Khách sạn cung cấp cho chúng tôi bàn chải đánh răng và kem đánh răng.",
+        "explanation": "Đặt cụm từ **宾馆** ở đầu câu, sau đó ghép cụm **为我们**, sau đó ghép cụm **提供了**, sau đó ghép cụm **牙刷和牙膏**.",
+        "highlights": [
+          "宾馆"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[俩] / [没通过] / [普通话考试] / [她们]",
+        "answer": "她们俩没通过普通话考试。",
+        "vietnamese": "Cả hai đều trượt kỳ thi tiếng phổ thông.",
+        "explanation": "Đặt cụm từ **她们** ở đầu câu, sau đó ghép cụm **俩**, sau đó ghép cụm **没通过**, sau đó ghép cụm **普通话考试**.",
+        "highlights": [
+          "她们"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[那个警察] / [任务] / [完成了] / [顺利地]",
+        "answer": "那个警察顺利地完成了任务。",
+        "vietnamese": "Người cảnh sát đã hoàn thành xuất sắc nhiệm vụ của mình.",
+        "explanation": "Đặt cụm từ **那个警察** ở đầu câu, sau đó ghép cụm **顺利地**, sau đó ghép cụm **完成了**, sau đó ghép cụm **任务**.",
+        "highlights": [
+          "那个"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[他] / [负责] / [技术工作] / [网站] / [的]",
+        "answer": "他负责网站的技术工作。",
+        "vietnamese": "Ông chịu trách nhiệm về các khía cạnh kỹ thuật của trang web.",
+        "explanation": "Xác định chủ ngữ là **他** nên đặt ở đầu câu, sau đó ghép cụm **负责**, sau đó ghép cụm **网站**, tiếp theo là **的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **技术工作** để tạo thành cụm danh từ **的技术工作**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[保证] / [我] / [完成] / [按时] / [任务]",
+        "answer": "我保证按时完成任务。",
+        "vietnamese": "Tôi hứa sẽ hoàn thành nhiệm vụ đúng thời hạn.",
+        "explanation": "Xác định chủ ngữ là **我** nên đặt ở đầu câu, sau đó ghép cụm **保证**, sau đó ghép cụm **按时**, sau đó ghép cụm **完成**, sau đó ghép cụm **任务**.",
+        "highlights": [
+          "我保"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[顺利] / [祝] / [你们] / [这次访问] / [一切]",
+        "answer": "祝你们这次访问一切顺利。",
+        "vietnamese": "Tôi chúc bạn mọi điều tốt đẹp nhất trong chuyến thăm của bạn.",
+        "explanation": "Đặt cụm từ **祝** ở đầu câu, sau đó ghép cụm **你们**, sau đó ghép cụm **这次访问**, sau đó ghép cụm **一切**, sau đó ghép cụm **顺利**.",
+        "highlights": [
+          "祝你"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_26",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 14: Câu vị ngữ động từ thường (Bộ 3)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 14: Câu vị ngữ động từ thường",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[北京语音] / [标准音] / [普通话] / [以] / [为]",
+        "answer": "普通话以北京语音为标准音。",
+        "vietnamese": "Tiếng Quan Thoại sử dụng cách phát âm tiếng Bắc Kinh làm cách phát âm chuẩn.",
+        "explanation": "Đặt cụm từ **普通话** ở đầu câu, sau đó ghép cụm **以**, sau đó ghép cụm **北京语音**, sau đó ghép cụm **为**, sau đó ghép cụm **标准音**.",
+        "highlights": [
+          "普通"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[反对的] / [知道校长] / [原因] / [没人]",
+        "answer": "没人知道校长反对的原因。",
+        "vietnamese": "Không ai biết lý do phản đối của hiệu trưởng.",
+        "explanation": "Đặt cụm từ **没人** ở đầu câu, sau đó ghép cụm **知道校长**, tiếp theo là **反对的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **原因** để tạo thành cụm danh từ **反对的原因**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 2,
+        "question": "[进行了] / [同学们] / [调查] / [在超市]",
+        "answer": "同学们在超市进行了调查。",
+        "vietnamese": "Các sinh viên đã tiến hành một cuộc điều tra trong siêu thị.",
+        "explanation": "Đặt cụm từ **同学们** ở đầu câu, sau đó ghép cụm **在超市**, sau đó ghép cụm **进行了**, sau đó ghép cụm **调查**.",
+        "highlights": [
+          "在"
+        ]
+      },
+      {
+        "index": 3,
+        "question": "[她] / [说明书] / [仔细地] / [看了看]",
+        "answer": "她仔细地看了看说明书。",
+        "vietnamese": "Cô đọc kỹ hướng dẫn.",
+        "explanation": "Xác định chủ ngữ là **她** nên đặt ở đầu câu, sau đó ghép cụm **仔细地**, sau đó ghép cụm **看了看**, sau đó ghép cụm **说明书**.",
+        "highlights": [
+          "她仔"
+        ]
+      },
+      {
+        "index": 4,
+        "question": "[那篇报道] / [重视] / [引起了] / [校长的]",
+        "answer": "那篇报道引起了校长的重视。",
+        "vietnamese": "Bản báo cáo đó đã thu hút sự chú ý của hiệu trưởng.",
+        "explanation": "Đặt cụm từ **那篇报道** ở đầu câu, sau đó ghép cụm **引起了**, tiếp theo là **校长的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **重视** để tạo thành cụm danh từ **校长的重视**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 5,
+        "question": "[范围] / [他说的问题] / [今天讨论的] / [超出了]",
+        "answer": "他说的问题超出了今天讨论的范围。",
+        "vietnamese": "Những vấn đề ông đề cập nằm ngoài phạm vi thảo luận ngày hôm nay.",
+        "explanation": "Đặt cụm từ **他说的问题** ở đầu câu, sau đó ghép cụm **超出了**, tiếp theo là **今天讨论的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **范围** để tạo thành cụm danh từ **今天讨论的范围**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 6,
+        "question": "[这篇文章] / [三部分] / [组成] / [由]",
+        "answer": "这篇文章由三部分组成。",
+        "vietnamese": "Bài viết này bao gồm ba phần.",
+        "explanation": "Đặt cụm từ **这篇文章** ở đầu câu, sau đó ghép cụm **由**, sau đó ghép cụm **三部分**, sau đó ghép cụm **组成**.",
+        "highlights": [
+          "这篇"
+        ]
+      },
+      {
+        "index": 7,
+        "question": "[我] / [适应了这里的] / [已经] / [气候]",
+        "answer": "我已经适应了这里的气候。",
+        "vietnamese": "Tôi đã thích nghi được với khí hậu ở đây.",
+        "explanation": "Xác định chủ ngữ là **我** nên đặt ở đầu câu, sau đó ghép cụm **已经**, tiếp theo là **适应了这里的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **气候** để tạo thành cụm danh từ **适应了这里的气候**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 8,
+        "question": "[都] / [完成了] / [今年所有的] / [任务]",
+        "answer": "今年所有的任务都完成了。",
+        "vietnamese": "Tất cả các nhiệm vụ đã được hoàn thành trong năm nay.",
+        "explanation": "Đặt **今年所有的** ở đầu câu, vì theo sau **的** phải là một danh từ nên ta ghép với danh từ **任务** để tạo thành cụm danh từ **今年所有的任务**, sau đó ghép cụm **都**, sau đó ghép cụm **完成了**.",
+        "highlights": [
+          "有",
+          "的"
+        ]
+      },
+      {
+        "index": 9,
+        "question": "[许多人的] / [注意] / [引起了] / [那篇文章]",
+        "answer": "那篇文章引起了许多人的注意。",
+        "vietnamese": "Bài viết đó đã thu hút sự chú ý của nhiều người.",
+        "explanation": "Đặt cụm từ **那篇文章** ở đầu câu, sau đó ghép cụm **引起了**, tiếp theo là **许多人的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **注意** để tạo thành cụm danh từ **许多人的注意**.",
+        "highlights": [
+          "的"
+        ]
+      }
+    ]
+  },
+  {
+    "setId": "hsk4_arrange_set_27",
+    "setName": "Sắp xếp câu HSK 4 - Chuyên đề 14: Câu vị ngữ động từ thường (Bộ 4)",
+    "level": "HSK4",
+    "choices": {},
+    "example": {
+      "question": "★ Chuyên đề ngữ pháp: Chuyên đề 14: Câu vị ngữ động từ thường",
+      "answer": "",
+      "text": "Sắp xếp các từ cho sẵn thành câu hoàn chỉnh đúng ngữ pháp."
+    },
+    "questions": [
+      {
+        "index": 0,
+        "question": "[小弟弟] / [打针] / [邻居家] / [的] / [害怕]",
+        "answer": "邻居家的小弟弟害怕打针。",
+        "vietnamese": "Em trai hàng xóm sợ tiêm thuốc.",
+        "explanation": "Đặt cụm từ **邻居家** ở đầu câu, tiếp theo là **的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **小弟弟** để tạo thành cụm danh từ **的小弟弟**, sau đó ghép cụm **害怕**, sau đó ghép cụm **打针**.",
+        "highlights": [
+          "的"
+        ]
+      },
+      {
+        "index": 1,
+        "question": "[不符合] / [宾馆的] / [规定] / [这样做]",
+        "answer": "这样做不符合宾馆的规定。",
+        "vietnamese": "Điều này trái với quy định của khách sạn.",
+        "explanation": "Đặt cụm từ **这样做** ở đầu câu, sau đó ghép cụm **不符合**, tiếp theo là **宾馆的**, vì theo sau **de** (của) phải là một danh từ nên ta ghép với danh từ **规定** để tạo thành cụm danh từ **宾馆的规定**.",
+        "highlights": [
+          "的"
         ]
       }
     ]

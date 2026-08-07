@@ -51,7 +51,7 @@
   </div>
 
   <div class="container">
-    <h1>Tiếng Trung Mỹ Huyền - Đọc Hiểu HSK 3</h1>
+    <h1 id="main-header">Tiếng Trung Mỹ Huyền - Đọc Hiểu HSK 3</h1>
 
     <!-- 1. Screen: Register Name -->
     <div id="screen-register" class="view">
@@ -152,6 +152,7 @@
     let studentAnswers = []; // [ { q_index: 0, user_answer: '' } ]
     let lastServerMsg = null;
     let activeSetId = '';
+    let arrangeStates = {}; // { [q_index]: { wordsObj: [], selectedWords: [] } }
 
     let currentIdx = 0;
     let examStartTime = 0;
@@ -213,6 +214,9 @@
         example = msg.example;
         activeSetId = msg.setId || '';
 
+        const level = msg.level || (activeSetId.includes('hsk4') ? 'HSK4' : 'HSK3');
+        document.getElementById('main-header').innerText = level === 'HSK4' ? 'Tiếng Trung Mỹ Huyền - HSK4' : 'Tiếng Trung Mỹ Huyền - Đọc Hiểu HSK 3';
+
         // Start timer
         examStartTime = Date.now();
         currentIdx = 0;
@@ -233,12 +237,16 @@
         showScreen('screen-waiting-grading');
       } else if (msg.type === 'EXAM_RESULT') {
         showScreen('screen-result');
+        const level = msg.level || (activeSetId.includes('hsk4') ? 'HSK4' : 'HSK3');
+        document.getElementById('main-header').innerText = level === 'HSK4' ? 'Tiếng Trung Mỹ Huyền - HSK4' : 'Tiếng Trung Mỹ Huyền - Đọc Hiểu HSK 3';
         showResults(msg.score, msg.total, msg.details);
       } else if (msg.type === 'RESET_EXAM') {
         studentAnswers = [];
         questions = [];
         choices = {};
         currentIdx = 0;
+        arrangeStates = {};
+        document.getElementById('main-header').innerText = 'Tiếng Trung Mỹ Huyền - Đọc Hiểu HSK 3';
         showScreen('screen-waiting-exam');
       }
     }
@@ -270,15 +278,194 @@
       }
     }
 
+    function renderArrangeQuestion(card, q, ansObj, selectedLetter) {
+      if (!arrangeStates[currentIdx]) {
+        const blocks = q.question.match(/\[([^\]]+)\]/g);
+        let words = [];
+        if (blocks) {
+          words = blocks.map(b => b.slice(1, -1));
+        } else {
+          words = q.question.split('/').map(w => w.trim());
+        }
+
+        const shuffled = [...words];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+
+        const wordsObj = shuffled.map((w, idx) => ({ id: idx, text: w, selected: false }));
+        let selectedWords = [];
+
+        if (selectedLetter) {
+          let tempStr = selectedLetter;
+          let searchIndex = 0;
+          while (searchIndex < tempStr.length) {
+            let found = false;
+            for (let w of wordsObj) {
+              if (!w.selected && tempStr.startsWith(w.text, searchIndex)) {
+                w.selected = true;
+                selectedWords.push(w);
+                searchIndex += w.text.length;
+                found = true;
+                break;
+              }
+            }
+            if (!found) {
+              searchIndex++;
+            }
+          }
+        }
+
+        arrangeStates[currentIdx] = { wordsObj, selectedWords };
+      }
+
+      const state = arrangeStates[currentIdx];
+
+      const textDiv = document.createElement('div');
+      textDiv.className = 'question-text';
+      textDiv.innerHTML = `${currentIdx + 1}. <span style="font-size: 15px; color: #666; font-style: italic; font-weight: normal; display: block; margin-top: 4px; margin-bottom: 8px;">(Chọn các từ bên dưới để xếp thành câu hoàn chỉnh)</span>`;
+      card.appendChild(textDiv);
+
+      const blocksContainer = document.createElement('div');
+      blocksContainer.style.display = 'flex';
+      blocksContainer.style.flexWrap = 'wrap';
+      blocksContainer.style.gap = '8px';
+      blocksContainer.style.margin = '15px 0 25px 0';
+      blocksContainer.style.minHeight = '42px';
+
+      state.wordsObj.forEach(w => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'word-block-btn';
+        btn.innerText = w.text;
+        btn.style.padding = '8px 16px';
+        btn.style.fontSize = '18px';
+        btn.style.fontWeight = 'bold';
+        btn.style.borderRadius = '8px';
+        btn.style.transition = 'all 0.1s';
+
+        if (w.selected) {
+          btn.style.background = '#e0e0e0';
+          btn.style.border = '2px dashed #bdbdbd';
+          btn.style.color = '#e0e0e0';
+          btn.style.cursor = 'default';
+          btn.style.boxShadow = 'none';
+          btn.disabled = true;
+        } else {
+          btn.style.background = '#FAF6ED';
+          btn.style.border = '2px solid var(--gold-border)';
+          btn.style.color = '#333';
+          btn.style.cursor = 'pointer';
+          btn.style.boxShadow = '2px 2px 0px var(--border-color)';
+
+          btn.onmousedown = () => {
+            btn.style.transform = 'translate(1px, 1px)';
+            btn.style.boxShadow = 'none';
+          };
+          btn.onmouseup = () => {
+            btn.style.transform = 'none';
+            btn.style.boxShadow = '2px 2px 0px var(--border-color)';
+          };
+
+          btn.onclick = () => {
+            w.selected = true;
+            state.selectedWords.push(w);
+            ansObj.user_answer = state.selectedWords.map(x => x.text).join('');
+            
+            card.innerHTML = '';
+            renderArrangeQuestion(card, q, ansObj, ansObj.user_answer);
+            renderSummaryBar();
+            syncProgress();
+          };
+        }
+        blocksContainer.appendChild(btn);
+      });
+      card.appendChild(blocksContainer);
+
+      const ansLabel = document.createElement('div');
+      ansLabel.style.fontWeight = 'bold';
+      ansLabel.style.color = 'var(--primary-color)';
+      ansLabel.style.fontSize = '16px';
+      ansLabel.style.marginBottom = '8px';
+      ansLabel.innerText = 'Câu trả lời của em (Click vào từ để bỏ chọn):';
+      card.appendChild(ansLabel);
+
+      const answerArea = document.createElement('div');
+      answerArea.style.display = 'flex';
+      answerArea.style.flexWrap = 'wrap';
+      answerArea.style.gap = '8px';
+      answerArea.style.alignContent = 'center';
+      answerArea.style.padding = '14px';
+      answerArea.style.minHeight = '65px';
+      answerArea.style.background = '#FFFDF6';
+      answerArea.style.border = '2px dashed var(--gold-border)';
+      answerArea.style.borderRadius = '10px';
+      answerArea.style.boxShadow = 'inset 1px 1px 3px rgba(0,0,0,0.05)';
+      answerArea.style.boxSizing = 'border-box';
+      answerArea.style.marginBottom = '15px';
+
+      if (state.selectedWords.length === 0) {
+        const placeholder = document.createElement('span');
+        placeholder.style.color = '#aaa';
+        placeholder.style.fontStyle = 'italic';
+        placeholder.style.fontSize = '16px';
+        placeholder.innerText = 'Click chọn các từ ở trên để ghép câu...';
+        answerArea.appendChild(placeholder);
+      } else {
+        state.selectedWords.forEach((w, sIdx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'word-block-btn selected-word';
+          btn.innerText = w.text;
+          btn.style.padding = '8px 16px';
+          btn.style.fontSize = '18px';
+          btn.style.fontWeight = 'bold';
+          btn.style.background = '#FAF6ED';
+          btn.style.border = '2px solid var(--primary-color)';
+          btn.style.borderRadius = '8px';
+          btn.style.cursor = 'pointer';
+          btn.style.color = 'var(--primary-color)';
+          btn.style.boxShadow = '2px 2px 0px rgba(0,0,0,0.15)';
+          btn.style.transition = 'all 0.1s';
+
+          btn.onmousedown = () => {
+            btn.style.transform = 'translate(1px, 1px)';
+            btn.style.boxShadow = 'none';
+          };
+          btn.onmouseup = () => {
+            btn.style.transform = 'none';
+            btn.style.boxShadow = '2px 2px 0px rgba(0,0,0,0.15)';
+          };
+
+          btn.onclick = () => {
+            state.selectedWords.splice(sIdx, 1);
+            w.selected = false;
+            ansObj.user_answer = state.selectedWords.map(x => x.text).join('');
+            
+            card.innerHTML = '';
+            renderArrangeQuestion(card, q, ansObj, ansObj.user_answer);
+            renderSummaryBar();
+            syncProgress();
+          };
+          answerArea.appendChild(btn);
+        });
+      }
+      card.appendChild(answerArea);
+    }
+
     function renderExam() {
       const isPart3 = !!(questions && questions.length > 0 && questions[0].paragraph);
-      const isListening = !!(questions && questions.length > 0 && questions[0].audio);
+      const isListeningPart2 = !!(questions && questions.length > 0 && questions[0].isListeningPart2);
+      const isListeningPart3 = !!(questions && questions.length > 0 && questions[0].isListeningPart3);
+      const isListening = !!(questions && questions.length > 0 && questions[0].audio && !questions[0].isListeningPart2 && !questions[0].isListeningPart3);
+      const isArranging = !choices || Object.keys(choices).length === 0;
 
       // 1. Show/Hide Choices Box and Example Label
-      document.getElementById('exam-choices-panel').style.display = (isPart3 || isListening) ? 'none' : 'block';
-      document.getElementById('exam-example-parent').style.display = (isPart3 || isListening) ? 'none' : 'block';
+      document.getElementById('exam-choices-panel').style.display = (isPart3 || isListening || isListeningPart2 || isListeningPart3 || isArranging) ? 'none' : 'block';
+      document.getElementById('exam-example-parent').style.display = (isPart3 || isListening || isListeningPart2 || isListeningPart3 || isArranging) ? 'none' : 'block';
 
-      if (!isPart3 && !isListening) {
+      if (!isPart3 && !isListening && !isListeningPart2 && !isListeningPart3) {
         // Render Choices Box
         const choicesPanel = document.getElementById('exam-choices-panel');
         choicesPanel.innerHTML = '<h3>Khung Lựa Chọn</h3>';
@@ -355,120 +542,142 @@
           card.appendChild(contentDiv);
         }
 
-        // Render audio control box
+        // Render simple listening indicator since teacher plays audio externally
         const audioDiv = document.createElement('div');
         audioDiv.className = 'audio-control-box';
         audioDiv.style.display = 'flex';
-        audioDiv.style.flexDirection = 'column';
         audioDiv.style.alignItems = 'center';
         audioDiv.style.justifyContent = 'center';
         audioDiv.style.background = '#e3f2fd';
-        audioDiv.style.border = '2px solid #90caf9';
+        audioDiv.style.border = '2px dashed #90caf9';
         audioDiv.style.borderRadius = '12px';
-        audioDiv.style.padding = '20px';
+        audioDiv.style.padding = '15px';
         audioDiv.style.marginBottom = '25px';
-        audioDiv.style.gap = '10px';
-
-        const playKey = `playCount_${activeSetId}_${q.index}`;
-        let playCount = parseInt(localStorage.getItem(playKey) || '0');
 
         const label = document.createElement('div');
         label.style.fontWeight = 'bold';
         label.style.fontSize = '16px';
         label.style.color = '#1565c0';
-        label.innerText = `Lượt nghe của em: ${playCount} / 2`;
-
-        const playBtn = document.createElement('button');
-        playBtn.className = 'btn-control';
-        playBtn.style.padding = '12px 24px';
-        playBtn.style.fontSize = '17px';
-        playBtn.style.fontWeight = 'bold';
-        playBtn.style.cursor = 'pointer';
-        playBtn.style.borderRadius = '30px';
-        playBtn.style.border = 'none';
-        playBtn.style.transition = '0.2s';
-        playBtn.style.background = 'var(--primary-color)';
-        playBtn.style.color = 'white';
-
-        if (playCount >= 2) {
-          playBtn.innerText = '🚫 Đã hết lượt nghe';
-          playBtn.disabled = true;
-          playBtn.style.background = '#ccc';
-          playBtn.style.cursor = 'not-allowed';
-        } else {
-          playBtn.innerText = `🔈 Nghe lần ${playCount + 1}`;
-        }
-
-        let isPlaying = false;
-        let currentAudio = null;
-
-        playBtn.onclick = () => {
-          if (isPlaying || playCount >= 2) return;
-
-          playCount++;
-          localStorage.setItem(playKey, playCount.toString());
-          label.innerText = `Lượt nghe của em: ${playCount} / 2`;
-          playBtn.innerText = '🔊 Đang phát...';
-          playBtn.disabled = true;
-          playBtn.style.background = '#f57c00';
-          isPlaying = true;
-
-          currentAudio = new Audio(q.audio);
-          currentAudio.play().catch(err => {
-            console.error('Audio play failed:', err);
-            isPlaying = false;
-            playBtn.disabled = false;
-            playBtn.style.background = 'var(--primary-color)';
-            playBtn.innerText = `🔈 Nghe lần ${playCount}`;
-            playCount--;
-            localStorage.setItem(playKey, playCount.toString());
-            label.innerText = `Lượt nghe của em: ${playCount} / 2`;
-          });
-
-          currentAudio.onended = () => {
-            isPlaying = false;
-            if (playCount >= 2) {
-              playBtn.innerText = '🚫 Đã hết lượt nghe';
-              playBtn.disabled = true;
-              playBtn.style.background = '#ccc';
-              playBtn.style.cursor = 'not-allowed';
-            } else {
-              playBtn.disabled = false;
-              playBtn.style.background = 'var(--primary-color)';
-              playBtn.innerText = `🔈 Nghe lần ${playCount + 1}`;
-            }
-          };
-        };
+        label.style.textAlign = 'center';
+        label.innerText = `🎧 ĐỀ THI NGHE: Em hãy lắng nghe giáo viên phát âm thanh để chọn hình ảnh tương ứng [A - F]`;
 
         audioDiv.appendChild(label);
-        audioDiv.appendChild(playBtn);
         card.appendChild(audioDiv);
-      } else {
+      } else if (isListeningPart2) {
+        // Render simple listening indicator since teacher plays audio externally
+        const audioDiv = document.createElement('div');
+        audioDiv.className = 'audio-control-box';
+        audioDiv.style.display = 'flex';
+        audioDiv.style.alignItems = 'center';
+        audioDiv.style.justifyContent = 'center';
+        audioDiv.style.background = '#e3f2fd';
+        audioDiv.style.border = '2px dashed #90caf9';
+        audioDiv.style.borderRadius = '12px';
+        audioDiv.style.padding = '15px';
+        audioDiv.style.marginBottom = '25px';
+
+        const label = document.createElement('div');
+        label.style.fontWeight = 'bold';
+        label.style.fontSize = '16px';
+        label.style.color = '#1565c0';
+        label.style.textAlign = 'center';
+        label.innerText = `🎧 NGHE PHÁN ĐOÁN ĐÚNG/SAI: Em hãy nghe giáo viên phát âm thanh và chọn Đúng hoặc Sai`;
+
+        audioDiv.appendChild(label);
+        card.appendChild(audioDiv);
+
+        // Render the statement that they read
+        const statementDiv = document.createElement('div');
+        statementDiv.style.fontSize = '22px';
+        statementDiv.style.fontWeight = 'bold';
+        statementDiv.style.color = 'var(--primary-color)';
+        statementDiv.style.textAlign = 'center';
+        statementDiv.style.margin = '20px 0';
+        statementDiv.style.padding = '15px';
+        statementDiv.style.background = '#f9f9f9';
+        statementDiv.style.border = '1px solid #ddd';
+        statementDiv.style.borderRadius = '8px';
+        statementDiv.innerText = q.question;
+        card.appendChild(statementDiv);
+      } else if (isListeningPart3) {
+        // Render simple listening indicator since teacher plays audio externally
+        const audioDiv = document.createElement('div');
+        audioDiv.className = 'audio-control-box';
+        audioDiv.style.display = 'flex';
+        audioDiv.style.alignItems = 'center';
+        audioDiv.style.justifyContent = 'center';
+        audioDiv.style.background = '#e3f2fd';
+        audioDiv.style.border = '2px dashed #90caf9';
+        audioDiv.style.borderRadius = '12px';
+        audioDiv.style.padding = '15px';
+        audioDiv.style.marginBottom = '25px';
+
+        const label = document.createElement('div');
+        label.style.fontWeight = 'bold';
+        label.style.fontSize = '16px';
+        label.style.color = '#1565c0';
+        label.style.textAlign = 'center';
+        label.innerText = `🎧 NGHE CHỌN ĐÁP ÁN ĐÚNG: Em hãy nghe giáo viên phát câu hỏi và chọn đáp án A, B hoặc C`;
+
+        audioDiv.appendChild(label);
+        card.appendChild(audioDiv);
+
+        // Render Question Number
         const textDiv = document.createElement('div');
         textDiv.className = 'question-text';
         textDiv.innerText = `${currentIdx + 1}. ${q.question}`;
         card.appendChild(textDiv);
+
+        // Render Options A, B, C
+        const optionsList = document.createElement('div');
+        optionsList.style.display = 'flex';
+        optionsList.style.flexDirection = 'column';
+        optionsList.style.gap = '8px';
+        optionsList.style.paddingLeft = '10px';
+        optionsList.style.margin = '15px 0';
+        Object.entries(q.options).forEach(([letter, text]) => {
+          const optRow = document.createElement('div');
+          optRow.innerHTML = `<strong style="color: var(--primary-color); font-size: 18px;">${letter}.</strong> ${text}`;
+          optionsList.appendChild(optRow);
+        });
+        card.appendChild(optionsList);
+      } else {
+        const ansObj = studentAnswers.find(a => a.q_index === q.index);
+        const selectedLetter = ansObj ? ansObj.user_answer : '';
+
+        if (isArranging) {
+          renderArrangeQuestion(card, q, ansObj, selectedLetter);
+        } else {
+          const textDiv = document.createElement('div');
+          textDiv.className = 'question-text';
+          textDiv.innerText = `${currentIdx + 1}. ${q.question}`;
+          card.appendChild(textDiv);
+
+          const btnContainer = document.createElement('div');
+          btnContainer.className = 'matching-selector';
+
+          const btnOptions = isListeningPart3 ? ['A', 'B', 'C'] : (isListeningPart2 ? ['对', '错'] : (isListening ? ['A', 'B', 'C', 'D', 'E'] : (isPart3 ? ['A', 'B', 'C'] : ['A', 'B', 'C', 'D', 'F'])));
+          btnOptions.forEach(letter => {
+            const btn = document.createElement('button');
+            btn.className = 'match-btn';
+            if (isListeningPart2) {
+              btn.style.width = '140px';
+              btn.style.margin = '10px';
+              btn.style.fontSize = '18px';
+              btn.style.fontWeight = 'bold';
+            }
+            if (letter === selectedLetter) {
+              btn.classList.add('selected');
+            }
+            btn.innerText = isListeningPart2 ? (letter === '对' ? '对 (Đúng)' : '错 (Sai)') : letter;
+            btn.onclick = () => selectAnswer(letter);
+            btnContainer.appendChild(btn);
+          });
+
+          card.appendChild(btnContainer);
+        }
       }
 
-      const btnContainer = document.createElement('div');
-      btnContainer.className = 'matching-selector';
-
-      const ansObj = studentAnswers.find(a => a.q_index === q.index);
-      const selectedLetter = ansObj ? ansObj.user_answer : '';
-
-      const btnOptions = isListening ? ['A', 'B', 'C', 'D', 'E', 'F'] : (isPart3 ? ['A', 'B', 'C'] : ['A', 'B', 'C', 'D', 'F']);
-      btnOptions.forEach(letter => {
-        const btn = document.createElement('button');
-        btn.className = 'match-btn';
-        if (letter === selectedLetter) {
-          btn.classList.add('selected');
-        }
-        btn.innerText = letter;
-        btn.onclick = () => selectAnswer(letter);
-        btnContainer.appendChild(btn);
-      });
-
-      card.appendChild(btnContainer);
       questionsContainer.appendChild(card);
 
       // 5. Update Navigation Buttons
@@ -505,16 +714,18 @@
 
       // Refresh active card styling & buttons
       const btnContainer = document.querySelector('#q-card-active .matching-selector');
-      const buttons = btnContainer.querySelectorAll('.match-btn');
-      const currentAns = studentAnswers.find(a => a.q_index === q.index).user_answer;
+      if (btnContainer) {
+        const buttons = btnContainer.querySelectorAll('.match-btn');
+        const currentAns = studentAnswers.find(a => a.q_index === q.index).user_answer;
 
-      buttons.forEach(btn => {
-        if (btn.innerText === currentAns) {
-          btn.classList.add('selected');
-        } else {
-          btn.classList.remove('selected');
-        }
-      });
+        buttons.forEach(btn => {
+          if (btn.innerText === currentAns) {
+            btn.classList.add('selected');
+          } else {
+            btn.classList.remove('selected');
+          }
+        });
+      }
 
       renderSummaryBar();
       syncProgress();
@@ -543,8 +754,11 @@
 
     function renderSummaryBar() {
       const isPart3 = !!(questions && questions.length > 0 && questions[0].paragraph);
-      const isListening = !!(questions && questions.length > 0 && questions[0].audio);
-      const bypassDuplicateCheck = isPart3 || isListening;
+      const isListeningPart2 = !!(questions && questions.length > 0 && questions[0].isListeningPart2);
+      const isListeningPart3 = !!(questions && questions.length > 0 && questions[0].isListeningPart3);
+      const isListening = !!(questions && questions.length > 0 && questions[0].audio && !questions[0].isListeningPart2 && !questions[0].isListeningPart3);
+      const isArranging = !choices || Object.keys(choices).length === 0;
+      const bypassDuplicateCheck = isPart3 || isListening || isListeningPart2 || isListeningPart3 || isArranging;
 
       // Calculate selection counts to check duplicates (only if not bypassed)
       const counts = {};
@@ -582,7 +796,10 @@
         }
 
         if (ans) {
-          if (!bypassDuplicateCheck && counts[ans] > 1) {
+          if (isArranging) {
+            badge.classList.add('answered');
+            badge.innerText = `Câu ${idx + 1} [✓]`;
+          } else if (!bypassDuplicateCheck && counts[ans] > 1) {
             badge.classList.add('duplicate');
             badge.innerText = `Câu ${idx + 1} [${ans} ⚠️]`;
           } else {
@@ -638,6 +855,29 @@
       }));
     }
 
+    function mergeTranscriptAndTranslation(chineseText, vietnameseText) {
+      if (!chineseText) return '';
+      const cnLines = chineseText.split('\n').map(l => l.trim()).filter(l => l);
+      const vnLines = vietnameseText ? vietnameseText.split('\n').map(l => l.trim()).filter(l => l) : [];
+
+      let html = '';
+      cnLines.forEach((cnLine, i) => {
+        html += `<div style="font-size: 17px; font-weight: bold; color: #111; line-height: 1.5; margin-bottom: 2px;">${cnLine}</div>`;
+        if (vnLines[i]) {
+          html += `<div style="font-size: 14px; color: var(--error-red); font-style: italic; margin-bottom: 10px; padding-left: 15px;">${vnLines[i]}</div>`;
+        } else {
+          html += `<div style="margin-bottom: 6px;"></div>`;
+        }
+      });
+      return html;
+    }
+
+    function formatExplanation(text) {
+      if (!text) return '';
+      let cleanText = text.replace(/^(Mẹo|Giải thích):\s*/i, '');
+      return cleanText.replace(/\*\*([^*]+)\*\*/g, '<span style="color: #2e7d32; font-weight: bold;">$1</span>');
+    }
+
     function showResults(score, total, details) {
       document.getElementById('result-student-name').innerText = `Học viên: ${studentName}`;
       
@@ -665,11 +905,12 @@
         const card = document.createElement('div');
         card.className = `graded-card ${d.isCorrect ? 'correct' : 'incorrect'}`;
 
+        const isArrArr = !d.choices || Object.keys(d.choices).length === 0;
         const title = document.createElement('div');
         title.className = 'graded-title';
         title.innerHTML = `
           <span>Câu số ${idx + 1}: ${d.isCorrect ? '✅ ĐÚNG (+2đ)' : '❌ SAI (0đ)'}</span>
-          <span>Nối với: [ ${d.userAnswer || 'Chưa chọn'} ]</span>
+          <span>${isArrArr ? 'Câu của em' : 'Nối với'}: [ ${d.userAnswer || 'Chưa chọn'} ]</span>
         `;
         card.appendChild(title);
 
@@ -679,7 +920,7 @@
         let questionHtml = d.paragraph ? `${d.paragraph}<br><span style="color: var(--primary-color);">${d.question}</span>` : d.question;
         let highlightedTranscript = d.transcript || '';
 
-        const targetTextForHighlight = d.audio ? highlightedTranscript : questionHtml;
+        const targetTextForHighlight = (d.audio || d.isListeningPart2 || d.isListeningPart3) ? highlightedTranscript : (isArrArr ? d.correctAnswer : questionHtml);
         let finalHighlightedText = targetTextForHighlight;
 
         if (d.highlights && d.highlights.length > 0) {
@@ -691,38 +932,93 @@
           });
         }
 
-        if (d.audio) {
+        let highlightedCorrectAnswer = '';
+        if (d.isListeningPart2 || d.isListeningPart3) {
+          highlightedTranscript = finalHighlightedText;
+        } else if (d.audio) {
           highlightedTranscript = finalHighlightedText;
           questionHtml = d.content ? `${d.content}` : '';
-          questionHtml += `<audio controls src="${d.audio}" style="width: 100%; margin-top: 10px; max-height: 40px;"></audio>`;
+        } else if (isArrArr) {
+          highlightedCorrectAnswer = finalHighlightedText;
         } else {
           questionHtml = finalHighlightedText;
         }
 
-        if (d.audio) {
+        if (d.isListeningPart2) {
           reviewSec.innerHTML = `
             <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
-              <strong>Hình ảnh & Âm thanh nghe lại:</strong><br>
+              <strong>Khẳng định đề bài:</strong><br>
+              <span class="chinese-text" style="font-size: 19px; font-weight: bold; line-height: 1.5; display: block; margin-top: 4px; color: var(--primary-color);">${d.question}</span>
+            </div>
+            <div class="review-row" style="margin-bottom: 12px; background: #fffde7; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #fbc02d;">
+              <strong>Script nghe & Dịch nghĩa:</strong><br>
+              <div style="margin-top: 6px;">
+                ${mergeTranscriptAndTranslation(highlightedTranscript, d.vietnamese)}
+              </div>
+            </div>
+            <div class="review-row"><strong>Đáp án đúng:</strong> [ ${d.correctAnswer === '对' ? '对 (Đúng)' : '错 (Sai)'} ]</div>
+            <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích:</strong> ${formatExplanation(d.explanation)}</div>
+          `;
+        } else if (d.isListeningPart3) {
+          let optionsHtml = '';
+          if (d.options) {
+            Object.entries(d.options).forEach(([letter, text]) => {
+              optionsHtml += `<div><strong style="color: var(--primary-color);">${letter}.</strong> ${text}</div>`;
+            });
+          }
+          reviewSec.innerHTML = `
+            <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+              <strong>Các lựa chọn đề bài:</strong><br>
+              <div style="font-size: 17px; line-height: 1.5; margin-top: 4px;">${optionsHtml}</div>
+            </div>
+            <div class="review-row" style="margin-bottom: 12px; background: #fffde7; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #fbc02d;">
+              <strong>Script nghe & Dịch nghĩa:</strong><br>
+              <div style="margin-top: 6px;">
+                ${mergeTranscriptAndTranslation(highlightedTranscript, d.vietnamese)}
+              </div>
+            </div>
+            <div class="review-row"><strong>Đáp án đúng:</strong> [ ${d.correctAnswer} ]</div>
+            <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích:</strong> ${formatExplanation(d.explanation)}</div>
+          `;
+        } else if (d.audio) {
+          reviewSec.innerHTML = `
+            <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+              <strong>Hình ảnh đề bài:</strong><br>
               ${questionHtml}
             </div>
             <div class="review-row" style="margin-bottom: 12px; background: #fffde7; padding: 10px 12px; border-radius: 6px; border-left: 4px solid #fbc02d;">
-              <strong>Script nghe chữ Hán:</strong><br>
-              <span class="chinese-text" style="font-size: 18px; font-weight: bold; line-height: 1.5; display: block; margin-top: 4px; color: #111;">${highlightedTranscript.replace(/\n/g, '<br>')}</span>
+              <strong>Script nghe & Dịch nghĩa:</strong><br>
+              <div style="margin-top: 6px;">
+                ${mergeTranscriptAndTranslation(highlightedTranscript, d.vietnamese)}
+              </div>
             </div>
             <div class="review-row"><strong>Đáp án đúng:</strong> [${d.correctAnswer}]</div>
-            <div class="review-row" style="color: var(--error-red);"><strong>Dịch nghĩa Script:</strong><br>${d.vietnamese.replace(/\n/g, '<br>')}</div>
-            <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích mẹo:</strong> ${d.explanation}</div>
+            <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích:</strong> ${formatExplanation(d.explanation)}</div>
           `;
         } else {
-          reviewSec.innerHTML = `
-            <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
-              <strong>Câu hỏi gốc:</strong><br>
-              <span class="chinese-text" style="font-size: 18px; font-weight: bold; line-height: 1.5; display: block; margin-top: 4px; color: #111;">${questionHtml}</span>
-            </div>
-            <div class="review-row"><strong>Đáp án đúng:</strong> [${d.correctAnswer}] &mdash; ${d.choiceText}</div>
-            <div class="review-row" style="color: var(--error-red);"><strong>Dịch nghĩa câu hỏi:</strong> ${d.vietnamese}</div>
-            <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích mẹo:</strong> ${d.explanation}</div>
-          `;
+          const isArrArr = !d.choices || Object.keys(d.choices).length === 0;
+          if (isArrArr) {
+            reviewSec.innerHTML = `
+              <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+                <strong>Từ gợi ý:</strong><br>
+                <span class="chinese-text" style="font-size: 18px; font-weight: bold; line-height: 1.5; display: block; margin-top: 4px; color: #111;">${d.question}</span>
+              </div>
+              <div class="review-row" style="margin-bottom: 8px;"><strong>Câu của em:</strong> <span style="font-size: 17px; font-weight: bold; color: ${d.isCorrect ? '#2e7d32' : '#c62828'};">${d.userAnswer || '(Không trả lời)'}</span></div>
+              <div class="review-row" style="margin-bottom: 8px;"><strong>Đáp án đúng:</strong> <span style="font-size: 17px; font-weight: bold; color: #2e7d32;">${highlightedCorrectAnswer}</span></div>
+              <div class="review-row" style="color: var(--error-red); margin-bottom: 8px;"><strong>Dịch nghĩa:</strong> ${d.vietnamese}</div>
+              <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích:</strong> ${formatExplanation(d.explanation)}</div>
+            `;
+          } else {
+            reviewSec.innerHTML = `
+              <div class="review-row" style="margin-bottom: 12px; background: #f9f9f9; padding: 10px 12px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+                <strong>Câu hỏi gốc:</strong><br>
+                <span class="chinese-text" style="font-size: 18px; font-weight: bold; line-height: 1.5; display: block; margin-top: 4px; color: #111;">${questionHtml}</span>
+              </div>
+              <div class="review-row"><strong>Đáp án đúng:</strong> [${d.correctAnswer}] &mdash; ${d.choiceText}</div>
+              <div class="review-row" style="color: var(--error-red);"><strong>Dịch nghĩa câu hỏi:</strong> ${d.vietnamese}</div>
+              <div class="review-row" style="margin-top: 8px; border-top: 1px dotted #ccc; padding-top: 8px;"><strong>Giải thích:</strong> ${formatExplanation(d.explanation)}</div>
+            `;
+          }
         }
 
         card.appendChild(reviewSec);

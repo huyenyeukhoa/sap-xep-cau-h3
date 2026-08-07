@@ -17,6 +17,7 @@ const rawSets = JSON.parse(fs.readFileSync(path.join(__dirname, 'questions.json'
 // Server states
 let gameState = 'IDLE'; // 'IDLE', 'EXAM', 'GRADING'
 let activeSetId = '';
+let activeSetLevel = 'HSK3';
 let activeQuestions = [];
 let activeChoices = {};
 let activeExample = {};
@@ -105,7 +106,8 @@ function getAdminState() {
   const questionSets = rawSets.map(s => ({
     setId: s.setId,
     setName: s.setName,
-    questionCount: s.questions.length
+    questionCount: s.questions.length,
+    level: s.level
   }));
 
   return {
@@ -144,6 +146,7 @@ wss.on('connection', (ws, req) => {
           
           if (chosenSet) {
             activeSetId = setId;
+            activeSetLevel = chosenSet.level || (chosenSet.setId.includes('hsk4') ? 'HSK4' : 'HSK3');
             activeQuestions = chosenSet.questions;
             activeChoices = chosenSet.choices;
             activeExample = chosenSet.example;
@@ -165,13 +168,16 @@ wss.on('connection', (ws, req) => {
               choices: activeChoices,
               example: activeExample,
               setId: activeSetId,
+              level: activeSetLevel,
               questions: activeQuestions.map(q => ({
                 index: q.index,
                 question: q.question,
                 paragraph: q.paragraph,
                 options: q.options,
                 audio: q.audio,
-                content: q.content
+                content: q.content,
+                isListeningPart2: q.isListeningPart2,
+                isListeningPart3: q.isListeningPart3
               }))
             });
 
@@ -193,7 +199,9 @@ wss.on('connection', (ws, req) => {
             activeQuestions.forEach((q, idx) => {
               const studentAnsObj = student.answers.find(a => a.q_index === idx);
               const userAns = studentAnsObj ? studentAnsObj.user_answer : '';
-              const isCorrect = userAns === q.answer;
+              const cleanUser = userAns ? userAns.replace(/[\s\p{P}]/gu, '') : '';
+              const cleanCorrect = q.answer ? q.answer.replace(/[\s\p{P}]/gu, '') : '';
+              const isCorrect = cleanUser === cleanCorrect;
 
               if (isCorrect) {
                 correctCount++;
@@ -210,10 +218,12 @@ wss.on('connection', (ws, req) => {
                 pinyin: q.pinyin,
                 vietnamese: q.vietnamese,
                 explanation: q.explanation,
-                choiceText: q.options ? q.options[q.answer] : (activeChoices[q.answer] || ""),
+                choiceText: q.options ? q.options[q.answer] : ((activeChoices && activeChoices[q.answer]) || ""),
                 audio: q.audio,
                 transcript: q.transcript,
-                content: q.content
+                content: q.content,
+                isListeningPart2: q.isListeningPart2,
+                isListeningPart3: q.isListeningPart3
               });
             });
 
@@ -228,7 +238,8 @@ wss.on('connection', (ws, req) => {
               student.ws.send(JSON.stringify({
                 type: 'EXAM_RESULT',
                 score: finalScore,
-                total: 10,
+                total: activeQuestions.length,
+                level: activeSetLevel,
                 details: details
               }));
             }
@@ -325,9 +336,17 @@ wss.on('connection', (ws, req) => {
           type: 'START_EXAM',
           choices: activeChoices,
           example: activeExample,
+          setId: activeSetId,
+          level: activeSetLevel,
           questions: activeQuestions.map(q => ({
             index: q.index,
-            question: q.question
+            question: q.question,
+            paragraph: q.paragraph,
+            options: q.options,
+            audio: q.audio,
+            content: q.content,
+            isListeningPart2: q.isListeningPart2,
+            isListeningPart3: q.isListeningPart3
           })),
           name: student.name,
           answers: student.answers
@@ -337,7 +356,8 @@ wss.on('connection', (ws, req) => {
       ws.send(JSON.stringify({
         type: 'EXAM_RESULT',
         score: student.score,
-        total: 10,
+        total: activeQuestions.length,
+        level: activeSetLevel,
         details: student.gradedDetails
       }));
     }
